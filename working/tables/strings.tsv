@@ -1,0 +1,86 @@
+identifier	text
+start_campaign	Campaign mode is similar to a linear first-person shooter game, with secrets and bosses.
+start_adventure	Adventure mode is an open-ended game where you can explore dungeons, find new towns, gamble for items, etc.
+start_survival	Survival mode is a fast-paced game where you must survive for a set amount of time before the gate to the next level opens.
+tutorial_walking	Welcome to Empty Clip Use the movement keys to walk around. (default: E, D, S, F)
+tutorial_door	Hit the use key to open the door. (default: Spacebar)
+tutorial_pickup	Hit the use key to pick up items. (default: Spacebar)
+tutorial_key	Try using the key on the door. (default: Spacebar)
+tutorial_end	You have completed the tutorial. Step into the water to complete the level.
+tutorial_secret	You have found the secret level!
+hall_intro	Enter each room to learn about a particular subject. You can read the signs for more information.
+hall_checkpoints	Hall of Checkpoints
+hall_experience	Hall of Experience
+hall_keys	Hall of Keys
+hall_switches	Hall of Switches
+hall_weapons	Hall of Weapons
+hall_upgrades	Hall of Upgrades
+hall_armor	Hall of Armor
+hall_medkits	Hall of Medkits
+hall_monsters	Hall of Monsters
+hall_treasure	Hall of Treasure
+hall_puzzles	Hall of Puzzles
+hall_teleporters	Hall of Teleporters
+hall_end	End
+experience_kill	Left click the mouse to kill this creature. You will gain one level.
+experience_strength	Strength allows you to wear stronger armor and increases your melee damage.
+experience_dexterity	Dexterity reduces reload and weapon switch time. It also improves your walking speed.
+experience_vitality	Vitality increases your maximum health and improves your medkit efficiency.
+experience_monsters	Killing monsters will give you experience points. Certain monsters give more experience than others.
+experience_levels	After you gain enough experience, you'll increase levels. You will receive an attribute and skill point for each level you gain.
+experience_spending	To spend your attribute and skill points, click on the small icon next to the proficiency you wish to increase.
+experience_bonus	At level one, you start out with an extra attribute and skill point. Trying spending those now.
+checkpoints_save	Throughout levels there will be checkpoints which save your game automatically.
+key_doors	Some doors require keys. When you use a key, you will lose the key and you won't be able to close the door without another key.
+switch_use	Walk over to the switch on the right. Then, while facing it, press the use key. (default: Spacebar)
+weapon_fire	Left-clicking the mouse will attack. Holding down the right mouse button will aim the gun. Aiming increases accuracy at the cost of movement speed.
+weapon_reload	Hit the reload key to reload your weapon. This will use an entire clip, regardless of your gun's current ammo. (default: R)
+weapon_switch	Hit the weapon switch key to switch weapons. (default: W)
+weapon_sniperaim	Hold down the right mouse button to aim. Then move your mouse cursor to look around.
+weapon_kill	Try using your gun to kill this poor zombie.
+weapon_twoweapons	You can only carry two weapons at a time, so you'll have to decide which ones to keep. To drop a weapon, drag the icon onto the main window.
+weapon_melee	Melee weapons
+weapon_pistol	Pistols
+weapon_shotgun	Shotguns
+weapon_rifle	Rifles
+weapon_machine	Machine Guns
+weapon_sniper	Sniper Rifles
+armor_equip	Equipping armor gives you better defense and allows you to hold more ammo.
+armor_shirt	Shirts (light armor)
+armor_chain	Chainmail (medium armor)
+armor_plate	Platemail (heavy armor)
+armor_ammo	Right-clicking ammo in your inventory will put it into your ammo belt. Right-clicking ammo in your belt will drop it.
+upgrade_use	Upgrade components can be used to upgrade your weapon. Pick up the item, then drag it onto your weapon.
+medkit_use	Hit the medkit key to use a medkit. You cannot use one if your health is full. (default: Z)
+medkit_inventory	You may also right-click a medkit in your inventory to use it.
+treasure_open	Treasure chests contain valuable items. Attack  the chests to open them.
+town_gamble0	Low Gambling Room
+town_gamble1	Basic Gambling Room
+town_gamble2	Medium Gambling Room
+town_gamble3	Advanced Gambling Room
+town_gamble4	High Gambling Room
+town_gamble5	Elite Gambling Room
+town_gamble6	Unique Gambling Room
+town_medkit	Medkits
+town_ammo	Weapons and Ammunition
+town_dungeon0	Secret Dungeon
+town_shop	Shop
+town_name0	Woodshire
+town_name1	Ghost town
+town_name2	Underground City
+world_name0	Woodshire Forest
+world_name1	Scary Marsh
+world_dungeon0	Old Dungeon
+world_dungeon1	Emerald Dungeon
+world_dungeon2	Ruby Dungeon
+world_dungeon3	Sapphire Dungeon
+world_dungeon4	Glass Dungeon
+world_dungeon5	Sacred Dungeon
+world_dungeon6	Foreboding Dungeon
+world_dungeon7	Dusty Dungeon
+world_dungeon8	Deserted Dungeon
+world_dungeon9	Diamond Dungeon
+world_dungeon10	Azure Dungeon
+maze0_beware	Enter at your own risk! No turning back! For advanced players only!
+forest_sign0	Flip the switches to activate the bridges
+test	This is a test message

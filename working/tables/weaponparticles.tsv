@@ -1,0 +1,4 @@
+identifier	fire particle	smoke particle	ricochet particle	bullethole particle
+gun0	gun_fire0	gun_smoke0	bullet_spark0	bullet_hole0
+gun1	gun_fire1	gun_smoke0	bullet_spark0	bullet_hole0
+plasma0	plasma_fire0	plasma_smoke0	plasma_spark0	plasma_hole0

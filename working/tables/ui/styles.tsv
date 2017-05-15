@@ -1,0 +1,60 @@
+identifier	background color	border color	texture	texture color	stretch
+menu_window	menu_red_opaque	menu_red_border			0
+menu_box	menu_red_bg	menu_red_border			0
+menu_hover	menu_selected	menu_selected			0
+menu_textbox	menu_darkred_bg	menu_red_border			0
+menu_select		menu_red_border			0
+menu_button			menu_button		0
+menu_button_hover			menu_button_hover		0
+menu_keybox			menu_keybox		0
+editor_selected0			editor_selected0		0
+editor_layer1			editor_layer1		0
+editor_layer2			editor_layer2		0
+editor_layer3			editor_layer3		0
+editor_layer4			editor_layer4		0
+editor_layer5			editor_layer5		0
+editor_wall			editor_wall		0
+editor_fore			editor_fore		0
+editor_up			editor_up		0
+editor_down			editor_down		0
+editor_block			editor_block		0
+editor_event			editor_event		0
+editor_mons			editor_mons		0
+editor_item			editor_item		0
+editor_ammo			editor_ammo		0
+editor_mod			editor_mod		0
+editor_weap			editor_weap		0
+editor_arm			editor_arm		0
+editor_none			editor_none		0
+editor_del			editor_del		0
+editor_copy			editor_copy		0
+editor_paste			editor_paste		0
+editor_show			editor_show		0
+editor_undo			editor_undo		0
+editor_new			editor_new		0
+editor_grid			editor_grid		0
+editor_mset			editor_mset		0
+editor_load			editor_load		0
+editor_save			editor_save		0
+editor_test			editor_test		0
+editor_walk			editor_walk		0
+editor_rotate			editor_rotate		0
+editor_mirror			editor_mirror		0
+editor_raise			editor_raise		0
+editor_lower			editor_lower		0
+editor_tile			editor_tile		0
+editor_levelup			editor_levelup		0
+editor_leveldown			editor_leveldown		0
+editor_periodup			editor_periodup		0
+editor_perioddown			editor_perioddown		0
+editor_active			editor_active		0
+editor_itemidentifier			editor_itemidentifier		0
+editor_monsidentifier			editor_monsidentifier		0
+editor_partidentifier			editor_partidentifier		0
+editor_paletteprevious			editor_paletteprevious		0
+editor_palettenext			editor_palettenext		0
+editor_palette	black	white			0
+hud_inventory			hud_inventory		0
+hud_skills	skills_bg				0
+hud_plus			hud_plus		0
+hud_plus_hover			hud_plus_hover		0

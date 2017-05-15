@@ -1,0 +1,10 @@
+identifier	name	icon identifier	color	type
+9mm	9 mm	a_9mm		1
+357m	357 Magnum	a_357		2
+556mm	5.56 mm	a_556mm		3
+762mm	7.62 mm	a_762mm		4
+shells	Shotgun Shells	a_shells		5
+rockets	Rockets	a_rockets		6
+power	Power Cells	a_power		7
+plasma	Plasma Cells	a_plasma		8
+psi	Psi	a_psi		9

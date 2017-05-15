@@ -1,0 +1,53 @@
+Empty Clip 2.0.0 -
+- Can now set screen resolution
+- Removed player profiles and redesigned menus
+- Can now remap mouse buttons
+- Redesigned HUD to be simpler
+- Inventory can now hold armor and weapons
+- Made inventory bigger
+- Items in inventory can now stack
+- Added hotkey to open inventory (C by default)
+- Updated item popup and added item comparison
+- Can now pause the game
+- Removed ammo containers
+- Using OpenAL for audio now
+- Added more sound effects
+- Added cmake build system
+- Optimized rendering code
+- Updated font system
+- Made player/monster movement smoother
+- Save files are now in ~/.emptyclip for linux
+- Lots of small fixes and cleanup
+- Fixed rare crash
+- Fixed infinite key bug
+
+Empty Clip 1.0.3 - 4/06/2008
+- Added the ability to reset the level
+- Press R to cancel a reload
+- Can now pick up items while reloading
+- Reduced medkit delay to 0.5 from 2 seconds
+- Reduced pickup delay to 0.2 from 0.5 seconds
+- GPL v3
+- Refactored a lot of code
+- Now using NSIS for the windows installer
+- Updated all libraries to the latest versions
+
+Empty Clip 1.0.2 - 6/08/2006
+- Updated Windows version to SDL 1.2.10
+- Reduced compile time and game size by removing networking code
+- Fixed a rounding error in entity/wall collisions on large maps. Noticeable in skyscraper0.map on certain walls
+- Fixed a bug on the maze0.map where you could get stuck
+- Fixed a compile error on some machines
+- Removed "-level" argument in favor of "-mod"
+- The linux binary package now comes with the binary compiled from scons, which has slightly different dependencies
+
+Empty Clip 1.0.1 - 5/28/2006
+- Converted from make/autotools to SCons
+- Added a portal level where you choose which mode to start in
+- Made the first survival level accessible
+- Added the first map editing tutorial to the website
+- Added "-mod" command-line argument, used to set the path to the database directory
+- Bilinear filtering by default.  Pass "-trilinear" to enable trilinear filtering
+- Disabled the incomplete deathmatch mode for now
+- Adventure mode fixes
+- Added more debugging messages

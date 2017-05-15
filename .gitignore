@@ -1,0 +1,11 @@
+build*
+bin
+*.user
+*.log
+*.dll
+*.cfg
+*.~lock*
+*.swp
+working/maps/test.map
+deployment/*.exe
+deployment/*-src

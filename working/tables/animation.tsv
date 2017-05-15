@@ -1,0 +1,16 @@
+identifier	reels					
+player_torso	player_onehand_walking	player_twohand_walking	player_melee	player_shootonehand	player_shoottwohand	player_dying
+player_legs	player_legs					
+crate0	crate	crate	crate			
+treasure0	treasure	treasure	treasure			
+testing0	testing_walking	testing_walking	testing_walking			
+zombie0	zombie_walking	zombie_attacking	zombie_dying			
+bat0	bat_flying	bat_attacking	bat_dying			
+skeleton0	skeleton_walking	skeleton_attacking	skeleton_dying			
+spider0	spider_walking	spider_attacking	spider_dying			
+beast0	beast_walking	beast_attacking	beast_dying			
+mercenary0	mercenary_walking	mercenary_attacking	mercenary_dying			
+dog0	dog_walking	dog_attacking	dog_dying			
+shootmercenary0	shootmercenary_walking	shootmercenary_attacking	shootmercenary_dying			
+demon0	demon_walking	demon_attacking	demon_dying			
+alien0	alien_walking	alien_attacking	alien_dying			

@@ -1,0 +1,63 @@
+identifier	name	icon identifier	color	type	level
+medkit0	Low Quality Medkit	i_medkit0		0	1
+medkit1	Low Quality Medkit	i_medkit0	shade_red0	0	2
+medkit2	Basic Medkit	i_medkit0	shade_red1	0	3
+medkit3	Basic Medkit	i_medkit0	shade_red2	0	4
+medkit4	Medkit	i_medkit0	red	0	5
+medkit5	Medkit	i_medkit0	shade_green0	0	6
+medkit6	Advanced Medkit	i_medkit0	shade_green1	0	7
+medkit7	Advanced Medkit	i_medkit0	shade_green2	0	8
+medkit8	Elite Medkit	i_medkit0	shade_blue0	0	9
+medkit9	Elite Medkit	i_medkit0	shade_blue1	0	10
+medkit10	Magical Medkit	s_medkit0		0	13
+medkit11	Healing Orb	s_medkit0	dark	0	16
+key0	Key	i_key0		1	0
+key1	Red Key	i_key0	shade_red0	1	0
+key2	Green Key	i_key0	shade_green0	1	0
+key3	Blue Key	i_key0	shade_blue0	1	0
+key4	Purple Key	i_key0	purple	1	0
+key5	Black Key	i_key0	dark	1	0
+skey0	Secret Key	i_key0	shade_black1	1	0
+skey1	Ruby Key	i_key0	red	1	0
+skey2	Sapphire Key	i_key0	blue	1	0
+skey3	Emerald Key	i_key0	green	1	0
+skey4	Cavern Key	i_key0	brown	1	0
+akey0	Frozen Stars	i_key1		1	0
+akey1	Terrestrial Key	i_key1	shade_green0	1	0
+akey2	Plasma Finger	i_key1	shade_blue0	1	0
+akey3	Psi Key	i_key1	shade_black1	1	0
+dkey0	Symbol of Wrath	i_key2		1	0
+dkey1	Vampire Crest	i_key2	shade_red1	1	0
+dkey2	Dark Key	i_key2	shade_blue2	1	0
+dkey3	Doom Key	i_key2	dark	1	0
+dkey4	Death Key	i_key2	shade_green1	1	0
+gkey0	Rubber Key	i_key0	shade_brown0	1	0
+gkey1	Plastic Key	i_key0	shade_brown0	1	0
+gkey2	Tin Key	i_key0	shade_brown0	1	0
+gkey3	Copper Key	i_key0	shade_brown0	1	0
+gkey4	Lead Key	i_key0	shade_brown0	1	0
+gkey5	Steel Key	i_key0	shade_brown0	1	0
+gkey6	Gold Key	i_key0	shade_brown0	1	0
+gkey7	Diamond Key	i_key0	shade_brown0	1	0
+gkey8	Platinum Key	i_key0	shade_brown0	1	0
+gkey9	Merchant's Medallion	i_key0	shade_brown0	1	0
+dgkey0	Dungeon Key I	i_key0	shade_brown2	1	0
+dgkey1	Dungeon Key II	i_key0	shade_brown2	1	0
+dgkey2	Dungeon Key III	i_key0	shade_brown2	1	0
+dgkey3	Dungeon Key IV	i_key0	shade_brown2	1	0
+dgkey4	Dungeon Key V	i_key0	shade_brown2	1	0
+dgkey5	Dungeon Key VI	i_key0	shade_brown2	1	0
+dgkey6	Dungeon Key VII	i_key0	shade_brown2	1	0
+dgkey7	Dungeon Key VIII	i_key0	shade_brown2	1	0
+dgkey8	Dungeon Key IX	i_key0	shade_brown2	1	0
+dgkey9	Dungeon Key X	i_key0	shade_brown2	1	0
+dgkey10	Dungeon Key XI	i_key0	shade_brown2	1	0
+dgkey11	Dungeon Key XII	i_key0	shade_brown2	1	0
+dgkey12	Dungeon Key XIII	i_key0	shade_brown2	1	0
+dgkey13	Dungeon Key XIV	i_key0	shade_brown2	1	0
+dgkey14	Dungeon Key XV	i_key0	shade_brown2	1	0
+wkey0	World Key I	i_key0	shade_black0	1	0
+wkey1	World Key II	i_key0	shade_black0	1	0
+wkey2	World Key III	i_key0	shade_black0	1	0
+wkey3	World Key IV	i_key0	shade_black0	1	0
+wkey4	World Key V	i_key0	shade_black0	1	0

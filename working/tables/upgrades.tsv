@@ -1,0 +1,167 @@
+identifier	name	icon identifier	color	type	weapon type	bonus
+basic_clip0	Weapon Clip Upgrade	u_clip0		0	-1	0.1
+basic_clip1	Weapon Clip Upgrade	u_clip0		0	-1	0.2
+basic_clip2	Weapon Clip Upgrade	u_clip0		0	-1	0.3
+basic_clip3	Weapon Clip Upgrade	u_clip0		0	-1	0.4
+basic_clip4	Weapon Clip Upgrade	u_clip0		0	-1	0.5
+basic_damage0	Weapon Damage Upgrade	u_damage0		1	-1	0.1
+basic_damage1	Weapon Damage Upgrade	u_damage0		1	-1	0.2
+basic_damage2	Weapon Damage Upgrade	u_damage0		1	-1	0.3
+basic_damage3	Weapon Damage Upgrade	u_damage0		1	-1	0.4
+basic_damage4	Weapon Damage Upgrade	u_damage0		1	-1	0.5
+basic_accuracy0	Weapon Accuracy Upgrade	u_accuracy0		2	-1	0.1
+basic_accuracy1	Weapon Accuracy Upgrade	u_accuracy0		2	-1	0.2
+basic_accuracy2	Weapon Accuracy Upgrade	u_accuracy0		2	-1	0.3
+basic_accuracy3	Weapon Accuracy Upgrade	u_accuracy0		2	-1	0.4
+basic_accuracy4	Weapon Accuracy Upgrade	u_accuracy0		2	-1	0.5
+basic_speed0	Weapon Speed Upgrade	u_speed0		3	-1	0.1
+basic_speed1	Weapon Speed Upgrade	u_speed0		3	-1	0.2
+basic_speed2	Weapon Speed Upgrade	u_speed0		3	-1	0.3
+basic_speed3	Weapon Speed Upgrade	u_speed0		3	-1	0.4
+basic_speed4	Weapon Speed Upgrade	u_speed0		3	-1	0.5
+basic_reload0	Reload Speed Upgrade	u_reload0		4	-1	0.1
+basic_reload1	Reload Speed Upgrade	u_reload0		4	-1	0.2
+basic_reload2	Reload Speed Upgrade	u_reload0		4	-1	0.3
+basic_reload3	Reload Speed Upgrade	u_reload0		4	-1	0.4
+basic_reload4	Reload Speed Upgrade	u_reload0		4	-1	0.5
+basic_bullet0	Attack Count Upgrade	u_bullet0		5	-1	1
+basic_bullet1	Attack Count Upgrade	u_bullet0		5	-1	2
+basic_bullet2	Attack Count Upgrade	u_bullet0		5	-1	3
+melee_clip0	Melee Clip Upgrade	u_meleeclip0		0	0	0.6
+melee_clip1	Melee Clip Upgrade	u_meleeclip0		0	0	0.7
+melee_clip2	Melee Clip Upgrade	u_meleeclip0		0	0	0.8
+melee_clip3	Melee Clip Upgrade	u_meleeclip0		0	0	0.9
+melee_clip4	Melee Clip Upgrade	u_meleeclip0		0	0	1
+melee_clip5	Melee Clip Upgrade	u_meleeclip0	shade_black2	0	0	1.5
+pistol_clip0	Pistol Clip Upgrade	u_pistolclip0		0	1	0.6
+pistol_clip1	Pistol Clip Upgrade	u_pistolclip0		0	1	0.7
+pistol_clip2	Pistol Clip Upgrade	u_pistolclip0		0	1	0.8
+pistol_clip3	Pistol Clip Upgrade	u_pistolclip0		0	1	0.9
+pistol_clip4	Pistol Clip Upgrade	u_pistolclip0		0	1	1
+pistol_clip5	Pistol Clip Upgrade	u_pistolclip0	shade_black2	0	1	1.5
+shotgun_clip0	Shotgun Clip Upgrade	u_shotgunclip0		0	2	0.6
+shotgun_clip1	Shotgun Clip Upgrade	u_shotgunclip0		0	2	0.7
+shotgun_clip2	Shotgun Clip Upgrade	u_shotgunclip0		0	2	0.8
+shotgun_clip3	Shotgun Clip Upgrade	u_shotgunclip0		0	2	0.9
+shotgun_clip4	Shotgun Clip Upgrade	u_shotgunclip0		0	2	1
+shotgun_clip5	Shotgun Clip Upgrade	u_shotgunclip0	shade_black2	0	2	1.5
+rifle_clip0	Rifle Clip Upgrade	u_rifleclip0		0	3	0.6
+rifle_clip1	Rifle Clip Upgrade	u_rifleclip0		0	3	0.7
+rifle_clip2	Rifle Clip Upgrade	u_rifleclip0		0	3	0.8
+rifle_clip3	Rifle Clip Upgrade	u_rifleclip0		0	3	0.9
+rifle_clip4	Rifle Clip Upgrade	u_rifleclip0		0	3	1
+rifle_clip5	Rifle Clip Upgrade	u_rifleclip0	shade_black2	0	3	1.5
+heavy_clip0	Heavy Clip Upgrade	u_heavyclip0		0	4	0.6
+heavy_clip1	Heavy Clip Upgrade	u_heavyclip0		0	4	0.7
+heavy_clip2	Heavy Clip Upgrade	u_heavyclip0		0	4	0.8
+heavy_clip3	Heavy Clip Upgrade	u_heavyclip0		0	4	0.9
+heavy_clip4	Heavy Clip Upgrade	u_heavyclip0		0	4	1
+heavy_clip5	Heavy Clip Upgrade	u_heavyclip0	shade_black2	0	4	1.5
+melee_damage0	Melee Damage Upgrade	u_meleedamage0		1	0	0.6
+melee_damage1	Melee Damage Upgrade	u_meleedamage0		1	0	0.7
+melee_damage2	Melee Damage Upgrade	u_meleedamage0		1	0	0.8
+melee_damage3	Melee Damage Upgrade	u_meleedamage0		1	0	0.9
+melee_damage4	Melee Damage Upgrade	u_meleedamage0		1	0	1
+melee_damage5	Melee Damage Upgrade	u_meleedamage0	shade_black2	1	0	1.5
+pistol_damage0	Pistol Damage Upgrade	u_pistoldamage0		1	1	0.6
+pistol_damage1	Pistol Damage Upgrade	u_pistoldamage0		1	1	0.7
+pistol_damage2	Pistol Damage Upgrade	u_pistoldamage0		1	1	0.8
+pistol_damage3	Pistol Damage Upgrade	u_pistoldamage0		1	1	0.9
+pistol_damage4	Pistol Damage Upgrade	u_pistoldamage0		1	1	1
+pistol_damage5	Pistol Damage Upgrade	u_pistoldamage0	shade_black2	1	1	1.5
+shotgun_damage0	Shotgun Damage Upgrade	u_shotgundamage0		1	2	0.6
+shotgun_damage1	Shotgun Damage Upgrade	u_shotgundamage0		1	2	0.7
+shotgun_damage2	Shotgun Damage Upgrade	u_shotgundamage0		1	2	0.8
+shotgun_damage3	Shotgun Damage Upgrade	u_shotgundamage0		1	2	0.9
+shotgun_damage4	Shotgun Damage Upgrade	u_shotgundamage0		1	2	1
+shotgun_damage5	Shotgun Damage Upgrade	u_shotgundamage0	shade_black2	1	2	1.5
+rifle_damage0	Rifle Damage Upgrade	u_rifledamage0		1	3	0.6
+rifle_damage1	Rifle Damage Upgrade	u_rifledamage0		1	3	0.7
+rifle_damage2	Rifle Damage Upgrade	u_rifledamage0		1	3	0.8
+rifle_damage3	Rifle Damage Upgrade	u_rifledamage0		1	3	0.9
+rifle_damage4	Rifle Damage Upgrade	u_rifledamage0		1	3	1
+rifle_damage5	Rifle Damage Upgrade	u_rifledamage0	shade_black2	1	3	1.5
+heavy_damage0	Heavy Damage Upgrade	u_heavydamage0		1	4	0.6
+heavy_damage1	Heavy Damage Upgrade	u_heavydamage0		1	4	0.7
+heavy_damage2	Heavy Damage Upgrade	u_heavydamage0		1	4	0.8
+heavy_damage3	Heavy Damage Upgrade	u_heavydamage0		1	4	0.9
+heavy_damage4	Heavy Damage Upgrade	u_heavydamage0		1	4	1
+heavy_damage5	Heavy Damage Upgrade	u_heavydamage0	shade_black2	1	4	1.5
+pistol_accuracy0	Pistol Accuracy Upgrade	u_pistolaccuracy0		2	1	0.6
+pistol_accuracy1	Pistol Accuracy Upgrade	u_pistolaccuracy0		2	1	0.7
+pistol_accuracy2	Pistol Accuracy Upgrade	u_pistolaccuracy0		2	1	0.8
+pistol_accuracy3	Pistol Accuracy Upgrade	u_pistolaccuracy0		2	1	0.9
+pistol_accuracy4	Pistol Accuracy Upgrade	u_pistolaccuracy0		2	1	1
+pistol_accuracy5	Pistol Accuracy Upgrade	u_pistolaccuracy0	shade_black2	2	1	1.5
+rifle_accuracy0	Rifle Accuracy Upgrade	u_rifleaccuracy0		2	3	0.6
+rifle_accuracy1	Rifle Accuracy Upgrade	u_rifleaccuracy0		2	3	0.7
+rifle_accuracy2	Rifle Accuracy Upgrade	u_rifleaccuracy0		2	3	0.8
+rifle_accuracy3	Rifle Accuracy Upgrade	u_rifleaccuracy0		2	3	0.9
+rifle_accuracy4	Rifle Accuracy Upgrade	u_rifleaccuracy0		2	3	1
+rifle_accuracy5	Rifle Accuracy Upgrade	u_rifleaccuracy0	shade_black2	2	3	1.5
+heavy_accuracy0	Heavy Accuracy Upgrade	u_heavyaccuracy0		2	4	0.6
+heavy_accuracy1	Heavy Accuracy Upgrade	u_heavyaccuracy0		2	4	0.7
+heavy_accuracy2	Heavy Accuracy Upgrade	u_heavyaccuracy0		2	4	0.8
+heavy_accuracy3	Heavy Accuracy Upgrade	u_heavyaccuracy0		2	4	0.9
+heavy_accuracy4	Heavy Accuracy Upgrade	u_heavyaccuracy0		2	4	1
+heavy_accuracy5	Heavy Accuracy Upgrade	u_heavyaccuracy0	shade_black2	2	4	1.5
+melee_speed0	Melee Speed Upgrade	u_meleespeed0		3	0	0.6
+melee_speed1	Melee Speed Upgrade	u_meleespeed0		3	0	0.7
+melee_speed2	Melee Speed Upgrade	u_meleespeed0		3	0	0.8
+melee_speed3	Melee Speed Upgrade	u_meleespeed0		3	0	0.9
+melee_speed4	Melee Speed Upgrade	u_meleespeed0		3	0	1
+melee_speed5	Melee Speed Upgrade	u_meleespeed0	shade_black2	3	0	1.5
+pistol_speed0	Pistol Speed Upgrade	u_pistolspeed0		3	1	0.6
+pistol_speed1	Pistol Speed Upgrade	u_pistolspeed0		3	1	0.7
+pistol_speed2	Pistol Speed Upgrade	u_pistolspeed0		3	1	0.8
+pistol_speed3	Pistol Speed Upgrade	u_pistolspeed0		3	1	0.9
+pistol_speed4	Pistol Speed Upgrade	u_pistolspeed0		3	1	1
+pistol_speed5	Pistol Speed Upgrade	u_pistolspeed0	shade_black2	3	1	1.5
+shotgun_speed0	Shotgun Speed Upgrade	u_shotgunspeed0		3	2	0.6
+shotgun_speed1	Shotgun Speed Upgrade	u_shotgunspeed0		3	2	0.7
+shotgun_speed2	Shotgun Speed Upgrade	u_shotgunspeed0		3	2	0.8
+shotgun_speed3	Shotgun Speed Upgrade	u_shotgunspeed0		3	2	0.9
+shotgun_speed4	Shotgun Speed Upgrade	u_shotgunspeed0		3	2	1
+shotgun_speed5	Shotgun Speed Upgrade	u_shotgunspeed0	shade_black2	3	2	1.5
+rifle_speed0	Rifle Speed Upgrade	u_riflespeed0		3	3	0.6
+rifle_speed1	Rifle Speed Upgrade	u_riflespeed0		3	3	0.7
+rifle_speed2	Rifle Speed Upgrade	u_riflespeed0		3	3	0.8
+rifle_speed3	Rifle Speed Upgrade	u_riflespeed0		3	3	0.9
+rifle_speed4	Rifle Speed Upgrade	u_riflespeed0		3	3	1
+rifle_speed5	Rifle Speed Upgrade	u_riflespeed0	shade_black2	3	3	1.5
+heavy_speed0	Heavy Speed Upgrade	u_heavyspeed0		3	4	0.6
+heavy_speed1	Heavy Speed Upgrade	u_heavyspeed0		3	4	0.7
+heavy_speed2	Heavy Speed Upgrade	u_heavyspeed0		3	4	0.8
+heavy_speed3	Heavy Speed Upgrade	u_heavyspeed0		3	4	0.9
+heavy_speed4	Heavy Speed Upgrade	u_heavyspeed0		3	4	1
+heavy_speed5	Heavy Speed Upgrade	u_heavyspeed0	shade_black2	3	4	1.5
+melee_reload0	Melee Reload Upgrade	u_meleereload0		4	0	0.6
+melee_reload1	Melee Reload Upgrade	u_meleereload0		4	0	0.7
+melee_reload2	Melee Reload Upgrade	u_meleereload0		4	0	0.8
+melee_reload3	Melee Reload Upgrade	u_meleereload0		4	0	0.9
+melee_reload4	Melee Reload Upgrade	u_meleereload0		4	0	1
+melee_reload5	Melee Reload Upgrade	u_meleereload0	shade_black2	4	0	1.5
+pistol_reload0	Pistol Reload Upgrade	u_pistolreload0		4	1	0.6
+pistol_reload1	Pistol Reload Upgrade	u_pistolreload0		4	1	0.7
+pistol_reload2	Pistol Reload Upgrade	u_pistolreload0		4	1	0.8
+pistol_reload3	Pistol Reload Upgrade	u_pistolreload0		4	1	0.9
+pistol_reload4	Pistol Reload Upgrade	u_pistolreload0		4	1	1
+pistol_reload5	Pistol Reload Upgrade	u_pistolreload0	shade_black2	4	1	1.5
+shotgun_reload0	Shotgun Reload Upgrade	u_shotgunreload0		4	2	0.6
+shotgun_reload1	Shotgun Reload Upgrade	u_shotgunreload0		4	2	0.7
+shotgun_reload2	Shotgun Reload Upgrade	u_shotgunreload0		4	2	0.8
+shotgun_reload3	Shotgun Reload Upgrade	u_shotgunreload0		4	2	0.9
+shotgun_reload4	Shotgun Reload Upgrade	u_shotgunreload0		4	2	1
+shotgun_reload5	Shotgun Reload Upgrade	u_shotgunreload0	shade_black2	4	2	1.5
+rifle_reload0	Rifle Reload Upgrade	u_riflereload0		4	3	0.6
+rifle_reload1	Rifle Reload Upgrade	u_riflereload0		4	3	0.7
+rifle_reload2	Rifle Reload Upgrade	u_riflereload0		4	3	0.8
+rifle_reload3	Rifle Reload Upgrade	u_riflereload0		4	3	0.9
+rifle_reload4	Rifle Reload Upgrade	u_riflereload0		4	3	1
+rifle_reload5	Rifle Reload Upgrade	u_riflereload0	shade_black2	4	3	1.5
+heavy_reload0	Heavy Reload Upgrade	u_heavyreload0		4	4	0.6
+heavy_reload1	Heavy Reload Upgrade	u_heavyreload0		4	4	0.7
+heavy_reload2	Heavy Reload Upgrade	u_heavyreload0		4	4	0.8
+heavy_reload3	Heavy Reload Upgrade	u_heavyreload0		4	4	0.9
+heavy_reload4	Heavy Reload Upgrade	u_heavyreload0		4	4	1
+heavy_reload5	Heavy Reload Upgrade	u_heavyreload0	shade_black2	4	4	1.5

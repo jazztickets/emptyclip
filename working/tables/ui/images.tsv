@@ -1,0 +1,22 @@
+identifier	parent	texture	color	offset x	offset y	width	height	alignment x	alignment y	stretch/fill
+player_health_empty	hud_player_health	viewport_health1		0	0	200	32	0	0	0
+player_health_full	hud_player_health	viewport_health0		0	0	0	32	0	0	0
+player_health_cap_start	hud_player_health	viewport_healthend0		-108	0	16	32	1	0	0
+player_health_cap_end	hud_player_health	viewport_healthend1		108	0	16	32	1	0	0
+enemy_health_empty	hud_enemy_info	viewport_health1		0	0	150	32	0	0	0
+enemy_health_full	hud_enemy_info	viewport_health0		0	0	0	32	0	0	0
+indicator_progress	hud_indicator			0	0	256	32	0	0	0
+experience_bar	hud_experience	hud_experience		0	0	512	8	0	0	0
+experience_bar_full	hud_experience	hud_experience_full		0	0	512	8	0	0	0
+weapon0_icon	hud_mainhand			0	0	32	32	1	0	0
+weapon1_icon	hud_offhand			0	0	32	32	1	0	0
+menu_title_logo	menu_title	menu_title		0	0	512	128	1	0	1
+menu_bg		menu_bg		0	0	1024	768	1	1	0
+menu_new_player_legs0	menu_new	menu_legs	dark	60	200	64	64	0	0	0
+menu_new_player_torso0	menu_new	menu_torso		60	200	64	64	0	0	0
+menu_new_player_legs1	menu_new	menu_legs	red	130	200	64	64	0	0	0
+menu_new_player_torso1	menu_new	menu_torso		130	200	64	64	0	0	0
+menu_new_player_legs2	menu_new	menu_legs	green	200	200	64	64	0	0	0
+menu_new_player_torso2	menu_new	menu_torso		200	200	64	64	0	0	0
+menu_new_player_legs3	menu_new	menu_legs	blue	270	200	64	64	0	0	0
+menu_new_player_torso3	menu_new	menu_torso		270	200	64	64	0	0	0

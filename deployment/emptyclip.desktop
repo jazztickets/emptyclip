@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=emptyclip
+Comment=2D Top-down shooter
+Exec=emptyclip
+Icon=emptyclip
+Terminal=false
+Type=Application
+Categories=Game;ActionGame;
+StartupNotify=false

@@ -1,0 +1,180 @@
+identifier	name	icon identifier	samples identifier	particle identifier	color	weapon type	zoom scale	min accuracy	max accuracy	recoil	recoil regen	range	fire rate	fire period	reload period	min components	max components	min damage	max damage	bullets shot	round size	ammo type
+special_slash0	Swift Blade	s_knife0	knife0			0	30	0	55	0	0	0.65	0	0.17	0	1	1	17	25	1	0	0
+special_slash1	Venom Blade	s_knife0	knife0			0	30	0	65	0	0	0.7	0	0.25	0	2	2	60	90	1	0	0
+special_slash2	Practice Katana	s_sword0	knife0			0	30	0	95	0	0	0.75	0	0.25	0	2	2	75	120	1	0	0
+special_slash3	Slayer	s_sword0	knife0			0	30	0	130	0	0	0.9	1	0.225	0	3	3	200	300	2	0	0
+special_slash4	Tomahawk	s_axe0	knife0			0	30	0	100	0	0	0.8	0	0.3	0	2	2	213	253	1	0	0
+special_slash5	Halberd	s_axe0	knife0			0	30	0	70	0	0	1	0	0.6	0	3	3	150	500	2	0	0
+special_slash6	Stinger	s_sword1	knife0			0	30	0	65	0	0	0.5	1	0.25	2	1	1	70	150	2	15	7
+special_slash7	Plasma Sword	s_sword1	knife0			0	30	0	115	0	0	0.85	1	0.225	3.5	3	3	300	400	2	30	8
+special_slash8	Murasame	s_sword1	knife0		dark	0	30	0	270	0	0	1.2	1	0.1	10	8	8	1000	1200	4	5	9
+special_blunt0	Basher	s_club0	club0			0	30	0	110	0	0	0.85	0	0.5	0	1	1	21	40	1	0	0
+special_blunt1	Ogre's Club	s_club0	club0			0	30	0	180	0	0	1.1	0	1.2	0	3	3	300	600	1	0	0
+special_pistol0	Desert Eagle	s_pistol0	magnum0	gun1		1	12	7	45	8	1	0	0	0.45	1.6	1	1	15	60	1	9	2
+special_pistol1	.357 Magnum	s_magnum0	magnum0	gun1		1	12	10	50	10	1	0	0	0.6	1.4	1	1	30	100	1	6	2
+special_pistol2	Desert Eagle II	s_pistol0	magnum0	gun1		1	8	5	30	7	1	0	0	0.35	1.5	2	2	140	300	1	12	2
+special_pistol3	Lightning Pistol	s_pistol0	plasma0	plasma0		1	7	2	10	4	1	0	0	0.14	2	3	3	180	350	1	90	7
+special_pistol4	Plasma Pistol	s_pistol0	plasma0	plasma0		1	7	2	20	5	1	0	0	0.125	3.5	4	4	300	600	2	60	8
+special_pistol5	Psi Emitter	s_pistol0	plasma0	plasma0	dark	1	2	40	40	0	0	0	0	3	10	6	6	20	40	100	2	9
+special_shotgun0	Sawed-off Shotgun	s_shotgun0	shotgun0	gun0		2	19	60	60	0	0	0	0	0.6	3.5	1	1	15	30	15	4	5
+special_shotgun1	Plasma Shotgun	s_shotgun0	plasma0	plasma0		2	19	20	20	0	0	0	0	0.3	4	2	2	130	200	5	30	8
+special_shotgun2	Rail Gun	s_shotgun0	plasma0	plasma0	dark	2	2	2	2	0	0	0	0	2	10	4	4	30	60	50	4	8
+special_rifle0	M16	s_m160	rifle0	gun0		3	7.5	7	50	10	3	0	1	0.07	2	1	1	15	30	1	30	3
+special_rifle1	AK-47	s_assault0	rifle0	gun0		3	7.5	20	60	15	4	0	1	0.08	2	2	2	50	100	1	25	3
+special_rifle2	P90	s_p900	rifle0	gun0		3	7.5	20	60	10	3	0	1	0.066	2	3	3	140	200	1	50	3
+special_rifle3	Lightning Gun	s_m160	plasma0	plasma0		3	6	10	40	6	1	0	1	0.12	2.5	4	4	10	350	2	90	7
+special_rifle4	Plasma Rifle	s_m160	plasma0	plasma0		3	6	13	30	4	1	0	1	0.1	3	5	5	300	500	3	60	8
+special_rifle5	Demon Slayer	s_m160	plasma0	plasma0	dark	3	6	1	5	1	1	0	1	0.15	10	6	6	500	600	5	20	9
+special_sniper0	Eagle Eye	s_sniper0	sniper0	gun1		4	1.75	8	30	10	0.4	0	0	1.5	3.5	2	2	100	120	3	5	4
+special_sniper1	Plasma Sniper	s_sniper0	sniper0	plasma0		4	1.35	2	10	2	1	0	0	0.8	5	4	4	300	400	5	10	8
+special_sniper2	Destroyer	s_sniper0	sniper0	gun1	dark	4	1.1	1	1	0	0	0	0	4.5	25	7	7	20000	30000	1	2	9
+special_machine0	Bullet Cannon	s_minigun0	minigun0	gun1		4	30	50	70	10	1	0	1	0.1	5	2	2	10	30	1	125	4
+special_machine1	Plasma Cannon	s_minigun0	plasma0	plasma0		4	25	20	40	5	2	0	1	0.075	4	4	4	50	100	2	300	8
+special_machine2	Minigun	s_minigun0	minigun0	gun1	dark	4	25	10	20	5	1	0	1	0.04	5	6	6	100	400	3	500	4
+slash0	Small Knife	w_knife0	knife0			0	30	0	50	0	0	0.6	0	0.4	0	1	1	3	6	1	0	0
+slash1	Combat Knife	w_knife0	knife0		shade_red0	0	30	0	45	0	0	0.6	0	0.4	0	1	1	5	8	1	0	0
+slash2	Dagger	w_knife0	knife0		shade_green0	0	30	0	40	0	0	0.6	0	0.4	0	1	1	8	11	1	0	0
+slash3	Machete	w_sword0	knife0			0	30	0	60	0	0	0.65	0	0.375	0	1	2	12	16	1	0	0
+slash4	Hatchet	w_axe0	knife0		shade_red0	0	30	0	55	0	0	0.65	0	0.375	0	1	2	17	22	1	0	0
+slash5	Short Sword	w_sword0	knife0		shade_green0	0	30	0	50	0	0	0.65	0	0.375	0	1	2	24	31	1	0	0
+slash6	Rapier	w_sword0	knife0			0	30	0	70	0	0	0.7	0	0.35	0	1	3	34	42	1	0	0
+slash7	Claymore	w_sword0	knife0		shade_red0	0	30	0	65	0	0	0.7	0	0.35	0	1	3	48	58	1	0	0
+slash8	Long Sword	w_sword0	knife0		shade_green0	0	30	0	60	0	0	0.7	0	0.35	0	1	3	64	78	1	0	0
+slash9	Small Knife II	w_knife0	knife0			0	30	0	85	0	0	0.75	0	0.325	0	2	4	87	104	1	0	0
+slash10	Combat Knife II	w_knife0	knife0		shade_red0	0	30	0	75	0	0	0.75	0	0.325	0	1	4	117	140	1	0	0
+slash11	Dagger II	w_knife0	knife0		shade_green0	0	30	0	65	0	0	0.75	0	0.325	0	1	4	158	188	1	0	0
+slash12	Machete II	w_sword0	knife0			0	30	0	100	0	0	0.8	0	0.3	0	3	5	213	253	1	0	0
+slash13	Hatchet II	w_axe0	knife0		shade_red0	0	30	0	85	0	0	0.8	0	0.3	0	2	5	288	341	1	0	0
+slash14	Short Sword II	w_sword0	knife0		shade_green0	0	30	0	70	0	0	0.8	0	0.3	0	1	5	388	460	1	0	0
+slash15	Rapier II	w_sword0	knife0			0	30	0	115	0	0	0.85	1	0.275	0	4	6	262	311	2	0	0
+slash16	Claymore II	w_sword0	knife0		shade_red0	0	30	0	95	0	0	0.85	1	0.275	0	3	6	354	419	2	0	0
+slash17	Long Sword II	w_sword0	knife0		shade_green0	0	30	0	75	0	0	0.85	1	0.275	0	2	6	478	565	2	0	0
+slash18	War Axe	w_axe0	knife0		shade_black1	0	30	0	130	0	0	0.9	1	0.25	0	5	7	430	509	3	0	0
+slash19	Bastard Sword	w_sword0	knife0		shade_black1	0	30	0	105	0	0	0.9	1	0.25	0	4	7	580	686	3	0	0
+slash20	Katana	w_sword0	knife0		shade_black1	0	30	0	80	0	0	0.9	1	0.25	0	3	7	783	926	3	0	0
+blunt0	Baseball Bat	w_bat0	club0			0	30	0	105	0	0	0.8	0	0.7	0	1	1	4	9	1	0	0
+blunt1	Hammer	w_bat0	club0		shade_red0	0	30	0	100	0	0	0.8	0	0.7	0	1	1	6	13	1	0	0
+blunt2	Club	w_bat0	club0		shade_green0	0	30	0	95	0	0	0.8	0	0.7	0	1	1	9	18	1	0	0
+blunt3	Staff	w_bat0	club0			0	30	0	115	0	0	0.85	0	0.69	0	1	2	14	26	1	0	0
+blunt4	Pitchfork	w_bat0	club0		shade_red0	0	30	0	110	0	0	0.85	0	0.69	0	1	2	21	38	1	0	0
+blunt5	Shovel	w_bat0	club0		shade_green0	0	30	0	105	0	0	0.85	0	0.69	0	1	2	29	53	1	0	0
+blunt6	Mace	w_bat0	club0			0	30	0	125	0	0	0.9	0	0.68	0	1	3	40	73	1	0	0
+blunt7	Axe	w_axe0	club0		shade_red0	0	30	0	120	0	0	0.9	0	0.68	0	1	3	56	101	1	0	0
+blunt8	Lead Pipe	w_bat0	club0		shade_green0	0	30	0	115	0	0	0.9	0	0.68	0	1	3	76	136	1	0	0
+blunt9	Baseball Bat II	w_bat0	club0			0	30	0	140	0	0	0.95	0	0.67	0	2	4	103	182	1	0	0
+blunt10	Hammer II	w_bat0	club0		shade_red0	0	30	0	130	0	0	0.95	0	0.67	0	1	4	138	246	1	0	0
+blunt11	Club II	w_bat0	club0		shade_green0	0	30	0	120	0	0	0.95	0	0.67	0	1	4	187	331	1	0	0
+blunt12	Staff II	w_bat0	club0			0	30	0	155	0	0	1	0	0.66	0	3	5	252	446	1	0	0
+blunt13	Pitchfork II	w_bat0	club0		shade_red0	0	30	0	140	0	0	1	0	0.66	0	2	5	341	601	1	0	0
+blunt14	Shovel II	w_bat0	club0		shade_green0	0	30	0	125	0	0	1	0	0.66	0	1	5	460	811	1	0	0
+blunt15	Mace II	w_bat0	club0			0	30	0	170	0	0	1.05	0	0.65	0	4	6	310	548	2	0	0
+blunt16	Axe II	w_axe0	club0		shade_red0	0	30	0	150	0	0	1.05	0	0.65	0	3	6	419	739	2	0	0
+blunt17	Lead Pipe II	w_bat0	club0		shade_green0	0	30	0	130	0	0	1.05	0	0.65	0	2	6	566	997	2	0	0
+blunt18	Flail	w_bat0	club0		shade_black1	0	30	0	185	0	0	1.1	0	0.64	0	5	7	509	898	3	0	0
+blunt19	Mighty Club	w_bat0	club0		shade_black1	0	30	0	160	0	0	1.1	0	0.64	0	4	7	687	1211	3	0	0
+blunt20	Giant Axe	w_axe0	club0		shade_black1	0	30	0	135	0	0	1.1	0	0.64	0	3	7	928	1635	3	0	0
+pistol0	Basic Handgun	w_pistol0	pistol0	gun0		1	13	20	40	5	0.17	0	0	0.2	1.7	1	1	8	10	1	9	1
+pistol1	Basic Pistol	w_pistol0	pistol0	gun0	shade_red0	1	13	21	41	5	0.17	0	0	0.2	1.7	1	1	11	14	1	8	1
+pistol2	Small Firearm	w_pistol0	pistol0	gun0	shade_green0	1	13	22	42	5	0.17	0	0	0.2	1.7	1	1	17	20	1	8	1
+pistol3	9mm Handgun	w_pistol0	pistol0	gun0		1	12	18.5	37	4.9	0.17	0	0	0.19	1.625	1	2	20	24	1	12	1
+pistol4	Handgun	w_pistol0	pistol0	gun0	shade_red0	1	12	19.5	38	4.9	0.17	0	0	0.19	1.625	1	2	30	35	1	11	1
+pistol5	Pistol	w_pistol0	pistol0	gun0	shade_green0	1	12	20.5	39	4.9	0.17	0	0	0.19	1.625	1	2	43	48	1	10	1
+pistol6	Powerful Pistol	w_pistol0	pistol0	gun0		1	11	17	34	4.8	0.17	0	0	0.18	1.55	1	3	50	55	1	15	1
+pistol7	Beretta	w_pistol0	pistol0	gun0	shade_red0	1	11	18	35	4.8	0.17	0	0	0.18	1.55	1	3	69	76	1	14	1
+pistol8	Glock	w_pistol0	pistol0	gun0	shade_green0	1	11	19	36	4.8	0.17	0	0	0.18	1.55	1	3	94	102	1	13	1
+pistol9	Basic Handgun II	w_pistol0	pistol0	gun0		1	10	15.5	31	4.7	0.17	0	0	0.17	1.475	2	4	109	118	1	18	1
+pistol10	Basic Pistol II	w_pistol0	pistol0	gun0	shade_red0	1	10	16.5	32	4.7	0.17	0	0	0.17	1.475	1	4	146	159	1	17	1
+pistol11	Small Firearm II	w_pistol0	pistol0	gun0	shade_green0	1	10	17.5	33	4.7	0.17	0	0	0.17	1.475	1	4	198	214	1	16	1
+pistol12	9mm Handgun II	w_pistol0	pistol0	gun0		1	9	14	28	4.6	0.17	0	0	0.16	1.4	3	5	234	252	1	21	1
+pistol13	Handgun II	w_pistol0	pistol0	gun0	shade_red0	1	9	15	29	4.6	0.17	0	0	0.16	1.4	2	5	315	339	1	19	1
+pistol14	Pistol II	w_pistol0	pistol0	gun0	shade_green0	1	9	16	30	4.6	0.17	0	0	0.16	1.4	1	5	426	458	1	18	1
+pistol15	Powerful Pistol II	w_pistol0	pistol0	gun0		1	8	12.5	25	4.5	0.17	0	1	0.15	1.325	4	6	255	275	2	26	1
+pistol16	Beretta II	w_pistol0	pistol0	gun0	shade_red0	1	8	13.5	26	4.5	0.17	0	1	0.15	1.325	3	6	345	371	2	24	1
+pistol17	Glock II	w_pistol0	pistol0	gun0	shade_green0	1	8	14.5	27	4.5	0.17	0	1	0.15	1.325	2	6	466	500	2	21	1
+pistol18	Pistol III	w_pistol0	pistol0	gun0	shade_black1	1	7	11	22	4.4	0.17	0	1	0.14	1.25	5	7	377	405	3	30	1
+pistol19	Burst Shot	w_pistol0	pistol0	gun0	shade_black1	1	7	12	23	4.4	0.17	0	1	0.14	1.25	4	7	509	547	3	27	1
+pistol20	Silver Handgun	w_pistol0	pistol0	gun0	shade_black1	1	7	13	24	4.4	0.17	0	1	0.14	1.25	3	7	687	737	3	24	1
+shotgun0	Basic Shotgun	w_shotgun0	shotgun0	gun0		2	20	42	42	0	0	0	0	0.7	3	1	1	7	12	2	5	5
+shotgun1	10 Gauge Shotgun	w_shotgun0	shotgun0	gun0	shade_red0	2	20	41	41	0	0	0	0	0.7	3	1	1	11	17	2	4	5
+shotgun2	Pump-action Shotgun	w_shotgun0	shotgun0	gun0	shade_green0	2	20	42	42	0	0	0	0	0.7	3	1	1	16	25	2	4	5
+shotgun3	Shotgun	w_shotgun0	shotgun0	gun0		2	19	41	41	0	0	0	0	0.675	2.85	1	2	13	20	3	6	5
+shotgun4	12 Gauge Shotgun	w_shotgun0	shotgun0	gun0	shade_red0	2	19	40	40	0	0	0	0	0.675	2.85	1	2	19	29	3	5	5
+shotgun5	Riot Gun	w_shotgun0	shotgun0	gun0	shade_green0	2	19	39	39	0	0	0	0	0.675	2.85	1	2	27	40	3	5	5
+shotgun6	Combat Shotgun	w_shotgun0	shotgun0	gun0		2	18	40	40	0	0	0	0	0.65	2.7	1	3	23	35	4	7	5
+shotgun7	16 Gauge Shotgun	w_shotgun0	shotgun0	gun0	shade_red0	2	18	39	39	0	0	0	0	0.65	2.7	1	3	32	49	4	6	5
+shotgun8	Hunting Shotgun	w_shotgun0	shotgun0	gun0	shade_green0	2	18	38	38	0	0	0	0	0.65	2.7	1	3	44	65	4	6	5
+shotgun9	Basic Shotgun II	w_shotgun0	shotgun0	gun0		2	17	39	39	0	0	0	0	0.625	2.55	2	4	41	60	5	9	5
+shotgun10	10 Gauge Shotgun II	w_shotgun0	shotgun0	gun0	shade_red0	2	17	38	38	0	0	0	0	0.625	2.55	1	4	55	81	5	8	5
+shotgun11	Pump-action Shotgun II	w_shotgun0	shotgun0	gun0	shade_green0	2	17	37	37	0	0	0	0	0.625	2.55	1	4	74	108	5	7	5
+shotgun12	Shotgun II	w_shotgun0	shotgun0	gun0		2	16	38	38	0	0	0	0	0.6	2.4	3	5	73	106	6	10	5
+shotgun13	12 Gauge Shotgun II	w_shotgun0	shotgun0	gun0	shade_red0	2	16	37	37	0	0	0	0	0.6	2.4	2	5	98	143	6	9	5
+shotgun14	Riot Gun II	w_shotgun0	shotgun0	gun0	shade_green0	2	16	36	36	0	0	0	0	0.6	2.4	1	5	133	192	6	8	5
+shotgun15	Combat Shotgun II	w_shotgun0	shotgun0	gun0		2	15	37	37	0	0	0	1	0.575	2.25	4	6	136	198	7	12	5
+shotgun16	16 Gauge Shotgun II	w_shotgun0	shotgun0	gun0	shade_red0	2	15	36	36	0	0	0	1	0.575	2.25	3	6	184	266	7	11	5
+shotgun17	Hunting Shotgun II	w_shotgun0	shotgun0	gun0	shade_green0	2	15	35	35	0	0	0	1	0.575	2.25	2	6	249	359	7	10	5
+shotgun18	Winchester	w_shotgun0	shotgun0	gun0	shade_black1	2	14	36	36	0	0	0	1	0.55	2.1	5	7	264	382	8	15	5
+shotgun19	Remington	w_shotgun0	shotgun0	gun0	shade_black1	2	14	35	35	0	0	0	1	0.55	2.1	4	7	357	514	8	14	5
+shotgun20	Jackhammer	w_shotgun0	shotgun0	gun0	shade_black1	2	14	34	34	0	0	0	1	0.55	2.1	3	7	482	694	8	12	5
+rifle0	Semi-automatic Rifle	w_rifle0	rifle0	gun0		3	8	25	50	8	0.17	0	0	0.35	2	1	1	3	6	1	18	3
+rifle1	Repeater	w_rifle0	rifle0	gun0	shade_red0	3	8	26	51	8	0.17	0	0	0.35	2	1	1	5	8	1	17	3
+rifle2	Basic Rifle	w_rifle0	rifle0	gun0	shade_green0	3	8	27	52	8	0.17	0	0	0.35	2	1	1	7	11	1	16	3
+rifle3	Mercenary Weapon	w_rifle0	rifle0	gun0		3	7.5	22.5	46	7.8	0.17	0	0	0.32	1.925	1	2	9	14	1	21	3
+rifle4	Hunting Rifle	w_rifle0	rifle0	gun0	shade_red0	3	7.5	23.5	47	7.8	0.17	0	0	0.32	1.925	1	2	14	20	1	20	3
+rifle5	Rifle	w_rifle0	rifle0	gun0	shade_green0	3	7.5	24.5	48	7.8	0.17	0	0	0.32	1.925	1	2	19	27	1	19	3
+rifle6	Assault Rifle	w_rifle0	rifle0	gun0		3	7	20	42	7.6	0.17	0	0	0.29	1.85	1	3	24	33	1	25	3
+rifle7	Army Rifle	w_rifle0	rifle0	gun0	shade_red0	3	7	21	43	7.6	0.17	0	0	0.29	1.85	1	3	34	46	1	23	3
+rifle8	Power Rifle	w_rifle0	rifle0	gun0	shade_green0	3	7	22	44	7.6	0.17	0	0	0.29	1.85	1	3	46	61	1	21	3
+rifle9	Semi-automatic Rifle II	w_rifle0	rifle0	gun0		3	6.5	17.5	38	7.4	0.17	0	0	0.26	1.775	2	4	56	75	1	29	3
+rifle10	Repeater II	w_rifle0	rifle0	gun0	shade_red0	3	6.5	18.5	39	7.4	0.17	0	0	0.26	1.775	1	4	76	100	1	26	3
+rifle11	Basic Rifle II	w_rifle0	rifle0	gun0	shade_green0	3	6.5	19.5	40	7.4	0.17	0	0	0.26	1.775	1	4	102	135	1	24	3
+rifle12	Mercenary Weapon II	w_rifle0	rifle0	gun0		3	6	15	34	7.2	0.17	0	0	0.23	1.7	3	5	126	166	1	34	3
+rifle13	Hunting Rifle II	w_rifle0	rifle0	gun0	shade_red0	3	6	16	35	7.2	0.17	0	0	0.23	1.7	2	5	170	223	1	31	3
+rifle14	Rifle II	w_rifle0	rifle0	gun0	shade_green0	3	6	17	36	7.2	0.17	0	0	0.23	1.7	1	5	230	301	1	28	3
+rifle15	Assault Rifle II	w_rifle0	rifle0	gun0		3	5.5	12.5	30	7	0.17	0	1	0.2	1.625	4	6	143	188	2	38	3
+rifle16	Army Rifle II	w_rifle0	rifle0	gun0	shade_red0	3	5.5	13.5	31	7	0.17	0	1	0.2	1.625	3	6	193	253	2	34	3
+rifle17	Power Rifle II	w_rifle0	rifle0	gun0	shade_green0	3	5.5	14.5	32	7	0.17	0	1	0.2	1.625	2	6	261	341	2	32	3
+rifle18	Rifle III	w_rifle0	rifle0	gun0	shade_black1	3	5	10	26	6.8	0.17	0	1	0.17	1.55	5	7	218	286	3	43	3
+rifle19	Modified Carbine	w_rifle0	rifle0	gun0	shade_black1	3	5	11	27	6.8	0.17	0	1	0.17	1.55	4	7	295	385	3	38	3
+rifle20	Battle Rifle	w_rifle0	rifle0	gun0	shade_black1	3	5	12	28	6.8	0.17	0	1	0.17	1.55	3	7	398	519	3	36	3
+sniper0	Weak Sniper Rifle	w_sniper0	sniper0	gun0		4	5	14	30	8	0.067	0	0	1	3.5	1	1	33	38	1	3	4
+sniper1	Long Distance Rifle	w_sniper0	sniper0	gun0	shade_red0	4	5	15	31	8	0.067	0	0	1	3.5	1	1	49	56	1	3	4
+sniper2	Accurate Rifle	w_sniper0	sniper0	gun0	shade_green0	4	5	16	32	8	0.067	0	0	1	3.5	1	1	74	84	1	3	4
+sniper3	Basic Sniper Rifle	w_sniper0	sniper0	gun1		4	4	12.5	26.5	7.8	0.067	0	0	1.2	3.4	1	2	44	51	2	4	4
+sniper4	Scoped Rifle	w_sniper0	sniper0	gun1	shade_red0	4	4	13.5	27.5	7.8	0.067	0	0	1.2	3.4	1	2	66	76	2	4	4
+sniper5	Long Range Rifle	w_sniper0	sniper0	gun1	shade_green0	4	4	14.5	28.5	7.8	0.067	0	0	1.2	3.4	1	2	93	105	2	4	4
+sniper6	Military Sniper	w_sniper0	sniper0	gun1		4	3	11	23	7.6	0.067	0	0	1.4	3.3	1	3	72	82	3	5	4
+sniper7	Sharp Shooter	w_sniper0	sniper0	gun1	shade_red0	4	3	12	24	7.6	0.067	0	0	1.4	3.3	1	3	101	114	3	5	4
+sniper8	Sniper Rifle	w_sniper0	sniper0	gun1	shade_green0	4	3	13	25	7.6	0.067	0	0	1.4	3.3	1	3	136	153	3	5	4
+sniper9	Weak Sniper Rifle II	w_sniper0	sniper0	gun1		4	2	9.5	19.5	7.4	0.067	0	0	1.6	3.2	2	4	118	133	4	5	4
+sniper10	Long Distance Rifle II	w_sniper0	sniper0	gun1	shade_red0	4	2	10.5	20.5	7.4	0.067	0	0	1.6	3.2	1	4	160	179	4	5	4
+sniper11	Accurate Rifle II	w_sniper0	sniper0	gun1	shade_green0	4	2	11.5	21.5	7.4	0.067	0	0	1.6	3.2	1	4	216	241	4	5	4
+sniper12	Basic Sniper Rifle II	w_sniper0	sniper0	gun1		4	1.9	8	16	7.2	0.067	0	0	1.8	3.1	3	5	170	190	6	6	4
+sniper13	Scoped Rifle II	w_sniper0	sniper0	gun1	shade_red0	4	1.85	9	17	7.2	0.067	0	0	1.8	3.1	2	5	229	256	6	6	4
+sniper14	Long Range Rifle II	w_sniper0	sniper0	gun1	shade_green0	4	1.8	10	18	7.2	0.067	0	0	1.8	3.1	1	5	309	345	6	6	4
+sniper15	Military Sniper II	w_sniper0	sniper0	gun1		4	1.75	6.5	12.5	7	0.067	0	0	2	3	4	6	278	311	8	8	4
+sniper16	Sharp Shooter II	w_sniper0	sniper0	gun1	shade_red0	4	1.7	7.5	13.5	7	0.067	0	0	2	3	3	6	376	419	8	7	4
+sniper17	Sniper Rifle II	w_sniper0	sniper0	gun1	shade_green0	4	1.6	8.5	14.5	7	0.067	0	0	2	3	2	6	507	565	8	7	4
+sniper18	Sharp Shooter III	w_sniper0	sniper0	gun1	shade_black1	4	1.5	5	9	6.8	0.067	0	0	2.2	2.9	5	7	493	550	10	10	4
+sniper19	Sniper Rifle III	w_sniper0	sniper0	gun1	shade_black1	4	1.4	6	10	6.8	0.067	0	0	2.2	2.9	4	7	666	741	10	9	4
+sniper20	Assassin	w_sniper0	sniper0	gun1	shade_black1	4	1.3	7	11	6.8	0.067	0	0	2.2	2.9	3	7	899	1000	10	8	4
+machine0	Fully Automatic Rifle	w_machine0	rifle0	gun0		4	30	30	60	10	0.17	0	1	0.45	3.5	1	1	1	4	1	33	4
+machine1	Big Repeater	w_machine0	rifle0	gun0	shade_red0	4	30	33	63	10	0.17	0	1	0.45	3.5	1	1	2	5	1	31	4
+machine2	Light Machine Gun	w_machine0	rifle0	gun0	shade_green0	4	30	35	65	10	0.17	0	1	0.45	3.5	1	1	3	7	1	30	4
+machine3	Power Gun	w_machine0	rifle0	gun1		4	30	27.5	56	9.8	0.17	0	1	0.41	3.4	1	2	4	8	1	40	4
+machine4	Heavy Rifle	w_machine0	rifle0	gun1	shade_red0	4	30	30.5	59	9.8	0.17	0	1	0.41	3.4	1	2	6	11	1	37	4
+machine5	Machine Gun	w_machine0	rifle0	gun1	shade_green0	4	30	32.5	61	9.8	0.17	0	1	0.41	3.4	1	2	8	15	1	35	4
+machine6	M85	w_machine0	rifle0	gun1		4	30	25	52	9.6	0.17	0	1	0.37	3.3	1	3	10	18	1	48	4
+machine7	AT-14	w_machine0	rifle0	gun1	shade_red0	4	30	28	55	9.6	0.17	0	1	0.37	3.3	1	3	14	24	1	45	4
+machine8	Bullet Cannon	w_machine0	rifle0	gun1	shade_green0	4	30	30	57	9.6	0.17	0	1	0.37	3.3	1	3	19	32	1	42	4
+machine9	Fully Automatic Rifle II	w_machine0	rifle0	gun1		4	30	22.5	48	9.4	0.17	0	1	0.33	3.2	2	4	23	38	1	56	4
+machine10	Big Repeater II	w_machine0	rifle0	gun1	shade_red0	4	30	25.5	51	9.4	0.17	0	1	0.33	3.2	1	4	31	51	1	51	4
+machine11	Light Machine Gun II	w_machine0	rifle0	gun1	shade_green0	4	30	27.5	53	9.4	0.17	0	1	0.33	3.2	1	4	42	68	1	48	4
+machine12	Power Gun II	w_machine0	rifle0	gun1		4	30	20	44	9.2	0.17	0	1	0.29	3.1	3	5	51	83	1	64	4
+machine13	Heavy Rifle II	w_machine0	rifle0	gun1	shade_red0	4	30	23	47	9.2	0.17	0	1	0.29	3.1	2	5	69	111	1	57	4
+machine14	Machine Gun II	w_machine0	rifle0	gun1	shade_green0	4	30	25	49	9.2	0.17	0	1	0.29	3.1	1	5	93	149	1	54	4
+machine15	M85 II	w_machine0	rifle0	gun1		4	30	17.5	40	9	0.17	0	1	0.25	3	4	6	57	92	2	72	4
+machine16	AT-14 II	w_machine0	rifle0	gun1	shade_red0	4	30	20.5	43	9	0.17	0	1	0.25	3	3	6	77	124	2	63	4
+machine17	Bullet Cannon II	w_machine0	rifle0	gun1	shade_green0	4	30	22.5	45	9	0.17	0	1	0.25	3	2	6	104	166	2	60	4
+machine18	Machine Gun III	w_machine0	rifle0	gun1	shade_black1	4	30	15	36	8.8	0.17	0	1	0.21	2.9	5	7	85	138	3	80	4
+machine19	AR-99	w_machine0	rifle0	gun1	shade_black1	4	30	18	39	8.8	0.17	0	1	0.21	2.9	4	7	115	185	3	70	4
+machine20	Heavy Repeater	w_machine0	rifle0	gun1	shade_black1	4	30	20	41	8.8	0.17	0	1	0.21	2.9	3	7	156	249	3	67	4

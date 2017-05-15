@@ -1,0 +1,41 @@
+identifier	playback speed	repeat mode	starting position	textures...				
+crate	0.15	2	0	crate0.png				
+treasure	0.15	2	0	treasure0.png				
+player_legs	0.07	2	2	legs0.png	legs1.png	legs2.png	legs3.png	legs4.png
+player_onehand_walking	0.07	2	2	walking_onehand0.png	walking_onehand1.png	walking_onehand2.png	walking_onehand3.png	walking_onehand4.png
+player_twohand_walking	0.07	2	2	walking_twohand0.png	walking_twohand1.png	walking_twohand2.png	walking_twohand3.png	walking_twohand4.png
+player_melee	0.3	0	0	melee0.png	melee1.png	melee2.png		
+player_shootonehand	2	0	0	shooting_onehand0.png				
+player_shoottwohand	2	0	0	shooting_twohand0.png				
+player_dying	0.15	0	0	dying0.png	dying1.png	dying2.png		
+testing_walking	0.15	2	0	testing_w0.png				
+zombie_walking	0.15	2	2	zombie_w0.png	zombie_w1.png	zombie_w2.png	zombie_w3.png	zombie_w4.png
+zombie_attacking	0.12	0	0	zombie_a0.png	zombie_a1.png	zombie_a2.png		
+zombie_dying	0.13	0	0	zombie_d0.png	zombie_d1.png	zombie_d2.png	zombie_d3.png	zombie_d4.png
+bat_flying	0.05	2	2	bat_f0.png	bat_f1.png	bat_f2.png	bat_f3.png	bat_f4.png
+bat_attacking	0.1	0	0	bat_a0.png	bat_a1.png	bat_a2.png		
+bat_dying	0.13	0	0	bat_d0.png	bat_d1.png	bat_d2.png		
+skeleton_walking	0.13	2	2	skeleton_w0.png	skeleton_w1.png	skeleton_w2.png	skeleton_w3.png	skeleton_w4.png
+skeleton_attacking	0.1	0	0	skeleton_a0.png	skeleton_a1.png	skeleton_a2.png		
+skeleton_dying	0.13	0	0	skeleton_d0.png	skeleton_d1.png	skeleton_d2.png		
+spider_walking	0.03	2	2	spider_w0.png	spider_w1.png	spider_w2.png	spider_w3.png	spider_w4.png
+spider_attacking	0.07	0	0	spider_a0.png	spider_a1.png	spider_a2.png		
+spider_dying	0.13	0	0	spider_d0.png	spider_d1.png	spider_d2.png		
+beast_walking	0.15	2	2	beast_w0.png	beast_w1.png	beast_w2.png	beast_w3.png	beast_w4.png
+beast_attacking	0.13	0	0	beast_a0.png	beast_a1.png	beast_a2.png		
+beast_dying	0.13	0	0	beast_d0.png	beast_d1.png	beast_d2.png		
+mercenary_walking	0.07	2	2	mercenary_w0.png	mercenary_w1.png	mercenary_w2.png	mercenary_w3.png	mercenary_w4.png
+mercenary_attacking	0.08	0	0	mercenary_a0.png	mercenary_a1.png	mercenary_a2.png		
+mercenary_dying	0.13	0	0	mercenary_d0.png	mercenary_d1.png	mercenary_d2.png		
+dog_walking	0.04	2	2	dog_w0.png	dog_w1.png	dog_w2.png	dog_w3.png	dog_w4.png
+dog_attacking	0.05	0	0	dog_a0.png	dog_a1.png	dog_a2.png		
+dog_dying	0.13	0	0	dog_d0.png	dog_d1.png	dog_d2.png		
+shootmercenary_walking	0.07	2	2	shootmercenary_w0.png	shootmercenary_w1.png	shootmercenary_w2.png	shootmercenary_w3.png	shootmercenary_w4.png
+shootmercenary_attacking	0.08	0	0	shootmercenary_a0.png	shootmercenary_a1.png	shootmercenary_a2.png		
+shootmercenary_dying	0.13	0	0	shootmercenary_d0.png	shootmercenary_d1.png	shootmercenary_d2.png		
+demon_walking	0.07	2	2	demon_w0.png	demon_w1.png	demon_w2.png	demon_w3.png	demon_w4.png
+demon_attacking	0.05	0	0	demon_a0.png	demon_a1.png	demon_a2.png		
+demon_dying	0.13	0	0	demon_d0.png	demon_d1.png	demon_d2.png		
+alien_walking	0.07	2	2	alien_w0.png	alien_w1.png	alien_w2.png	alien_w3.png	alien_w4.png
+alien_attacking	0.075	0	0	alien_a0.png	alien_a1.png	alien_a2.png		
+alien_dying	0.13	0	0	alien_d0.png	alien_d1.png	alien_d2.png		
