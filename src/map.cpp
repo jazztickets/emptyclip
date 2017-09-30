@@ -245,8 +245,12 @@ void _Map::Init() {
 	for(size_t k = 0; k < Blocks[5].size(); k++) {
 		for(int i = Blocks[5][k].Start.X; i <= Blocks[5][k].End.X; i++) {
 			for(int j = Blocks[5][k].Start.Y; j <= Blocks[5][k].End.Y; j++) {
-				if(Blocks[5][k].Wall)
-					Data[i][j].Collision |= _Tile::ENTITY | _Tile::BULLET;
+				if(Blocks[5][k].Wall) {
+					if(Blocks[5][k].Walkable)
+						Data[i][j].Collision &= ~_Tile::ENTITY & ~_Tile::BULLET;
+					else
+						Data[i][j].Collision |= _Tile::ENTITY | _Tile::BULLET;
+				}
 			}
 		}
 	}
