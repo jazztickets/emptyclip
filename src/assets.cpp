@@ -554,6 +554,16 @@ void _Assets::LoadMonsterTable(const std::string &Filename) {
 			throw std::runtime_error(std::string(__FUNCTION__) + " - Cannot find item group: " + Monster.ItemGroupIdentifier + " in " + Identifier);
 		}
 
+		// Check for animation
+		if(!IsAnimationLoaded(Monster.AnimationIdentifier)) {
+			throw std::runtime_error(std::string(__FUNCTION__) + " - Cannot find animation: " + Monster.AnimationIdentifier + " in " + Identifier);
+		}
+
+		// Check for samples
+		if(!IsAttackSampleLoaded(Monster.SamplesIdentifier)) {
+			throw std::runtime_error(std::string(__FUNCTION__) + " - Cannot find sample: " + Monster.SamplesIdentifier + " in " + Identifier);
+		}
+
 		// Set particles
 		if(IsWeaponParticleTemplateLoaded(WeaponParticlesIdentifier))
 			Monster.WeaponParticles = GetWeaponParticleTemplate(WeaponParticlesIdentifier);
