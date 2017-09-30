@@ -98,8 +98,12 @@ void _Save::LoadSaves() {
 		std::string SlotIndexString = Contents[i].substr(0, Extension);
 		int SlotIndex = atoi(SlotIndexString.c_str()) - 1;
 		if(SlotIndex >= 0 && SlotIndex <= SLOT_9) {
-			Players[SlotIndex] = new _Player(Config.GetConfigPath() + Contents[i]);
-			Players[SlotIndex]->Load();
+			try {
+				Players[SlotIndex] = new _Player(Config.GetConfigPath() + Contents[i]);
+				Players[SlotIndex]->Load();
+			}
+			catch(std::exception &Error) {
+			}
 		}
 	}
 }

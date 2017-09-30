@@ -113,7 +113,7 @@ void _PlayState::Init() {
 	Graphics.ShowCursor(false);
 
 	Actions.ResetState();
-};
+}
 
 // Close map
 void _PlayState::Close() {
@@ -127,7 +127,7 @@ void _PlayState::Close() {
 	delete Camera;
 	delete Map;
 	delete HUD;
-};
+}
 
 // Action handler
 bool _PlayState::HandleAction(int InputType, int Action, int Value) {
@@ -216,7 +216,7 @@ void _PlayState::KeyEvent(const _KeyEvent &KeyEvent) {
 			break;
 		}
 	}
-};
+}
 
 // Mouse handler
 void _PlayState::MouseEvent(const _MouseEvent &MouseEvent) {
@@ -224,7 +224,7 @@ void _PlayState::MouseEvent(const _MouseEvent &MouseEvent) {
 
 	if(IsPaused())
 		Menu.MouseEvent(MouseEvent);
-};
+}
 
 // Update
 void _PlayState::Update(double FrameTime) {
@@ -354,7 +354,7 @@ void _PlayState::Update(double FrameTime) {
 		HUD->SetCursorOverItem(CursorItem);
 
 	Audio.SetPosition(Player->GetPosition());
-};
+}
 
 // Render the state
 void _PlayState::Render(double BlendFactor) {
@@ -455,7 +455,7 @@ void _PlayState::Render(double BlendFactor) {
 				Assets.GetFont("hud_tiny")->DrawText(Buffer.str(), P.X, P.Y);
 				Buffer.str("");
 			}
-		}		
+		}
 	}*/
 
 	HUD->Render();
@@ -473,7 +473,7 @@ void _PlayState::Render(double BlendFactor) {
 	}
 
 	Graphics.SetDepthMask(true);
-};
+}
 
 // Restart the level after death
 void _PlayState::RestartFromDeath() {

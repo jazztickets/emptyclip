@@ -18,11 +18,22 @@
 #pragma once
 
 #include <SDL_opengl.h>
+
 #ifdef _WIN32
-	#define WIN32_LEAN_AND_MEAN
-	#include <windows.h>
+	#ifndef NOMINMAX
+		#define NOMINMAX
+	#endif
+
 	#undef DrawText
-	#undef LoadCursor
+	#undef DrawTextA
+	#undef CreateEvent
+	#undef CreateEventA
+	#undef GetObject
+	#undef GetObjectA
+	#undef SendMessage
+	#undef SendMessageA
+#else
+	#define GL_GLEXT_PROTOTYPES
 #endif
 
 #include <GL/glu.h>

@@ -19,9 +19,15 @@
 
 // Libraries
 #include <cmath>
+#ifndef M_PI
+	#define M_PI 3.1415926535897932384626433832795
+#endif
+#ifndef M_SQRT1_2
+	#define M_SQRT1_2 0.7071067811865475244
+#endif
 
 // Constants
-const float DEGREES_IN_RADIAN 	= 180.0f / M_PI;
+const float DEGREES_IN_RADIAN = 180.0f / M_PI;
 
 // Classes
 union Vector2 {

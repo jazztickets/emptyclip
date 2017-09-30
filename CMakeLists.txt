@@ -8,73 +8,53 @@ project(emptyclip)
 
 # add extra find modules
 set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake;${CMAKE_MODULE_PATH}")
-set(EXTRA_LIBS)
 
-if(MSVC)
-	set(EXTRA_LIBS ${EXTRA_LIBS} winmm)
-	add_definitions("-DNOMINMAX -D_USE_MATH_DEFINES")
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP")
-	
-	set(FREETYPE_INCLUDE_DIRS "${PROJECT_SOURCE_DIR}/extlibs/include")
-	set(OPENAL_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/extlibs/include/AL")
+# add custom target to generate version.h
+add_custom_target(
+	version
+	${CMAKE_COMMAND}
+	-D SRC=${PROJECT_SOURCE_DIR}/cmake/version.h.in
+	-D DST=${PROJECT_SOURCE_DIR}/src/version.h
+	-P ${PROJECT_SOURCE_DIR}/cmake/version.cmake
+)
 
-	set(FREETYPE_LIBRARY "freetype.lib")
-	set(ZLIB_LIBRARIES "zlib.lib")
-	set(VORBIS_LIBRARY debug ${PROJECT_SOURCE_DIR}/extlibs/debug/libvorbis_d.lib optimized ${PROJECT_SOURCE_DIR}/extlibs/release/libvorbis.lib)
-	set(VORBISFILE_LIBRARY debug ${PROJECT_SOURCE_DIR}/extlibs/debug/libvorbisfile_d.lib optimized ${PROJECT_SOURCE_DIR}/extlibs/release/libvorbisfile.lib)
-	set(OGG_LIBRARY debug ${PROJECT_SOURCE_DIR}/extlibs/debug/libogg_d.lib optimized ${PROJECT_SOURCE_DIR}/extlibs/release/libogg.lib)
-	set(OPENAL_LIBRARY debug ${PROJECT_SOURCE_DIR}/extlibs/debug/OpenAL32.lib optimized ${PROJECT_SOURCE_DIR}/extlibs/release/OpenAL32.lib)
+#set(EXTRA_LIBS)
 
-	include_directories("${PROJECT_SOURCE_DIR}/extlibs/include")
-	include_directories("${PROJECT_SOURCE_DIR}/extlibs/include/zlib")
-	link_directories("${PROJECT_SOURCE_DIR}/extlibs/")
-	
-	set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin/)
-elseif(UNIX)
-	add_definitions("-Wall")
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-
-	# set default build type
-	if(NOT CMAKE_BUILD_TYPE)
-		set(CMAKE_BUILD_TYPE Release)
-	endif()
-	
-	set(VORBISFILE_LIBRARY vorbisfile)
-	
-	find_package(ZLIB REQUIRED)
-	if(NOT ZLIB_FOUND)
-		message(SEND_ERROR "Could not find zlib!")
-	endif()
-	
-	find_package(OpenAL REQUIRED)
-	if(NOT OPENAL_FOUND)
-		message(SEND_ERROR "Could not find OpenAL!")
-	endif()
-
-	set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin/${CMAKE_BUILD_TYPE})
+# mingw
+if(WIN32)
+	set(EXTRA_LIBS ${EXTRA_LIBS} winmm ws2_32)
 endif()
+
+
+# set default build type
+if(NOT CMAKE_BUILD_TYPE)
+	set(CMAKE_BUILD_TYPE Release)
+endif()
+
+# compiler flags
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static-libgcc -static-libstdc++ -std=c++11 -msse -mfpmath=sse -Wall -Wextra -Wno-unused-result -Wno-unused-parameter")
+
+# set output path
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin/${CMAKE_BUILD_TYPE})
 
 # find libraries
 find_package(OpenGL REQUIRED)
-if(NOT OPENGL_FOUND)
-	message(SEND_ERROR "Could not find OpenGL!")
-endif()
-
 find_package(SDL2 REQUIRED)
-if(NOT SDL2_FOUND)
-	message(SEND_ERROR "Could not find SDL2!")
-endif()
-
+find_package(OpenAL REQUIRED)
+find_package(Vorbis REQUIRED)
+find_package(Ogg REQUIRED)
 find_package(Freetype REQUIRED)
-if(NOT FREETYPE_FOUND)
-	message(SEND_ERROR "Could not find Freetype 2!")
-endif()
+find_package(ZLIB REQUIRED)
+find_package(Threads REQUIRED)
 
 # includes
-include_directories(${FREETYPE_INCLUDE_DIRS})
+include_directories("src/")
 include_directories(${SDL2_INCLUDE_DIR})
 include_directories(${OPENAL_INCLUDE_DIR})
-include_directories("src/")
+include_directories(${VORBIS_INCLUDE_DIR})
+include_directories(${OGG_INCLUDE_DIR})
+include_directories(${ZLIB_INCLUDE_DIRS})
+include_directories(${FREETYPE_INCLUDE_DIRS})
 
 # add source files
 file(GLOB MAIN_SRC "src/*.cpp" "src/*.h")
@@ -82,12 +62,6 @@ file(GLOB OBJECTS_SRC "src/objects/*.cpp" "src/objects/*.h")
 file(GLOB UI_SRC "src/ui/*.cpp" "src/ui/*.h")
 file(GLOB STATES_SRC "src/states/*.cpp" "src/states/*.h")
 file(GLOB PNGLITE_SRC "src/pnglite/*.c" "src/pnglite/*.h")
-
-# add virtual folders
-source_group(main FILES ${MAIN_SRC})
-source_group(objects FILES ${OBJECTS_SRC})
-source_group(ui FILES ${UI_SRC})
-source_group(states FILES ${STATES_SRC})
 
 # build executable
 add_executable(${CMAKE_PROJECT_NAME}
@@ -97,38 +71,34 @@ add_executable(${CMAKE_PROJECT_NAME}
 	${STATES_SRC}
 	${PNGLITE_SRC}
 )
+add_dependencies(${CMAKE_PROJECT_NAME} version)
 
 # link libraries
 target_link_libraries(${CMAKE_PROJECT_NAME}
 	${OPENGL_LIBRARIES}
-	${FREETYPE_LIBRARIES}
 	${SDL2_LIBRARY}
 	${OPENAL_LIBRARY}
+	${VORBIS_LIBRARIES}
+	${OGG_LIBRARIES}
+	${LUA_LIBRARIES}
+	${FREETYPE_LIBRARIES}
 	${ZLIB_LIBRARIES}
-	${VORBIS_LIBRARY}
-	${VORBISFILE_LIBRARY}
-	${OGG_LIBRARY}
+	${CMAKE_THREAD_LIBS_INIT}
 	${EXTRA_LIBS}
 )
 
-if(MSVC)
-	add_custom_command(TARGET ${CMAKE_PROJECT_NAME} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different "$ENV{SDL2DIR}/lib/x86/SDL2.dll" ${PROJECT_SOURCE_DIR}/working)
+if(WIN32)
 else()
-	
+
 	# linux installation
 	install(TARGETS ${CMAKE_PROJECT_NAME} RUNTIME DESTINATION share/games/${CMAKE_PROJECT_NAME})
-	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/fonts DESTINATION share/games/${CMAKE_PROJECT_NAME})
-	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/maps DESTINATION share/games/${CMAKE_PROJECT_NAME})
-	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/music DESTINATION share/games/${CMAKE_PROJECT_NAME})
-	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/sounds DESTINATION share/games/${CMAKE_PROJECT_NAME})
-	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/tables DESTINATION share/games/${CMAKE_PROJECT_NAME})
-	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/textures DESTINATION share/games/${CMAKE_PROJECT_NAME})
-	install(FILES ${PROJECT_SOURCE_DIR}/deployment/emptyclip.png DESTINATION share/pixmaps)
-	install(FILES ${PROJECT_SOURCE_DIR}/deployment/emptyclip.desktop DESTINATION share/applications)
+	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/ DESTINATION share/games/${CMAKE_PROJECT_NAME} PATTERN "${PROJECT_SOURCE_DIR}/working/*" )
+	install(FILES ${PROJECT_SOURCE_DIR}/deployment/${CMAKE_PROJECT_NAME}.png DESTINATION share/pixmaps)
+	install(FILES ${PROJECT_SOURCE_DIR}/deployment/${CMAKE_PROJECT_NAME}.desktop DESTINATION share/applications)
 	install(FILES ${PROJECT_SOURCE_DIR}/CHANGELOG DESTINATION share/doc/${CMAKE_PROJECT_NAME})
 	install(FILES ${PROJECT_SOURCE_DIR}/LICENSE DESTINATION share/doc/${CMAKE_PROJECT_NAME})
 	install(FILES ${PROJECT_SOURCE_DIR}/README DESTINATION share/doc/${CMAKE_PROJECT_NAME})
-	
+
 	# generate the script to launch the program
 	configure_file(${PROJECT_SOURCE_DIR}/deployment/${CMAKE_PROJECT_NAME} ${CMAKE_CURRENT_BINARY_DIR}/CMakeFiles)
 	install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/CMakeFiles/${CMAKE_PROJECT_NAME} DESTINATION bin)

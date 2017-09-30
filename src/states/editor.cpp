@@ -139,7 +139,7 @@ void _EditorState::Init() {
 
 	if(SavedPalette != -1)
 		ExecuteSwitchMode(SavedPalette);
-};
+}
 
 void _EditorState::Close() {
 	SavedCameraPosition = Camera->GetPosition();
@@ -154,7 +154,7 @@ void _EditorState::Close() {
 
 	Camera = NULL;
 	Map = NULL;
-};
+}
 
 // Load a level
 bool _EditorState::LoadMap(const std::string &File, bool UseSavedCameraPosition) {
@@ -480,7 +480,7 @@ void _EditorState::KeyEvent(const _KeyEvent &KeyEvent) {
 			break;
 		}
 	}
-};
+}
 
 // Text event handler
 void _EditorState::TextEvent(const char *Text) {
@@ -645,7 +645,7 @@ void _EditorState::MouseEvent(const _MouseEvent &MouseEvent) {
 			break;
 		}
 	}
-};
+}
 
 // Mouse wheel handler
 void _EditorState::MouseWheelEvent(int Direction) {
@@ -793,7 +793,7 @@ void _EditorState::Update(double FrameTime) {
 				MoveDelta = WorldCursor - ClickedPosition;
 		break;
 	}
-};
+}
 
 // Render the state
 void _EditorState::Render(double BlendFactor) {
@@ -970,7 +970,7 @@ void _EditorState::Render(double BlendFactor) {
 	PaletteElement[CurrentPalette]->Render();
 
 	Graphics.SetDepthMask(true);
-};
+}
 
 // Load palette buttons
 void _EditorState::LoadPalettes() {
