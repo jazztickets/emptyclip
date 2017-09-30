@@ -72,7 +72,7 @@ const int PaletteSizes[EDITMODE_COUNT] = {
 // Constructor
 _EditorState::_EditorState()
 :	SavedCameraPosition(ZERO_VECTOR),
-	CheckpointIndex(0),
+	SavedCheckpointIndex(-1),
 	MapFilename(""),
 	SavedLayer(-1),
 	SavedPalette(-1) {
@@ -139,12 +139,16 @@ void _EditorState::Init() {
 
 	if(SavedPalette != -1)
 		ExecuteSwitchMode(SavedPalette);
+
+	if(SavedCheckpointIndex != -1)
+		CheckpointIndex = SavedCheckpointIndex;
 }
 
 void _EditorState::Close() {
 	SavedCameraPosition = Camera->GetPosition();
 	SavedLayer = CurrentLayer;
 	SavedPalette = CurrentPalette;
+	SavedCheckpointIndex = CheckpointIndex;
 
 	for(int i = 0; i < EDITMODE_COUNT; i++)
 		ClearPalette(i);

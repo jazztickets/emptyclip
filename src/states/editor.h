@@ -205,6 +205,7 @@ class _EditorState : public _State {
 		// Parameters
 		Vector2 SavedCameraPosition;
 		int CheckpointIndex;
+		int SavedCheckpointIndex;
 		std::string MapFilename;
 		int SavedLayer;
 		int SavedPalette;

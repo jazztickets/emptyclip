@@ -23,12 +23,12 @@
 #include <SDL_keycode.h>
 
 //     Config
-const  int          DEFAULT_SCREEN_WIDTH           =  1024;
-const  int          DEFAULT_SCREEN_HEIGHT          =  768;
-const  int          DEFAULT_FULLSCREEN             =  0;
+const  int          DEFAULT_WINDOW_WIDTH           =  1440;
+const  int          DEFAULT_WINDOW_HEIGHT          =  900;
+const  int          DEFAULT_FULLSCREEN             =  1;
 const  int          DEFAULT_AUDIOENABLED           =  1;
 const  int          DEFAULT_VSYNC                  =  1;
-const  double       DEFAULT_MAXFPS                 =  120.0;
+const  double       DEFAULT_MAXFPS                 =  180.0;
 const  int          DEFAULT_KEYUP                  =  SDL_SCANCODE_E;
 const  int          DEFAULT_KEYDOWN                =  SDL_SCANCODE_D;
 const  int          DEFAULT_KEYLEFT                =  SDL_SCANCODE_S;
@@ -58,9 +58,9 @@ const  float        CAMERA_EDITOR_DIVISOR          =  5.0f;
 const  float        CAMERA_FOVY                    =  90.0f;
 const  float        CAMERA_NEAR                    =  0.1f;
 const  float        CAMERA_FAR                     =  500.0f;
-//     Weapons//     Graphics
+//     Graphics
 const  int          GRAPHICS_CIRCLE_VERTICES       =  32;
-
+//     Weapons
 const  double       WEAPON_MINFIREPERIOD           =  0.017;
 //     Audio
 const  float        MAX_AUDIO_DISTANCE             =  30.0f;

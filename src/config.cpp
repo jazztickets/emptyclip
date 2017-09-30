@@ -56,8 +56,8 @@ void _Config::Close() {
 // Set defaults
 void _Config::SetDefaults() {
 
-	ScreenWidth = DEFAULT_SCREEN_WIDTH;
-	ScreenHeight = DEFAULT_SCREEN_HEIGHT;
+	ScreenWidth = DEFAULT_WINDOW_WIDTH;
+	ScreenHeight = DEFAULT_WINDOW_HEIGHT;
 	MSAA = 0;
 	Aniso = 0;
 	Fullscreen = DEFAULT_FULLSCREEN;

@@ -749,7 +749,6 @@ void _PlayState::CheckEvents(const _Entity *Entity) {
 						default:
 						break;
 					}
-
 				break;
 				case EVENT_END:
 					Level = Event->GetItemIdentifier();

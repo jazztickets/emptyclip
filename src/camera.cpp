@@ -26,6 +26,7 @@ _Camera::_Camera(const Vector2 &Position, float Distance, float UpdateDivisor)
 :	LastPosition(Position),
 	Position(Position),
 	TargetPosition(Position),
+	LastDistance(Distance),
 	Distance(Distance),
 	TargetDistance(Distance),
 	Fovy(CAMERA_FOVY),
@@ -42,12 +43,13 @@ _Camera::~_Camera() {
 
 void _Camera::CalculateFrustum(float AspectRatio) {
 	Frustum[1] = tan(Fovy / 360 * M_PI) * Near;
-	Frustum[0] = Frustum[1] * AspectRatio;	
+	Frustum[0] = Frustum[1] * AspectRatio;
 }
 
 // Set up 3d projection matrix
 void _Camera::Set3DProjection(double BlendFactor) const {
 	Vector2 DrawPosition(Position * BlendFactor + LastPosition * (1.0f - BlendFactor));
+	float DrawDistance = Distance * BlendFactor + LastDistance * (1.0f - BlendFactor);
 
 	// Set projection matrix and frustum
 	glMatrixMode(GL_PROJECTION);
@@ -56,7 +58,7 @@ void _Camera::Set3DProjection(double BlendFactor) const {
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	glTranslatef(-DrawPosition.X, -DrawPosition.Y, -Distance);
+	glTranslatef(-DrawPosition.X, -DrawPosition.Y, -DrawDistance);
 }
 
 // Converts screen space to world space
@@ -74,6 +76,8 @@ void _Camera::ConvertWorldToScreen(const Vector2 &WorldPosition, _Point &Point) 
 // Update camera
 void _Camera::Update(double FrameTime) {
 	LastPosition = Position;
+	LastDistance = Distance;
+
 	Vector2 Delta(TargetPosition - Position);
 	if(std::abs(Delta[0]) > 0.01f)
 		Position[0] += Delta[0] / UpdateDivisor;

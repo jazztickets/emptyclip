@@ -949,7 +949,7 @@ void _Assets::LoadMonsterSet(const std::string &Filename) {
 	// Load file
 	std::ifstream InputFile((AssetPath + Filename).c_str(), std::ios::in);
 	if(!InputFile)
-		throw std::runtime_error("Error loading: " + Filename);
+		return;
 
 	UnloadMonsterSet();
 

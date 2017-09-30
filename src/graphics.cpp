@@ -36,9 +36,9 @@ PFNGLDELETEBUFFERSPROC glDeleteBuffers;
 _Graphics Graphics;
 
 // Initialize
-void _Graphics::Init(int ScreenWidth, int ScreenHeight, int Vsync, int MSAA, bool Fullscreen) {
-	this->ScreenWidth = ScreenWidth;
-	this->ScreenHeight = ScreenHeight;
+void _Graphics::Init(int WindowWidth, int WindowHeight, int Vsync, int MSAA, bool Fullscreen) {
+	this->ScreenWidth = WindowWidth;
+	this->ScreenHeight = WindowHeight;
 	FramesPerSecond = 0;
 	FramesPerSecond = 0;
 	FrameCount = 0;
@@ -51,16 +51,24 @@ void _Graphics::Init(int ScreenWidth, int ScreenHeight, int Vsync, int MSAA, boo
 	LastColor = COLOR_WHITE;
 	LastTextureEnabled = true;
 
-	// Set root element
-	Element = new _Element("screen_element", NULL, _Point(0, 0), _Point(ScreenWidth, ScreenHeight), _Alignment(0, 0), NULL, false);
-
-	// Set up viewport
-	ChangeViewport(ScreenWidth, ScreenHeight);
 
 	// Set video flags
 	Uint32 VideoFlags = SDL_WINDOW_OPENGL;
-	if(Fullscreen)
-		VideoFlags |= SDL_WINDOW_FULLSCREEN;
+	if(Fullscreen) {
+		VideoFlags |= SDL_WINDOW_FULLSCREEN_DESKTOP;
+
+		SDL_DisplayMode DisplayMode;
+		if(SDL_GetDesktopDisplayMode(0, &DisplayMode) == 0) {
+			this->ScreenWidth = DisplayMode.w;
+			this->ScreenHeight = DisplayMode.h;
+		}
+	}
+
+	// Set root element
+	Element = new _Element("screen_element", NULL, _Point(0, 0), _Point(this->ScreenWidth, this->ScreenHeight), _Alignment(0, 0), NULL, false);
+
+	// Set up viewport
+	ChangeViewport(this->ScreenWidth, this->ScreenHeight);
 
 	// Set opengl attributes
 	SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 1);
@@ -71,7 +79,7 @@ void _Graphics::Init(int ScreenWidth, int ScreenHeight, int Vsync, int MSAA, boo
 	}
 
 	// Set video mode
-	Window = SDL_CreateWindow(GAME_WINDOWTITLE.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, ScreenWidth, ScreenHeight, VideoFlags);
+	Window = SDL_CreateWindow(GAME_WINDOWTITLE.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, this->ScreenWidth, this->ScreenHeight, VideoFlags);
 	if(Window == NULL)
 		throw std::runtime_error("SDL_CreateWindow failed");
 
@@ -87,7 +95,7 @@ void _Graphics::Init(int ScreenWidth, int ScreenHeight, int Vsync, int MSAA, boo
 	SetupOpenGL();
 
 	// Setup viewport
-	ChangeViewport(ScreenWidth, ScreenHeight);
+	ChangeViewport(this->ScreenWidth, this->ScreenHeight);
 }
 
 // Shutdown system

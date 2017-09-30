@@ -45,7 +45,7 @@ class _Camera {
 		void ForcePosition(const Vector2 &Position) { this->LastPosition = this->Position = Position; this->TargetPosition = Position; }
 
 		void UpdateDistance(float Update) { this->TargetDistance += Update; }
-		void ForceDistance(float Distance) { this->Distance = TargetDistance = Distance; }
+		void ForceDistance(float Distance) { this->Distance = LastDistance = TargetDistance = Distance; }
 
 		void SetPosition(const Vector2 &Position) { this->TargetPosition = Position; }
 		const Vector2 &GetPosition() const { return Position; }
@@ -62,7 +62,7 @@ class _Camera {
 	private:
 
 		Vector2 LastPosition, Position, TargetPosition;
-		float Distance, TargetDistance;
+		float LastDistance, Distance, TargetDistance;
 		float Fovy;
 		float UpdateDivisor;
 

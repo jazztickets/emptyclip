@@ -43,7 +43,7 @@ class _Graphics {
 
 		_Graphics() { Enabled = false; }
 
-		void Init(int ScreenWidth, int ScreenHeight, int Vsync, int MSAA, bool Fullscreen);
+		void Init(int WindowWidth, int WindowHeight, int Vsync, int MSAA, bool Fullscreen);
 		void Close();
 
 		void ToggleFullScreen();

@@ -165,7 +165,7 @@ void _Framework::Update() {
 
 					// Toggle fullscreen
 					if(Event.type == SDL_KEYDOWN && (Event.key.keysym.mod & KMOD_ALT) && Event.key.keysym.scancode == SDL_SCANCODE_RETURN) {
-						Graphics.ToggleFullScreen();
+						//Graphics.ToggleFullScreen();
 					}
 				}
 				else {
