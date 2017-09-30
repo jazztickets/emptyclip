@@ -367,7 +367,14 @@ void _Menu::MouseEvent(const _MouseEvent &MouseEvent) {
 				}
 			} break;
 			case STATE_INGAME: {
-				if(Clicked->GetIdentifier() == "button_ingame_resume") {
+				if(Clicked->GetIdentifier() == "button_ingame_restart" && PlayState.GetPlayer()) {
+					InitPlay();
+					PlayState.GetPlayer()->SetCheckpointIndex(0);
+					PlayState.GetPlayer()->Save();
+					PlayState.GetPlayer()->Load();
+					Framework.ChangeState(&PlayState);
+				}
+				else if(Clicked->GetIdentifier() == "button_ingame_resume") {
 					InitPlay();
 				}
 				else if(Clicked->GetIdentifier() == "button_ingame_options") {
@@ -435,11 +442,13 @@ void _Menu::Render() {
 		case STATE_SINGLEPLAYER: {
 			Assets.GetElement("menu_singleplayer")->Render();
 
+			Graphics.EnableVBO(VBO_QUAD);
 			for(int i = 0; i <= _Save::SLOT_9; i++) {
 				_Player *Player = Save.GetPlayer(i);
 				if(Player)
 					Player->Render2D(SaveSlots[i]->GetBounds().GetMidPoint());
 			}
+			Graphics.DisableVBO(VBO_QUAD);
 
 			if(SinglePlayerState == SINGLEPLAYER_NEW_PLAYER) {
 				Graphics.FadeScreen(MENU_ACCEPTINPUT_FADE);

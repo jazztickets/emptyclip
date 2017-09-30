@@ -93,6 +93,7 @@ label_options_config_weaponswitch	button_options_input_switch	hud_medium			0	21	
 label_options_config_medkit	button_options_input_medkit	hud_medium			0	21	0	0	1	3
 menu_options_accept_text	menu_popup	hud_large		Press a key or button for	0	35	0	0	1	3
 menu_options_accept_text_action	menu_popup	hud_large			0	75	0	0	1	3
+menu_ingame_restart_text	button_ingame_restart	hud_medium		Restart Level	0	21	0	0	1	3
 menu_ingame_resume_text	button_ingame_resume	hud_medium		Resume	0	21	0	0	1	3
 menu_ingame_options_text	button_ingame_options	hud_medium		Options	0	21	0	0	1	3
 menu_ingame_menu_text	button_ingame_menu	hud_medium		Main Menu	0	21	0	0	1	3

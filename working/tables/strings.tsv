@@ -2,7 +2,7 @@ identifier	text
 start_campaign	Campaign mode is similar to a linear first-person shooter game, with secrets and bosses.
 start_adventure	Adventure mode is an open-ended game where you can explore dungeons, find new towns, gamble for items, etc.
 start_survival	Survival mode is a fast-paced game where you must survive for a set amount of time before the gate to the next level opens.
-tutorial_walking	Welcome to Empty Clip Use the movement keys to walk around. (default: E, D, S, F)
+tutorial_walking	Welcome to Empty Clip. Use the movement keys to walk around. (default: E, D, S, F)
 tutorial_door	Hit the use key to open the door. (default: Spacebar)
 tutorial_pickup	Hit the use key to pick up items. (default: Spacebar)
 tutorial_key	Try using the key on the door. (default: Spacebar)
