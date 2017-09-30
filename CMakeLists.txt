@@ -32,7 +32,7 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 # compiler flags
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static-libgcc -static-libstdc++ -std=c++11 -msse -mfpmath=sse -Wall -Wextra -Wno-unused-result -Wno-unused-parameter")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -msse -mfpmath=sse -Wall -Wextra -Wno-unused-result -Wno-unused-parameter")
 
 # set output path
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin/${CMAKE_BUILD_TYPE})
@@ -40,6 +40,7 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin/${CMAKE_BUILD_TYPE})
 # find libraries
 find_package(OpenGL REQUIRED)
 find_package(SDL2 REQUIRED)
+find_package(SDL2_image REQUIRED)
 find_package(OpenAL REQUIRED)
 find_package(Vorbis REQUIRED)
 find_package(Ogg REQUIRED)
@@ -50,6 +51,7 @@ find_package(Threads REQUIRED)
 # includes
 include_directories("src/")
 include_directories(${SDL2_INCLUDE_DIR})
+include_directories(${SDL2_IMAGE_INCLUDE_DIR})
 include_directories(${OPENAL_INCLUDE_DIR})
 include_directories(${VORBIS_INCLUDE_DIR})
 include_directories(${OGG_INCLUDE_DIR})
@@ -61,7 +63,6 @@ file(GLOB MAIN_SRC "src/*.cpp" "src/*.h")
 file(GLOB OBJECTS_SRC "src/objects/*.cpp" "src/objects/*.h")
 file(GLOB UI_SRC "src/ui/*.cpp" "src/ui/*.h")
 file(GLOB STATES_SRC "src/states/*.cpp" "src/states/*.h")
-file(GLOB PNGLITE_SRC "src/pnglite/*.c" "src/pnglite/*.h")
 
 # build executable
 add_executable(${CMAKE_PROJECT_NAME}
@@ -69,7 +70,6 @@ add_executable(${CMAKE_PROJECT_NAME}
 	${OBJECTS_SRC}
 	${UI_SRC}
 	${STATES_SRC}
-	${PNGLITE_SRC}
 )
 add_dependencies(${CMAKE_PROJECT_NAME} version)
 
@@ -77,6 +77,7 @@ add_dependencies(${CMAKE_PROJECT_NAME} version)
 target_link_libraries(${CMAKE_PROJECT_NAME}
 	${OPENGL_LIBRARIES}
 	${SDL2_LIBRARY}
+	${SDL2_IMAGE_LIBRARIES}
 	${OPENAL_LIBRARY}
 	${VORBIS_LIBRARIES}
 	${OGG_LIBRARIES}

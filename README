@@ -7,6 +7,7 @@ https://github.com/jazztickets/emptyclip
 Linux dependencies:
 cmake
 sdl2
+sdl2_image
 freetype
 openal
 libvorbis
@@ -19,15 +20,12 @@ cd build
 cmake ..
 make -j`nproc`
 
-Building in Codelite:
-Open codelite/emptyclip.workspace with codelite. Run the custom build target 'CMake', then build with F7.
-
 Installing:
 run "sudo make install" from the build directory.
 
 Command-line arguments
 -level [.map file]        Test a level
--fullscreen               Run game fullscreen 
+-fullscreen               Run game fullscreen
 -window                   Run game in a window
 -w [width]                Set screen width
 -h [height]               Set screen height
@@ -51,6 +49,5 @@ Left-click                Attack
 Right-click               Aim mode
 Escape                    Menu (or quit game in test mode)
 F1                        Menu
-Alt+Enter                 Toggle Fullscreen mode
 
 Save data is in %APPDATA%/emptyclip for windows and ~/.local/share/emptyclip for linux.

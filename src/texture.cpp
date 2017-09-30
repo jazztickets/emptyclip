@@ -16,7 +16,7 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *******************************************************************************/
 #include <texture.h>
-#include <pnglite/pnglite.h>
+#include <SDL_image.h>
 #include <stdexcept>
 
 // Constructor
@@ -33,29 +33,19 @@ _Texture::_Texture()
 _Texture::_Texture(const std::string &FilePath, int Group, bool Repeat, bool Mipmaps) {
 
 	// Open png file
-	png_t Png;
-	int Result = png_open_file(&Png, FilePath.c_str());
-	if(Result != PNG_NO_ERROR) {
-		throw std::runtime_error("Error loading png: " + FilePath + " reason: " + png_error_string(Result));
+	SDL_Surface *Image = IMG_Load(FilePath.c_str());
+	if(!Image) {
+		throw std::runtime_error("Error loading png: " + FilePath + " with error: " + IMG_GetError());
 	}
 
 	this->Name = FilePath;
 	this->Group = Group;
-	this->Width = Png.width;
-	this->Height = Png.height;
-
-	// Allocate memory for texture
-	unsigned char *TextureData = new unsigned char[Width * Height * Png.bpp];
-
-	// Load png file
-	Result = png_get_data(&Png, TextureData);
-	if(Result != PNG_NO_ERROR) {
-		throw std::runtime_error("Error loading png: " + FilePath + " reason: " + png_error_string(Result));
-	}
+	this->Width = Image->w;
+	this->Height = Image->h;
 
 	// Determine OpenGL format
 	GLint ColorFormat = GL_RGB;
-	if(Png.bpp == 4)
+	if(Image->format->BitsPerPixel == 32)
 		ColorFormat = GL_RGBA;
 
 	// Create texture and upload to GPU
@@ -72,16 +62,15 @@ _Texture::_Texture(const std::string &FilePath, int Group, bool Repeat, bool Mip
 
 	if(Mipmaps) {
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-		gluBuild2DMipmaps(GL_TEXTURE_2D, ColorFormat, Width, Height, ColorFormat, GL_UNSIGNED_BYTE, TextureData);
+		gluBuild2DMipmaps(GL_TEXTURE_2D, ColorFormat, Width, Height, ColorFormat, GL_UNSIGNED_BYTE, Image->pixels);
 	}
 	else {
 		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-		glTexImage2D(GL_TEXTURE_2D, 0, ColorFormat, Width, Height, 0, ColorFormat, GL_UNSIGNED_BYTE, TextureData);
+		glTexImage2D(GL_TEXTURE_2D, 0, ColorFormat, Width, Height, 0, ColorFormat, GL_UNSIGNED_BYTE, Image->pixels);
 	}
 
 	// Clean up
-	png_close_file(&Png);
-	delete[] TextureData;
+	SDL_FreeSurface(Image);
 }
 
 // Initialize from buffer

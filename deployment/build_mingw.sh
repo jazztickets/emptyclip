@@ -41,7 +41,7 @@ build() {
 
 	cd "$projectdir"
 
-	cp /usr/$arch/bin/{libbz2-1.dll,libfreetype-6.dll,libgcc_*.dll,libstdc++-6.dll,libwinpthread-1.dll,libvorbisfile-3.dll,libvorbis-0.dll,libogg-0.dll,SDL2.dll,zlib1.dll} working/
+	cp /usr/$arch/bin/{libbz2-1.dll,libfreetype-6.dll,libgcc_*.dll,libstdc++-6.dll,libwinpthread-1.dll,libvorbisfile-3.dll,libvorbis-0.dll,libogg-0.dll,SDL2.dll,SDL2_image.dll,libpng16-16.dll,libjpeg-8.dll,zlib1.dll} working/
 
 	gitver=`git log --oneline | wc -l`
 	mv bin/Release/emptyclip.exe working/
