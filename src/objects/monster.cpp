@@ -67,7 +67,7 @@ _Monster::_Monster(_MonsterTemplate *Monster, _Animation *Animation, const Vecto
 	AttackRange *= AttackRange;
 	Level = Monster->Level;
 	CurrentHealth = MaxHealth = Monster->Health;
-	Defense = Monster->Defense;
+	DamageBlock = Monster->DamageBlock;
 	ViewRangeFront = Monster->ViewRange;
 	ViewRangeSide = Monster->ViewRange * MONSTER_SIDERANGE;
 	ViewRangeBack = Monster->ViewRange * MONSTER_BACKRANGE;

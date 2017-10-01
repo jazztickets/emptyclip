@@ -107,7 +107,8 @@ _HUD::_HUD(_Player *Player) {
 	Labels[LABEL_SKILL7] = Assets.GetLabel("hud_skill7_value");
 
 	Labels[LABEL_DAMAGE] = Assets.GetLabel("hud_player_damage_value");
-	Labels[LABEL_DEFENSE] = Assets.GetLabel("hud_player_defense_value");
+	Labels[LABEL_DAMAGEBLOCK] = Assets.GetLabel("hud_player_damageblock_value");
+	Labels[LABEL_DAMAGERESIST] = Assets.GetLabel("hud_player_damageresist_value");
 	Labels[LABEL_KILLS] = Assets.GetLabel("hud_player_kills_value");
 
 	Elements[ELEMENT_SKILLINFO] = Assets.GetElement("skill_info");
@@ -388,7 +389,7 @@ void _HUD::RenderCharacterScreen() {
 	Labels[LABEL_SKILL_REMAINING]->SetText(Buffer.str());
 	Buffer.str("");
 
-	for(int i = 0; i < SKILL_COUNT; i++) {
+	for(int i = 0; i < SKILL_MAXUSED; i++) {
 		Buffer << Player->GetSkill(i);
 		Labels[LABEL_SKILL0 + i]->SetText(Buffer.str());
 		Buffer.str("");
@@ -398,8 +399,12 @@ void _HUD::RenderCharacterScreen() {
 	Labels[LABEL_DAMAGE]->SetText(Buffer.str());
 	Buffer.str("");
 
-	Buffer << Player->GetDefense();
-	Labels[LABEL_DEFENSE]->SetText(Buffer.str());
+	Buffer << Player->GetDamageBlock();
+	Labels[LABEL_DAMAGEBLOCK]->SetText(Buffer.str());
+	Buffer.str("");
+
+	Buffer << int(100 * Player->GetDamageResist() + 0.5f) << "%";
+	Labels[LABEL_DAMAGERESIST]->SetText(Buffer.str());
 	Buffer.str("");
 
 	Buffer << Player->GetMonsterKills();
@@ -696,18 +701,18 @@ void _HUD::RenderItemInfo(_Item *Item, int DrawX, int DrawY) {
 			Fonts[FONT_MEDIUM]->DrawText(Buffer.str(), DrawX + PadX, DrawY, TextColor, LEFT_BASELINE);
 			Buffer.str("");
 
-			// Defense
+			// DamageBlock
 			TextColor = COLOR_WHITE;
 			if(EquippedArmor) {
-				if(Armor->GetDefense() > EquippedArmor->GetDefense())
+				if(Armor->GetDamageBlock() > EquippedArmor->GetDamageBlock())
 					TextColor = COLOR_GREEN;
-				else if(Armor->GetDefense() < EquippedArmor->GetDefense())
+				else if(Armor->GetDamageBlock() < EquippedArmor->GetDamageBlock())
 					TextColor = COLOR_RED;
 			}
 
 			DrawY += 20;
-			Buffer << Armor->GetDefense();
-			Fonts[FONT_MEDIUM]->DrawText("Defense", DrawX - PadX, DrawY, COLOR_WHITE, RIGHT_BASELINE);
+			Buffer << Armor->GetDamageBlock();
+			Fonts[FONT_MEDIUM]->DrawText("Damage Block", DrawX - PadX, DrawY, COLOR_WHITE, RIGHT_BASELINE);
 			Fonts[FONT_MEDIUM]->DrawText(Buffer.str(), DrawX + PadX, DrawY, TextColor, LEFT_BASELINE);
 			Buffer.str("");
 		} break;
@@ -786,10 +791,10 @@ void _HUD::UpdateSkillInfo(int Skill, int DrawX, int DrawY) {
 			Buffer << "+" << Assets.GetSkillPercentImprovement(Player->GetSkill(Skill), Skill) << "% Move Speed";
 			BufferNext << "+" << Assets.GetSkillPercentImprovement(Assets.GetValidSkill(Player->GetSkill(Skill)+1), Skill) << "% Move Speed";
 		break;
-		case SKILL_STAT:
-			Labels[LABEL_SKILLTEXT]->SetText("Stat");
-			Buffer << "+" << Assets.GetSkillPercentImprovement(Player->GetSkill(Skill), Skill) << "% Stat";
-			BufferNext << "+" << Assets.GetSkillPercentImprovement(Assets.GetValidSkill(Player->GetSkill(Skill)+1), Skill) << "% Stat";
+		case SKILL_DAMAGERESIST:
+			Labels[LABEL_SKILLTEXT]->SetText("Damage Resist");
+			Buffer << "+" << Assets.GetSkillPercentImprovement(Player->GetSkill(Skill), Skill) << "% Damage Resist";
+			BufferNext << "+" << Assets.GetSkillPercentImprovement(Assets.GetValidSkill(Player->GetSkill(Skill)+1), Skill) << "% Damage Resist";
 		break;
 		case SKILL_MAXINVENTORY:
 			Labels[LABEL_SKILLTEXT]->SetText("Increases max inventory stack size");

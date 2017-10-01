@@ -69,7 +69,7 @@ const  float        MAX_AUDIO_DISTANCE_SQUARED     =  MAX_AUDIO_DISTANCE*MAX_AUD
 const  float        ENTITY_MOVESOUNDDELAYFACTOR    =  0.02625f;
 const  int          ENTITY_MINDAMAGEPOINTS         =  1;
 //     Player
-const  int          PLAYER_SAVEVERSION             =  0;
+const  int          PLAYER_SAVEVERSION             =  1;
 const  std::string  PLAYER_DEFAULTNAME             =  "Jackson";
 const  float        PLAYER_RADIUS                  =  0.35f;
 const  double       PLAYER_MEDKITPERIOD            =  0.5;

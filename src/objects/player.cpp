@@ -41,8 +41,10 @@ enum SaveChunkTypes {
 	CHUNK_PLAYERNAME,
 	CHUNK_COLOR,
 	CHUNK_MAP,
+	CHUNK_PROGRESSION,
 	CHUNK_CHECKPOINT,
 	CHUNK_EXPERIENCE,
+	CHUNK_GOLD,
 	CHUNK_HEALTH,
 	CHUNK_TIME_PLAYED,
 	CHUNK_MONSTER_KILLS,
@@ -107,6 +109,7 @@ void _Player::Reset() {
 	Name = PLAYER_DEFAULTNAME;
 	ColorIdentifier = "white";
 	Level = 1;
+	Gold = 0;
 	Experience = 0;
 	ExperienceCurrentLevel = 0;
 	ExperienceNextLevel = 0;
@@ -121,6 +124,7 @@ void _Player::Reset() {
 	// Reset state
 	MapIdentifier = GAME_STARTLEVEL;
 	CheckpointIndex = 0;
+	Progression = 0;
 	Active = true;
 	Action = ACTION_IDLE;
 	MoveSoundDelay = 0;
@@ -205,6 +209,14 @@ void _Player::Load() {
 				File.read((char *)&CheckpointIndex, sizeof(CheckpointIndex));
 				//std::cout << "CheckpointIndex: " << CheckpointIndex << std::endl;
 			break;
+			case CHUNK_PROGRESSION:
+				File.read((char *)&Progression, sizeof(Progression));
+				//std::cout << "Progression: " << Progression << std::endl;
+			break;
+			case CHUNK_GOLD:
+				File.read((char *)&Gold, sizeof(Gold));
+				//std::cout << "Gold: " << Gold << std::endl;
+			break;
 			case CHUNK_EXPERIENCE:
 				File.read((char *)&Experience, sizeof(Experience));
 				//std::cout << "Experience: " << Experience << std::endl;
@@ -267,7 +279,9 @@ void _Player::Save() {
 		WriteChunk(File, CHUNK_MAP, MapIdentifier.c_str(), MapIdentifier.length());
 		WriteChunk(File, CHUNK_CHECKPOINT, (char *)&CheckpointIndex, sizeof(CheckpointIndex));
 	}
+	WriteChunk(File, CHUNK_PROGRESSION, (char *)&Progression, sizeof(Progression));
 	WriteChunk(File, CHUNK_EXPERIENCE, (char *)&Experience, sizeof(Experience));
+	WriteChunk(File, CHUNK_GOLD, (char *)&Gold, sizeof(Gold));
 	WriteChunk(File, CHUNK_HEALTH, (char *)&CurrentHealth, sizeof(CurrentHealth));
 	WriteChunk(File, CHUNK_TIME_PLAYED, (char *)&TimePlayed, sizeof(TimePlayed));
 	WriteChunk(File, CHUNK_MONSTER_KILLS, (char *)&MonsterKills, sizeof(MonsterKills));
@@ -291,6 +305,7 @@ void _Player::LoadItems(_Buffer &Buffer) {
 	for(int i = 0; i < ItemCount; i++) {
 		int Slot = Buffer.Read<int>();
 		int Type = Buffer.Read<int>();
+		int Quality = Buffer.Read<int>();
 		int Count = Buffer.Read<int>();
 		std::string Identifier;
 
@@ -371,6 +386,7 @@ void _Player::SaveItems(std::ofstream &File) {
 		if(HasInventory(i)) {
 			Buffer.Write(i);
 			Buffer.Write(Inventory[i]->GetType());
+			Buffer.Write(Inventory[i]->GetQuality());
 			Buffer.Write(Inventory[i]->GetCount());
 			Inventory[i]->Serialize(Buffer);
 		}
@@ -1204,14 +1220,15 @@ void _Player::RecalculateStats() {
 		FirePeriod = WEAPON_MINFIREPERIOD;
 
 	MovementSpeed = PLAYER_MOVEMENTSPEED * Assets.GetSkill(Skills[SKILL_MOVESPEED], SKILL_MOVESPEED);
+	DamageResist = Assets.GetSkill(Skills[SKILL_DAMAGERESIST], SKILL_DAMAGERESIST) - 1.0f;
 	MaxHealth = Assets.GetLevelHealth(Level) * Assets.GetSkill(Skills[SKILL_HEALTH], SKILL_HEALTH);
 
 	// Armor
 	if(GetArmor()) {
-		Defense = Assets.GetLevelDefense(Level) + GetArmor()->GetDefense();
+		DamageBlock = Assets.GetLevelDamageBlock(Level) + GetArmor()->GetDamageBlock();
 	}
 	else {
-		Defense = Assets.GetLevelDefense(Level);
+		DamageBlock = Assets.GetLevelDamageBlock(Level);
 	}
 
 	if(DebugLevel > 1) {
@@ -1231,7 +1248,8 @@ void _Player::RecalculateStats() {
 		std::cout << "ReloadPeriod: " << Weapon.ReloadPeriod << " -> " << ReloadPeriod << '\n';
 		std::cout << "WeaponSwitchPeriod: " << PLAYER_WEAPONSWITCHPERIOD << " -> " << WeaponSwitchPeriod << '\n';
 		std::cout << "MovementSpeed: " << PLAYER_MOVEMENTSPEED << " -> " << MovementSpeed << '\n';
-		std::cout << "Defense: " << Defense << '\n';
+		std::cout << "DamageBlock: " << DamageBlock << '\n';
+		std::cout << "DamageResist: " << DamageResist << '\n';
 	}
 
 }

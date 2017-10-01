@@ -83,7 +83,7 @@ struct _Brush {
 struct LevelStruct {
 	int64_t Experience;
 	int HealthBonus;
-	int DefenseBonus;
+	int DamageBlockBonus;
 	int SkillPoints;
 };
 
@@ -201,7 +201,7 @@ class _Assets {
 		int64_t GetValidExperience(int64_t Experience);
 		int64_t GetExperienceForLevel(int Level);
 		int GetLevelHealth(int Level) { return Levels[Level-1].HealthBonus; }
-		int GetLevelDefense(int Level) { return Levels[Level-1].DefenseBonus; }
+		int GetLevelDamageBlock(int Level) { return Levels[Level-1].DamageBlockBonus; }
 		int GetSkillPointsRemaining(int Level) { return Levels[Level-1].SkillPoints; }
 		int GetValidSkill(int Level);
 		float GetSkill(int Level, int Type) const { return Skills[Level].Data[Type]; }

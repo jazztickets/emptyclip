@@ -555,7 +555,7 @@ void _PlayState::EntityAttack(_Entity *Attacker, int GridType) {
 				GenerateBulletEffects(Attacker, HIT_OBJECT, HitInformation.Position);
 
 				// Deal damage
-				int Damage = Attacker->GenerateDamage(HitInformation.Object->GetDefense());
+				int Damage = Attacker->GenerateDamage(HitInformation.Object->GetDamageBlock(), HitInformation.Object->GetDamageResist());
 
 				HitInformation.Object->UpdateHealth(-Damage);
 				if(HitInformation.Object->IsDying()) {

@@ -40,6 +40,9 @@ class _Item : public _Object {
 		void SetCount(int Count) { this->Count = Count; }
 		int GetCount() const { return Count; }
 
+		void SetQuality(int Quality) { this->Quality = Quality; }
+		int GetQuality() const { return Quality; }
+
 		void SetIdentifier(const std::string &Identifier) { this->Identifier = Identifier; }
 		std::string GetIdentifier() const { return Identifier; }
 
@@ -50,5 +53,6 @@ class _Item : public _Object {
 		std::string Identifier;
 		int Level;
 		int Count;
+		int Quality;
 		_Texture *Texture;
 };

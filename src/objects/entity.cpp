@@ -41,7 +41,8 @@ _Entity::_Entity()
 	Level(1),
 	CurrentHealth(0),
 	MaxHealth(0),
-	Defense(0),
+	DamageBlock(0),
+	DamageResist(0.0f),
 	CurrentAccuracy(0),
 	MinAccuracy(0),
 	MaxAccuracy(0),
@@ -100,11 +101,11 @@ float _Entity::GenerateShotDirection() {
 	return NewDirection;
 }
 
-// Generates a random number of damage
-int _Entity::GenerateDamage(int Defense) {
-	int Damage;
-
-	Damage = Random.GenerateRange(MinDamage, MaxDamage) - Defense;
+// Generates damage after defenses
+int _Entity::GenerateDamage(int DamageBlock, float DamageResist) {
+	int Damage = Random.GenerateRange(MinDamage, MaxDamage);
+	Damage -= (int)(Damage * DamageResist);
+	Damage -= DamageBlock;
 
 	// Cap the damage
 	if(Damage < ENTITY_MINDAMAGEPOINTS)

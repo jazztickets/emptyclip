@@ -106,8 +106,19 @@ enum SkillTypes {
 	SKILL_RELOADSPEED,
 	SKILL_ATTACKSPEED,
 	SKILL_MOVESPEED,
-	SKILL_STAT,
+	SKILL_DAMAGERESIST,
 	SKILL_MAXINVENTORY,
+	SKILL_UNUSED1,
+	SKILL_MAXUSED = SKILL_UNUSED1,
+	SKILL_UNUSED2,
+	SKILL_UNUSED3,
+	SKILL_UNUSED4,
+	SKILL_UNUSED5,
+	SKILL_UNUSED6,
+	SKILL_UNUSED7,
+	SKILL_UNUSED8,
+	SKILL_UNUSED9,
+	SKILL_UNUSED10,
 	SKILL_COUNT,
 };
 
@@ -155,24 +166,24 @@ struct _WeaponParticleTemplate {
 struct _WeaponTemplate {
 	_WeaponTemplate()
 		:	WeaponParticles(NULL),
-		    Name("Fists"),
-		    MinAccuracy(0.0f),
-		    MaxAccuracy(90.0f),
-		    Recoil(0.0f),
-		    RecoilRegen(0.0f),
-		    Range(0.5f),
-		    ZoomScale(15.0f),
-		    FirePeriod(0.4),
-		    ReloadPeriod(0.0),
-		    MinComponents(0),
-		    MaxComponents(0),
-		    MinDamage(1),
-		    MaxDamage(3),
-		    BulletsShot(1),
-		    RoundSize(0),
-		    Type(WEAPON_MELEE),
-		    AmmoType(AMMO_NONE),
-		    FireRate(FIRERATE_SEMI) {
+			Name("Fists"),
+			MinAccuracy(0.0f),
+			MaxAccuracy(90.0f),
+			Recoil(0.0f),
+			RecoilRegen(0.0f),
+			Range(0.5f),
+			ZoomScale(15.0f),
+			FirePeriod(0.4),
+			ReloadPeriod(0.0),
+			MinComponents(0),
+			MaxComponents(0),
+			MinDamage(1),
+			MaxDamage(3),
+			BulletsShot(1),
+			RoundSize(0),
+			Type(WEAPON_MELEE),
+			AmmoType(AMMO_NONE),
+			FireRate(FIRERATE_SEMI) {
 
 		for(int i = 0; i < SAMPLE_TYPES; i++)
 			Samples[i] = "";
@@ -194,7 +205,7 @@ struct _MonsterTemplate {
 	_WeaponParticleTemplate *WeaponParticles;
 	std::string Name, AnimationIdentifier, SamplesIdentifier, ItemGroupIdentifier;
 	float Radius, Scale, MovementSpeed, Accuracy, ViewRange, AttackRange;
-	int Level, Health, Defense, CurrentSpeed, MinDamage, MaxDamage, BehaviorType, WeaponType;
+	int Level, Health, DamageBlock, CurrentSpeed, MinDamage, MaxDamage, BehaviorType, WeaponType;
 	int64_t ExperienceGiven;
 	double FirePeriod;
 	std::string FireSample, MissSample, RicochetSample, EmptySample, ReloadSample, HitSample, DeathSample;
@@ -205,11 +216,11 @@ struct _ObjectSpawn {
 	_ObjectSpawn()
 		:	Identifier(""),
 			Position(ZERO_VECTOR),
-		    Type(-1) { }
+			Type(-1) { }
 	_ObjectSpawn(const std::string &Identifier, const Vector2 &Position, int Type)
 		:	Identifier(Identifier),
 			Position(Position),
-		    Type(Type) { }
+			Type(Type) { }
 
 	std::string Identifier;
 	Vector2 Position;

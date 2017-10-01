@@ -23,7 +23,7 @@ hud_skill4_text	skills_plus4	hud_medium		Attack Speed	25	14	0	0	0	3
 hud_skill4_value	skills_plus4	hud_medium		0	-32	14	0	0	0	3
 hud_skill5_text	skills_plus5	hud_medium		Move Speed	25	14	0	0	0	3
 hud_skill5_value	skills_plus5	hud_medium		0	-32	14	0	0	0	3
-hud_skill6_text	skills_plus6	hud_medium		Stat	25	14	0	0	0	3
+hud_skill6_text	skills_plus6	hud_medium		Damage Resist	25	14	0	0	0	3
 hud_skill6_value	skills_plus6	hud_medium		0	-32	14	0	0	0	3
 hud_skill7_text	skills_plus7	hud_medium		Max Inventory Stack	25	14	0	0	0	3
 hud_skill7_value	skills_plus7	hud_medium		0	-32	14	0	0	0	3
@@ -34,12 +34,14 @@ hud_skill_current	skill_info	hud_medium		Current Level	10	50	0	0	0	3
 hud_skill_level	skill_info	hud_medium			20	70	0	0	0	3
 hud_skill_next	skill_info	hud_medium		Next Level	10	100	0	0	0	3
 hud_skill_level_next	skill_info	hud_medium			20	120	0	0	0	3
-hud_player_damage_text	skills	hud_medium		Damage	-160	340	0	0	2	3
-hud_player_damage_value	skills	hud_medium		0	100	340	0	0	0	3
-hud_player_defense_text	skills	hud_medium		Defense	-160	360	0	0	2	3
-hud_player_defense_value	skills	hud_medium		0	100	360	0	0	0	3
-hud_player_kills_text	skills	hud_medium		Kills	-160	380	0	0	2	3
-hud_player_kills_value	skills	hud_medium		0	100	380	0	0	0	3
+hud_player_damage_text	skills	hud_medium		Damage	-130	340	0	0	2	3
+hud_player_damage_value	skills	hud_medium		0	130	340	0	0	0	3
+hud_player_damageblock_text	skills	hud_medium		Damage Block	-130	360	0	0	2	3
+hud_player_damageblock_value	skills	hud_medium		0	130	360	0	0	0	3
+hud_player_damageresist_text	skills	hud_medium		Damage Resist	-130	380	0	0	2	3
+hud_player_damageresist_value	skills	hud_medium		0	130	380	0	0	0	3
+hud_player_kills_text	skills	hud_medium		Kills	-130	400	0	0	2	3
+hud_player_kills_value	skills	hud_medium		0	130	400	0	0	0	3
 menu_title_tutorial	button_title_tutorial	hud_medium		Tutorial	0	21	0	0	1	3
 menu_title_single	button_title_single	hud_medium		Single Player	0	21	0	0	1	3
 menu_title_options	button_title_options	hud_medium		Options	0	21	0	0	1	3

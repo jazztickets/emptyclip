@@ -201,6 +201,7 @@ class _Player : public _Entity {
 		// Map
 		std::string MapIdentifier;
 		int CheckpointIndex;
+		int Progression;
 
 		// Engine
 		std::string SavePath;
@@ -223,6 +224,7 @@ class _Player : public _Entity {
 		float LevelPercentage;
 		double PlayingTimer;
 		int MonsterKills, TimePlayed;
+		int64_t Gold;
 		int64_t Experience, ExperienceNextLevel, ExperienceCurrentLevel;
 
 		// Skills

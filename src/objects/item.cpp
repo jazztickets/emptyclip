@@ -25,6 +25,7 @@ _Item::_Item() {
 	Texture = NULL;
 	Level = 0;
 	Count = 0;
+	Quality = 0;
 	PositionZ = ITEM_Z;
 }
 

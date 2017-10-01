@@ -25,7 +25,7 @@ _Armor::_Armor(const std::string &Identifier, int Count, const Vector2 &Position
 	this->Texture = Texture;
 	this->Position = Position;
 
-	this->Defense = Armor->Defense;
+	this->DamageBlock = Armor->DamageBlock;
 	this->StrengthRequirement = Armor->StrengthRequirement;
 	this->Name = Armor->Name;
 	this->Color = Armor->Color;

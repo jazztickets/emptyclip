@@ -176,7 +176,7 @@ void _Assets::LoadLevels() {
 			throw std::runtime_error("LoadLevels - Premature end of file");
 		}
 
-		InputFile >> Level.Experience >> Level.HealthBonus >> Level.DefenseBonus >> Level.SkillPoints;
+		InputFile >> Level.Experience >> Level.HealthBonus >> Level.DamageBlockBonus >> Level.SkillPoints;
 
 		Levels.push_back(Level);
 	}
@@ -533,7 +533,7 @@ void _Assets::LoadMonsterTable(const std::string &Filename) {
 		Monster.SamplesIdentifier = GetTSVText(InputFile);
 		Monster.ItemGroupIdentifier = GetTSVText(InputFile);
 		ColorName = GetTSVText(InputFile);
-		InputFile 	>> Monster.Level >> Monster.Health >> Monster.Defense >> Monster.BehaviorType >> Monster.ViewRange >> Monster.ExperienceGiven
+		InputFile 	>> Monster.Level >> Monster.Health >> Monster.DamageBlock >> Monster.BehaviorType >> Monster.ViewRange >> Monster.ExperienceGiven
 					>> Monster.MovementSpeed >> Monster.Radius >> Monster.Scale >> Monster.CurrentSpeed >> Monster.Accuracy
 					>> Monster.AttackRange >> Monster.MinDamage >> Monster.MaxDamage >> Monster.FirePeriod >> Monster.WeaponType;
 		InputFile.ignore(1024, '\n');
@@ -833,7 +833,7 @@ void _Assets::LoadArmorTable(const std::string &Filename) {
 		Armor.Name = GetTSVText(InputFile);
 		Armor.IconIdentifier = GetTSVText(InputFile);
 		ColorName = GetTSVText(InputFile);
-		InputFile >> Armor.Defense >> Armor.StrengthRequirement;
+		InputFile >> Armor.DamageBlock >> Armor.StrengthRequirement;
 		InputFile.ignore(1024, '\n');
 
 		// Check for loaded textures

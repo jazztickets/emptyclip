@@ -91,7 +91,7 @@ class _Entity : public _Object {
 
 		void UpdateMaxHealth(int Adjust);
 		void UpdateHealth(int Adjust);
-		int GenerateDamage(int Defense);
+		int GenerateDamage(int DamageBlock, float DamageResist);
 		bool IsDying() const { return Action == ACTION_DYING || Action == ACTION_STARTDEATH; }
 		bool IsDead() const { return Action == ACTION_DYING && !Active; }
 
@@ -104,7 +104,8 @@ class _Entity : public _Object {
 		ActionType GetAction() const { return Action; }
 		bool GetAttackMade() const { return AttackMade; }
 		MoveType GetMoveState() const { return MoveState; }
-		int GetDefense() const { return Defense; }
+		int GetDamageBlock() const { return DamageBlock; }
+		float GetDamageResist() const { return DamageResist; }
 		int GetMaxHealth() const { return MaxHealth; }
 		int GetHealth() const { return CurrentHealth; }
 		float GetHealthPercentage() const { return (float)CurrentHealth / MaxHealth; }
@@ -161,7 +162,8 @@ class _Entity : public _Object {
 		int WalkingAnimation, MeleeAnimation, ShootingOnehandAnimation, ShootingTwohandAnimation, DyingAnimation;
 
 		// Stats
-		int Level, CurrentHealth, MaxHealth, Defense;
+		int Level, CurrentHealth, MaxHealth, DamageBlock;
+		float DamageResist;
 
 		// Attacking attributes
 		float CurrentAccuracy, MinAccuracy, MaxAccuracy, Recoil, RecoilRegen, AttackRange;
