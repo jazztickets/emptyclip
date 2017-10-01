@@ -35,7 +35,7 @@ _Texture::_Texture(const std::string &FilePath, int Group, bool Repeat, bool Mip
 	// Open png file
 	SDL_Surface *Image = IMG_Load(FilePath.c_str());
 	if(!Image) {
-		throw std::runtime_error("Error loading png: " + FilePath + " with error: " + IMG_GetError());
+		throw std::runtime_error("Error loading image: " + FilePath + " with error: " + IMG_GetError());
 	}
 
 	this->Name = FilePath;

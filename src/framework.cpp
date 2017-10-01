@@ -212,7 +212,7 @@ void _Framework::Update() {
 				State->Update(TimeStep);
 				TimeStepAccumulator -= TimeStep;
 			}
-			State->Render(TimeStepAccumulator * GAME_FPS);
+			State->Render(TimeStepAccumulator / TimeStep);
 			//printf("%f\n", TimeStepAccumulator);
 		} break;
 		case CLOSE: {
