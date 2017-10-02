@@ -83,13 +83,13 @@ class _Player : public _Entity {
 		void ResetAccuracy(bool CompleteReset);
 		void RecalculateStats();
 
-		bool AddItem(_Item *Item);
+		int AddItem(_Item *Item);
 		void DropItem(int Slot);
 		void SwapInventory(int SwapFrom, int SwapTo);
 		bool CanEquipItem(_Item *Item, int Slot);
 
-		bool AddInventory(_Item *Item);
-		int CombineItems(_Item **FromItem, _Item *ToItem);
+		int AddInventory(_Item *Item);
+		int CombineItems(_Item *FromItem, _Item *ToItem);
 		bool AddComponent(int FromIndex, int ToIndex);
 		bool UseItem(int Index, bool Event);
 		bool UseMedkit(int Index);

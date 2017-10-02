@@ -1452,5 +1452,4 @@ void _Map::RemoveItem(_Item *Item) {
 
 void _Map::AddRenderList(_Object *Object, int Layer) {
 	ObjectManager->AddRenderList(Object, Layer);
-
 }

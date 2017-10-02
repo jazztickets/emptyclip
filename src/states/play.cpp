@@ -595,8 +595,13 @@ void _PlayState::PickupObject() {
 	HitItem = (_Item *)Map->CheckCollisionsInGrid(Player->GetPosition(), Player->GetRadius(), GRID_ITEM, NULL);
 
 	if(HitItem != NULL) {
-		if(Player->AddItem(HitItem)) {
+		int AddResult = Player->AddItem(HitItem);
+		if(AddResult) {
 			Map->RemoveItem(HitItem);
+			if(AddResult == 2) {
+				delete HitItem;
+				CursorItemTimer = 0;
+			}
 			Player->ResetUseTimer();
 		}
 		else {

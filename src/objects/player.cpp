@@ -615,8 +615,8 @@ int _Player::SpentSkillPoints() const {
 	return Sum;
 }
 
-// Adds an item to the player's possession, returns false on full
-bool _Player::AddItem(_Item *Item) {
+// Adds an item to the player's possession, returns 0 on full, return 2 on combine
+int _Player::AddItem(_Item *Item) {
 
 	switch(Item->GetType()) {
 		case _Object::WEAPON:
@@ -624,11 +624,11 @@ bool _Player::AddItem(_Item *Item) {
 				SetMainHand(static_cast<_Weapon *>(Item));
 				RecalculateStats();
 				ResetWeaponAnimation();
-				return true;
+				return 1;
 			}
 			else if(!HasOffHand()) {
 				SetOffHand(static_cast<_Weapon *>(Item));
-				return true;
+				return 1;
 			}
 			else
 				return AddInventory(Item);
@@ -638,7 +638,7 @@ bool _Player::AddItem(_Item *Item) {
 			if(!HasArmor() && Assets.GetSkill(Skills[SKILL_STRENGTH], SKILL_STRENGTH) >= ArmorItem->GetStrengthRequirement()) {
 				SetArmor(ArmorItem);
 				RecalculateStats();
-				return true;
+				return 1;
 			}
 			else {
 				return AddInventory(ArmorItem);
@@ -649,7 +649,7 @@ bool _Player::AddItem(_Item *Item) {
 		break;
 	}
 
-	return false;
+	return 0;
 }
 
 // Drops an item from the player's inventory
@@ -730,10 +730,15 @@ void _Player::SwapInventory(int SlotFrom, int SlotTo) {
 		else {
 
 			// Try to combine items
-			if(!CombineItems(&Inventory[SlotFrom], Inventory[SlotTo])) {
+			int CombineResult = CombineItems(Inventory[SlotFrom], Inventory[SlotTo]);
+			if(CombineResult == 0) {
 				_Item *Temp = Inventory[SlotFrom];
 				Inventory[SlotFrom] = Inventory[SlotTo];
 				Inventory[SlotTo] = Temp;
+			}
+			else if(CombineResult == 2) {
+				delete Inventory[SlotFrom];
+				Inventory[SlotFrom] = nullptr;
 			}
 		}
 
@@ -745,18 +750,16 @@ void _Player::SwapInventory(int SlotFrom, int SlotTo) {
 // Attempts to combine two items and deletes FromItem if successful
 // Return 0 when item can't be combined
 // Return 1 when item was combined but still has count left
-// Return 2 when item was combined and fromitem was deleted
-int _Player::CombineItems(_Item **FromItem, _Item *ToItem) {
-	if((*FromItem) && ToItem && (*FromItem)->CanStack() && ToItem->CanStack() && (*FromItem)->GetIdentifier() == ToItem->GetIdentifier()) {
-		ToItem->UpdateCount((*FromItem)->GetCount());
+// Return 2 when item was combined and fromitem needs deletion
+int _Player::CombineItems(_Item *FromItem, _Item *ToItem) {
+	if(FromItem && ToItem && FromItem->CanStack() && ToItem->CanStack() && FromItem->GetIdentifier() == ToItem->GetIdentifier()) {
+		ToItem->UpdateCount(FromItem->GetCount());
 		if(ToItem->GetCount() > GetInventoryMaxStack()) {
-			(*FromItem)->SetCount(ToItem->GetCount() - GetInventoryMaxStack());
+			FromItem->SetCount(ToItem->GetCount() - GetInventoryMaxStack());
 			ToItem->SetCount(GetInventoryMaxStack());
 			return 1;
 		}
 		else {
-			delete (*FromItem);
-			(*FromItem) = NULL;
 			return 2;
 		}
 	}
@@ -765,13 +768,16 @@ int _Player::CombineItems(_Item **FromItem, _Item *ToItem) {
 }
 
 // Add an item to the inventory
-bool _Player::AddInventory(_Item *Item) {
+// return 0 on inventory full
+// return 1 on added item
+// return 2 on added item and combined
+int _Player::AddInventory(_Item *Item) {
 
 	// Search for an existing item or empty slot
 	int EmptySlot = -1;
 	for(int i = INVENTORY_BAGSTART; i < INVENTORY_BAGEND; i++) {
-		if(CombineItems(&Item, Inventory[i]) == 2) {
-			return true;
+		if(CombineItems(Item, Inventory[i]) == 2) {
+			return 2;
 		}
 
 		if(Inventory[i] == NULL && EmptySlot == -1)
@@ -781,10 +787,10 @@ bool _Player::AddInventory(_Item *Item) {
 	// Add item to empty slot
 	if(EmptySlot != -1) {
 		Inventory[EmptySlot] = Item;
-		return true;
+		return 1;
 	}
 
-	return false;
+	return 0;
 }
 
 // Add an upgrade to a weapon

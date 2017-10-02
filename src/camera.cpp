@@ -30,7 +30,9 @@ _Camera::_Camera(const Vector2 &Position, float Distance, float UpdateDivisor)
 	Distance(Distance),
 	TargetDistance(Distance),
 	Fovy(CAMERA_FOVY),
-	UpdateDivisor(UpdateDivisor) {
+	UpdateDivisor(UpdateDivisor),
+	Frustum{0,0},
+	AABB{0,0,0,0} {
 
 	// Set up frustum
 	Near = CAMERA_NEAR;

@@ -175,11 +175,15 @@ void _Audio::FreeAllBuffers() {
 
 // Play an audio source and add it to the audio manager
 void _Audio::Play(_AudioSource *AudioSource, const Vector2 &Position) {
-	if(!Enabled)
+	if(!Enabled) {
+		delete AudioSource;
 		return;
+	}
 
-	if(!AudioSource->GetAudioBuffer())
+	if(!AudioSource->GetAudioBuffer()) {
+		delete AudioSource;
 		return;
+	}
 
 	float DistanceSquared = (Position - GetListenerPosition()).MagnitudeSquared();
 	if(AudioSource->IsRelative() || DistanceSquared <= MAX_AUDIO_DISTANCE_SQUARED) {
@@ -339,7 +343,7 @@ void _AudioSource::Stop() {
 bool _AudioSource::IsPlaying() {
 	ALenum State;
 
-    alGetSourcei(ID, AL_SOURCE_STATE, &State);
+	alGetSourcei(ID, AL_SOURCE_STATE, &State);
 
 	return State == AL_PLAYING;
 }
@@ -348,7 +352,7 @@ bool _AudioSource::IsPlaying() {
 bool _AudioSource::IsRelative() {
 	ALenum State;
 
-    alGetSourcei(ID, AL_SOURCE_RELATIVE, &State);
+	alGetSourcei(ID, AL_SOURCE_RELATIVE, &State);
 
 	return State == AL_TRUE;
 }
