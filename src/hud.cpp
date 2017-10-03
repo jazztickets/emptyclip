@@ -184,6 +184,7 @@ void _HUD::MouseEvent(const _MouseEvent &MouseEvent) {
 		if(MouseEvent.Pressed) {
 			if(HitElement && HitElement->GetID() >= 0) {
 				Player->UseMedkit(HitElement->GetID());
+				CursorOverItem = nullptr;
 			}
 		}
 	}
