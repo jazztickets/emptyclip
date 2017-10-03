@@ -103,6 +103,8 @@ void _Save::LoadSaves() {
 				Players[SlotIndex]->Load();
 			}
 			catch(std::exception &Error) {
+				delete Players[SlotIndex];
+				Players[SlotIndex] = nullptr;
 			}
 		}
 	}
