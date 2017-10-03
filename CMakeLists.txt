@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 
 # define constants
-add_definitions(-DGAME_VERSION_STRING="2.0.0")
+add_definitions(-DGAME_VERSION="2.0.0")
 
 # projects
 project(emptyclip)

@@ -30,6 +30,7 @@
 #include <config.h>
 #include <animation.h>
 #include <framework.h>
+#include <version.h>
 #include <states/play.h>
 #include <states/null.h>
 #include <sstream>
@@ -74,7 +75,12 @@ _Menu::_Menu() {
 
 // Initialize
 void _Menu::InitTitle() {
-	Assets.GetLabel("game_version")->SetText(GAME_VERSION_STRING);
+
+	std::string BuildNumber = "";
+	if(GAME_BUILD)
+		BuildNumber = "r" + std::to_string(GAME_BUILD);
+
+	Assets.GetLabel("game_version")->SetText(GAME_VERSION + BuildNumber);
 	Graphics.ShowCursor(true);
 
 	Background = Assets.GetImage("menu_bg");
