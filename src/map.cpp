@@ -417,17 +417,17 @@ bool _Map::CheckCollisions(const Vector2 &TargetPosition, float Radius, Vector2 
 	int TopTile = (int)Top;
 	int BottomTile = (int)Bottom;
 
-	int PushCount = 0;
-	Vector2 Pushes[4];
+	std::list<Vector2> Pushes;
 	bool NoDiag = false;
 	for(int i = LeftTile; i <= RightTile; i++) {
 		for(int j = TopTile; j <= BottomTile; j++) {
 			if(!Data[i][j].CanWalk()) {
 
 				bool DiagonalPush = false;
-				if(CheckTileCollision(NewPosition, Radius, (float)i, (float)j, true, Pushes[PushCount], DiagonalPush)) {
+				Vector2 Push;
+				if(CheckTileCollision(NewPosition, Radius, (float)i, (float)j, true, Push, DiagonalPush)) {
 					Hit = true;
-					PushCount++;
+					Pushes.push_back(Push);
 
 					// If any non-diagonal vectors, flag it
 					if(!DiagonalPush)
@@ -438,9 +438,9 @@ bool _Map::CheckCollisions(const Vector2 &TargetPosition, float Radius, Vector2 
 	}
 
 	// Resolve collision
-	for(int i = 0; i < PushCount; i++) {
-		if(!(NoDiag && Pushes[i].X != 0 && Pushes[i].Y != 0)) {
-			NewPosition += Pushes[i];
+	for(const auto &Push : Pushes) {
+		if(!(NoDiag && Push.X != 0 && Push.Y != 0)) {
+			NewPosition += Push;
 		}
 	}
 
