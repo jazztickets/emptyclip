@@ -477,7 +477,12 @@ void _PlayState::Render(double BlendFactor) {
 
 // Restart the level after death
 void _PlayState::RestartFromDeath() {
-	Player->Load();
+	try {
+		Player->Load();
+	}
+	catch(std::exception &Error) {
+	}
+
 	Framework.ChangeState(&PlayState);
 }
 
