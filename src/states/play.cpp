@@ -918,7 +918,7 @@ void _PlayState::SpawnObject(_ObjectSpawn *ObjectSpawn, bool GenerateStats) {
 			Map->AddItem(Assets.CreateUpgradeItem(ObjectSpawn->Identifier, 1, ObjectSpawn->Position));
 		break;
 		case _Object::WEAPON:
-			Map->AddItem(Assets.CreateWeapon(ObjectSpawn->Identifier, 1, ObjectSpawn->Position, false));
+			Map->AddItem(Assets.CreateWeapon(ObjectSpawn->Identifier, 1, ObjectSpawn->Position, GenerateStats));
 		break;
 		case _Object::ARMOR:
 			Map->AddItem(Assets.CreateArmor(ObjectSpawn->Identifier, 1, ObjectSpawn->Position));
