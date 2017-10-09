@@ -2,7 +2,7 @@
 2
 tutorial0
 200 100
-112
+113
 1 training_experience 43.50 35.50 
 1 zombie0 94.56 17.03 
 1 zombie0 67.95 16.38 
@@ -115,6 +115,7 @@ tutorial0
 6 special_plate1 89.50 81.50 
 6 special_chain2 88.50 81.50 
 6 special_shirt2 87.50 81.50 
+2 key1 44.67 40.53 
 122
 3 1 1 49 1 49 0 0.00 0 "" "" ""
 3 0 26 48 26 51 1 0.00 1 "" "" ""
