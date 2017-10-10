@@ -138,8 +138,6 @@ void _Menu::InitInGame() {
 
 // Return to play
 void _Menu::InitPlay() {
-
-	Graphics.ShowCursor(false);
 	CurrentLayout = nullptr;
 
 	State = STATE_NONE;

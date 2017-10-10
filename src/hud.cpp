@@ -210,6 +210,7 @@ void _HUD::Update(double FrameTime, float Radius) {
 
 	// Update inventory
 	if(GetInventoryOpen()) {
+		Graphics.ShowCursor(true);
 		Elements[ELEMENT_INVENTORY]->Update(FrameTime, Input.GetMouse());
 		Elements[ELEMENT_SKILLS]->Update(FrameTime, Input.GetMouse());
 
@@ -222,6 +223,8 @@ void _HUD::Update(double FrameTime, float Radius) {
 		if(HitElement && HitElement->GetID() >= 0)
 			UpdateSkillInfo(HitElement->GetID(), Input.GetMouse().X, Input.GetMouse().Y);
 	}
+	else
+		Graphics.ShowCursor(false);
 
 	// Update health display
 	if(LastEntityHit != nullptr && (LastEntityHitTimer > HUD_ENTITYHEALTHDISPLAYPERIOD || !LastEntityHit->GetActive())) {

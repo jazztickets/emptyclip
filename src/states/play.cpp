@@ -230,6 +230,10 @@ void _PlayState::MouseEvent(const _MouseEvent &MouseEvent) {
 void _PlayState::Update(double FrameTime) {
 	if(IsPaused()) {
 		Menu.Update(FrameTime);
+		Graphics.ShowCursor(true);
+		if(HUD)
+			HUD->SetCursorOverItem(nullptr);
+
 		return;
 	}
 
@@ -358,6 +362,8 @@ void _PlayState::Update(double FrameTime) {
 
 // Render the state
 void _PlayState::Render(double BlendFactor) {
+	if(IsPaused())
+		BlendFactor = 0;
 
 	// Setup the viewing matrix
 	Graphics.Setup3DViewport();
