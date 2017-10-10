@@ -2,6 +2,7 @@
 *.swp
 *.~lock*
 *.zip
+*.exe
 CMakeLists.txt.user
 bin/
 build/
