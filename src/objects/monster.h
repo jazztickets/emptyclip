@@ -55,17 +55,17 @@ struct _WeaponParticleTemplate;
 class _Player;
 
 enum PersonalityTypes {
-    PERSONALITY_AGGRESSOR, 	// 0 Likes to be on the offensive, but will retreat if needed			ATTACK, INVESTIGATE
-    PERSONALITY_COWARD, 	// 1 Avoids confrontation as much as possible							RETREAT
-    PERSONALITY_CURIOUS, 	// 2 Wanderer, searcher													ATTACK, WANDER, INVESTIGATE
-    PERSONALITY_GUARD, 		// 3 Protects their point of origin										ATTACK, INVESTIGATE
-    PERSONALITY_IMMOVABLE, 	// 4 Will never move from spot, but will protect it						ATTACK
-    PERSONALITY_KAMIKAZE, 	// 5 Extremely aggressive, doesn't care if it dies						ATTACK, INVESTIGATE
-    PERSONALITY_MINDLESS, 	// 6 Moves aimlessly, may attack if near player, but may not. basically has no goal	WANDER
-    PERSONALITY_LEMMING, 	// 7 Seeks to do whatever the group is doing							ATTACK, GROUP
-    PERSONALITY_LOOKOUT, 	// 8 Looks around, pursues player if seen, alerts others				ATTACK, LOOK, INVESTIGATE
-    PERSONALITY_SPY, 		// 9 Seeks out player, when found returns to others and then they all go after the player	SEARCH, RETREAT
-    PERSONALITY_TREASURE,	// 10 Treasure chest (does nothing)
+	PERSONALITY_AGGRESSOR, 	// 0 Likes to be on the offensive, but will retreat if needed			ATTACK, INVESTIGATE
+	PERSONALITY_COWARD, 	// 1 Avoids confrontation as much as possible							RETREAT
+	PERSONALITY_CURIOUS, 	// 2 Wanderer, searcher													ATTACK, WANDER, INVESTIGATE
+	PERSONALITY_GUARD, 		// 3 Protects their point of origin										ATTACK, INVESTIGATE
+	PERSONALITY_IMMOVABLE, 	// 4 Will never move from spot, but will protect it						ATTACK
+	PERSONALITY_KAMIKAZE, 	// 5 Extremely aggressive, doesn't care if it dies						ATTACK, INVESTIGATE
+	PERSONALITY_MINDLESS, 	// 6 Moves aimlessly, may attack if near player, but may not. basically has no goal	WANDER
+	PERSONALITY_LEMMING, 	// 7 Seeks to do whatever the group is doing							ATTACK, GROUP
+	PERSONALITY_LOOKOUT, 	// 8 Looks around, pursues player if seen, alerts others				ATTACK, LOOK, INVESTIGATE
+	PERSONALITY_SPY, 		// 9 Seeks out player, when found returns to others and then they all go after the player	SEARCH, RETREAT
+	PERSONALITY_TREASURE,	// 10 Treasure chest (does nothing)
 	PERSONALITY_COUNT,
 };
 

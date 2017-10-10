@@ -407,7 +407,7 @@ bool _Monster::Investigate(_Player *Player, bool PlayerVisible) {
 
 void _Monster::Wander() {
 	if(!(CurrentActions & AI_INVESTIGATING) &&
-	        (BehaviorWait.empty() || BehaviorTime >= BehaviorWait.front())) {
+			(BehaviorWait.empty() || BehaviorTime >= BehaviorWait.front())) {
 		CurrentActions |= AI_WANDERING;
 		CurrentActions &= ~(AI_FOLLOWING_PATH | AI_FOLLOWING_PLAYER);
 
@@ -450,10 +450,10 @@ void _Monster::Explore() {
 
 		if(WallState || MoveDirection == Vector2(0, 0)) {
 			if((WallState & WALL_RIGHT && MoveDirection[0] > 0) ||
-			        (WallState & WALL_LEFT && MoveDirection[0] < 0) ||
-			        (WallState & WALL_TOP && MoveDirection[1] < 0) ||
-			        (WallState & WALL_BOTTOM && MoveDirection[1] > 0) ||
-			        (MoveDirection == Vector2(0, 0))) {
+					(WallState & WALL_LEFT && MoveDirection[0] < 0) ||
+					(WallState & WALL_TOP && MoveDirection[1] < 0) ||
+					(WallState & WALL_BOTTOM && MoveDirection[1] > 0) ||
+					(MoveDirection == Vector2(0, 0))) {
 				if(MoveDirection[0] != 0 && (WallState & WALL_LEFT || WallState & WALL_RIGHT))
 					MoveDirection[1] = Random.GenerateRange(-1.0f, 1.0f);
 				else if(MoveDirection[1] != 0 && (WallState & WALL_TOP || WallState & WALL_BOTTOM))
