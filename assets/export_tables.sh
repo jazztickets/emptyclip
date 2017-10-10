@@ -8,8 +8,7 @@ cd "$script_dir"
 mkdir -p temp
 
 # convert files to csv
-libreoffice --headless --convert-to csv tables/armor.ods --outdir temp/
-libreoffice --headless --convert-to csv tables/itemdrops.ods --outdir temp/
+libreoffice --headless --convert-to csv tables/{armor.ods,itemdrops.ods,monsters.ods,weapons.ods} --outdir temp/
 
 # convert from csv to tsv
 find temp/ -iname "*.csv" -exec sh -c 'f="{}";f="${f%.*}"; dos2unix "${f}.csv"; gawk -f scripts/csv2tsv.awk "${f}.csv" > "${f}.tsv"' \;
