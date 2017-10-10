@@ -424,7 +424,7 @@ bool _Map::CheckCollisions(const Vector2 &TargetPosition, float Radius, Vector2 
 			if(!Data[i][j].CanWalk()) {
 
 				bool DiagonalPush = false;
-				Vector2 Push;
+				Vector2 Push(0, 0);
 				if(CheckTileCollision(NewPosition, Radius, (float)i, (float)j, true, Push, DiagonalPush)) {
 					Hit = true;
 					Pushes.push_back(Push);

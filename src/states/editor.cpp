@@ -924,6 +924,7 @@ void _EditorState::Render(double BlendFactor) {
 
 	// Setup 2D transformation
 	Graphics.Setup2DProjectionMatrix();
+	std::ostringstream Buffer;
 
 	// Draw viewport outline
 	Graphics.DrawRectangle(0, 0, Graphics.GetViewportWidth(), Graphics.GetViewportHeight(), COLOR_DARK);
@@ -933,26 +934,40 @@ void _EditorState::Render(double BlendFactor) {
 		InputBox->Render();
 	}
 
-	int X = 16;
-	int Y = (float)Graphics.GetScreenHeight() - 25;
-
-	std::ostringstream Buffer;
+	// Draw filename
 	Buffer << Map->GetFilename();
 	MainFont->DrawText(Buffer.str(), 25, 25);
 	Buffer.str("");
 
+	// Draw cursor position
+	int X = 16;
+	int Y = Graphics.GetScreenHeight() - 25;
 	Buffer << std::fixed << WorldCursor[0] << ", " << WorldCursor[1];
-	MainFont->DrawText(Buffer.str(), X, (float)Graphics.GetViewportHeight() - 25);
+	MainFont->DrawText(Buffer.str(), X, Y);
 	Buffer.str("");
 
-	X = (float)Graphics.GetViewportWidth() - 45;
-	Y = (float)Graphics.GetViewportHeight() - 40;
+	// Draw FPS
+	X = Graphics.GetViewportWidth() - 45;
+	Y = 25;
+	Buffer << Graphics.GetFramesPerSecond() << " FPS";
+	MainFont->DrawText(Buffer.str(), X, Y, COLOR_WHITE, RIGHT_BASELINE);
+	Buffer.str("");
+
+	// Draw selection count
+	Buffer << SelectedObjects.size() << " selected";
+	MainFont->DrawText(Buffer.str(), X, Y + 20, COLOR_WHITE, RIGHT_BASELINE);
+	Buffer.str("");
+
+	// Draw checkpoint info
+	X = Graphics.GetViewportWidth() - 45;
+	Y = Graphics.GetViewportHeight() - 40;
 	Buffer << CheckpointIndex;
 	MainFont->DrawText("Checkpoint:", X, Y, COLOR_WHITE, RIGHT_BASELINE);
 	MainFont->DrawText(Buffer.str(), X + 5, Y);
 	Buffer.str("");
 
-	Y += 15;
+	// Draw grid size
+	Y += 20;
 	Buffer << GridMode;
 	MainFont->DrawText("Grid:", X, Y, COLOR_WHITE, RIGHT_BASELINE);
 	MainFont->DrawText(Buffer.str(), X + 5, Y);
