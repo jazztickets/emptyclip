@@ -11,7 +11,7 @@ mkdir -p temp
 libreoffice --headless --convert-to csv tables/armor.ods --outdir temp/
 
 # convert from csv to tsv
-find temp/ -iname "*.csv" -exec sh -c 'f="{}";f="${f%.*}"; gawk -f scripts/csv2tsv.awk "${f}.csv" > "${f}.tsv"' \;
+find temp/ -iname "*.csv" -exec sh -c 'f="{}";f="${f%.*}"; dos2unix "${f}.csv"; gawk -f scripts/csv2tsv.awk "${f}.csv" > "${f}.tsv"' \;
 
 # move files
 mv temp/*.tsv ../working/tables/
