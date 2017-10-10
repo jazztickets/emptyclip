@@ -10,6 +10,7 @@ export/
 src/tags
 src/version.h
 working/stats/*.txt
+assets/tables/temp
 deployment/*.exe
 deployment/*-src
 deployment/*.tar.gz
