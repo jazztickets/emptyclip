@@ -76,7 +76,7 @@ _Player::_Player(const std::string &SavePath) {
 
 	// Inventory
 	for(int i = 0; i < INVENTORY_SIZE; i++)
-		Inventory[i] = NULL;
+		Inventory[i] = nullptr;
 
 	// Set animation
 	SetTorsoAnimation(Assets.GetAnimation("player_torso"));
@@ -138,6 +138,8 @@ void _Player::Reset() {
 	WeaponSwitchTimer = ReloadTimer = UseTimer = MedkitTimer = 0;
 	WeaponSwitchFrom = -1;
 	WeaponSwitchTo = -1;
+	TimePlayed = 0;
+	PlayingTimer = 0;
 
 	CalculateExperienceStats();
 	CalculateLevelPercentage();
@@ -150,7 +152,6 @@ void _Player::Reset() {
 
 	RecalculateStats();
 	ResetWeaponAnimation();
-	ResetPlayingTimer();
 	StopAudio();
 
 	CurrentHealth = MaxHealth;
@@ -305,7 +306,8 @@ void _Player::LoadItems(_Buffer &Buffer) {
 	for(int i = 0; i < ItemCount; i++) {
 		int Slot = Buffer.Read<int>();
 		int Type = Buffer.Read<int>();
-		int Quality = Buffer.Read<int>();
+		//int Quality = Buffer.Read<int>();
+		Buffer.Read<int>();
 		int Count = Buffer.Read<int>();
 		std::string Identifier;
 
@@ -400,7 +402,7 @@ void _Player::SaveItems(std::ofstream &File) {
 void _Player::DeleteItems() {
 	for(int i = 0; i < INVENTORY_SIZE; i++) {
 		delete Inventory[i];
-		Inventory[i] = NULL;
+		Inventory[i] = nullptr;
 	}
 }
 
@@ -584,11 +586,6 @@ void _Player::UpdateSkill(int Index, int Value) {
 	RecalculateStats();
 }
 
-// Calculates the max health of the player
-void _Player::CalculateMaxHealth() {
-	MaxHealth = Assets.GetLevelHealth(Level);
-}
-
 // Calculates the level and experience variables
 void _Player::CalculateExperienceStats() {
 	Level = Assets.GetLevel(Experience);
@@ -663,7 +660,7 @@ void _Player::DropItem(int Slot) {
 		return;
 
 	// Remove item from inventory
-	Inventory[Slot] = NULL;
+	Inventory[Slot] = nullptr;
 
 	// Check if the item was equipped
 	if(Slot < INVENTORY_BAGSTART) {
@@ -780,7 +777,7 @@ int _Player::AddInventory(_Item *Item) {
 			return 2;
 		}
 
-		if(Inventory[i] == NULL && EmptySlot == -1)
+		if(Inventory[i] == nullptr && EmptySlot == -1)
 			EmptySlot = i;
 	}
 
@@ -795,7 +792,7 @@ int _Player::AddInventory(_Item *Item) {
 
 // Add an upgrade to a weapon
 bool _Player::AddComponent(int FromIndex, int ToIndex) {
-	_Weapon *Weapon = NULL;
+	_Weapon *Weapon = nullptr;
 
 	if(!HasInventory(FromIndex) || Inventory[FromIndex]->GetType() != _Object::UPGRADE)
 		return false;
@@ -859,17 +856,6 @@ bool _Player::IsRightClip(const _Item *Item) const {
 	}
 
 	return false;
-}
-
-// Checks if the player has a full inventory
-bool _Player::HasFullInventory() const {
-
-	for(int i = INVENTORY_BAGSTART; i < INVENTORY_BAGEND; i++) {
-		if(!HasInventory(i))
-			return false;
-	}
-
-	return true;
 }
 
 // Checks if the player's weapon has ammo
@@ -1118,46 +1104,13 @@ void _Player::ResetAccuracy(bool CompleteReset) {
 
 // Consume an item from the inventory
 void _Player::ConsumeInventory(int Index, bool Delete) {
-	if(Index >= INVENTORY_BAGSTART && Index < INVENTORY_BAGEND && Inventory[Index] != NULL) {
+	if(Index >= INVENTORY_BAGSTART && Index < INVENTORY_BAGEND && Inventory[Index] != nullptr) {
 		if(Inventory[Index]->UpdateCount(-1) <= 0) {
 			if(Delete)
 				delete Inventory[Index];
-			Inventory[Index] = NULL;
+			Inventory[Index] = nullptr;
 		}
 	}
-}
-
-// Returns the number of items the player has
-int _Player::GetItemSize() const {
-	int Count = 0;
-
-	for(int i = 0; i < INVENTORY_SIZE; i++)
-		if(HasInventory(i))
-			Count++;
-
-	return Count;
-}
-
-// Returns the number of weapons the player has
-int _Player::GetWeaponSize() const {
-	int Count = 0;
-
-	if(HasMainHand())
-		Count++;
-	if(HasOffHand())
-		Count++;
-
-	return Count;
-}
-
-// Returns the number of armor pieces the player has
-int _Player::GetArmorSize() const {
-	int Count = 0;
-
-	if(HasArmor())
-		Count++;
-
-	return Count;
 }
 
 // Calculates the player's stats from weapons and skills
@@ -1303,7 +1256,7 @@ const _ParticleTemplate *_Player::GetWeaponParticle(int Index) const {
 	if(HasMainHand())
 		return GetMainHand()->GetWeaponParticle(Index);
 
-	return NULL;
+	return nullptr;
 }
 
 // Sets the color string and color of the player
@@ -1319,7 +1272,7 @@ int _Player::GetInventoryMaxStack() const { return Assets.GetSkill(Skills[SKILL_
 bool _Player::CanUseMedkit() const { return (MedkitTimer > PLAYER_MEDKITPERIOD) && CurrentHealth < MaxHealth; }
 bool _Player::CanReload() const { return HasMainHand() && !Reloading && !SwitchingWeapons && !IsMeleeAttacking() && GetMainHand()->GetAmmo() != GetMainHand()->GetRoundSize() && HasClips(); }
 
-bool _Player::IsMelee() const { return GetMainHand() == NULL || GetMainHand()->GetWeaponType() == WEAPON_MELEE; }
+bool _Player::IsMelee() const { return GetMainHand() == nullptr || GetMainHand()->GetWeaponType() == WEAPON_MELEE; }
 
 void _Player::SetMainHand(_Weapon *Weapon) { Inventory[INVENTORY_MAINHAND] = Weapon; }
 void _Player::SetOffHand(_Weapon *Weapon) { Inventory[INVENTORY_OFFHAND] = Weapon; }

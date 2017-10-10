@@ -39,7 +39,7 @@ _Framework Framework;
 
 // Initialize
 void _Framework::Init(int ArgumentCount, char **Arguments) {
-	RequestedState = NULL;
+	RequestedState = nullptr;
 	Done = false;
 	TimeStepAccumulator = 0.0;
 	TimeStep = GAME_TIMESTEP;

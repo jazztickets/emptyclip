@@ -66,8 +66,8 @@ const char *COLORS[] = {
 // Constructor
 _Menu::_Menu() {
 	State = STATE_NONE;
-	CurrentLayout = NULL;
-	Background = NULL;
+	CurrentLayout = nullptr;
+	Background = nullptr;
 	OptionsState = OPTION_NONE;
 	SinglePlayerState = SINGLEPLAYER_NONE;
 	PreviousClickTimer = 0.0;
@@ -131,7 +131,7 @@ void _Menu::InitInGame() {
 	CurrentLayout = Assets.GetElement("menu_ingame");
 
 	Graphics.ShowCursor(true);
-	Background = NULL;
+	Background = nullptr;
 
 	State = STATE_INGAME;
 }
@@ -140,7 +140,7 @@ void _Menu::InitInGame() {
 void _Menu::InitPlay() {
 
 	Graphics.ShowCursor(false);
-	CurrentLayout = NULL;
+	CurrentLayout = nullptr;
 
 	State = STATE_NONE;
 }
@@ -268,7 +268,7 @@ void _Menu::MouseEvent(const _MouseEvent &MouseEvent) {
 	if(Clicked) {
 		bool DoubleClick = false;
 		if(PreviousClick == Clicked && PreviousClickTimer < MENU_DOUBLECLICK_TIME) {
-			PreviousClick = NULL;
+			PreviousClick = nullptr;
 			DoubleClick = true;
 		}
 		else

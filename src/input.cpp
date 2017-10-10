@@ -55,7 +55,7 @@ _Input::_Input() {
 void _Input::Update(double FrameTime) {
 
 	// Update state
-	KeyState = SDL_GetKeyboardState(NULL);
+	KeyState = SDL_GetKeyboardState(nullptr);
 	MouseState = SDL_GetMouseState(&Mouse.X, &Mouse.Y);
 }
 

@@ -49,7 +49,7 @@ _PlayState PlayState;
 
 // Constructor
 _PlayState::_PlayState() {
-	Player = NULL;
+	Player = nullptr;
 	Level = "";
 	TestMode = false;
 	FromEditor = false;
@@ -57,9 +57,9 @@ _PlayState::_PlayState() {
 
 // Load level and set up objects
 void _PlayState::Init() {
-	CursorItem = NULL;
-	PreviousCursorItem = NULL;
-	LastLightEvent = NULL;
+	CursorItem = nullptr;
+	PreviousCursorItem = nullptr;
+	LastLightEvent = nullptr;
 	SaveGameTimer = 0;
 
 	// Check for player
@@ -69,7 +69,7 @@ void _PlayState::Init() {
 
 	// Bad player
 	if(!Player)
-		throw std::runtime_error("Player is NULL");
+		throw std::runtime_error("Player is nullptr");
 
 	// Set checkpoint from editor
 	if(FromEditor)
@@ -328,7 +328,7 @@ void _PlayState::Update(double FrameTime) {
 			Vector2 Direction = WorldCursor - Player->GetPosition();
 
 			Vector2 NewPosition;
-			Map->CheckBulletCollisions(Player->GetPosition(), Direction, NULL, &NewPosition, 0, false);
+			Map->CheckBulletCollisions(Player->GetPosition(), Direction, nullptr, &NewPosition, 0, false);
 			Camera->UpdatePosition((NewPosition - Player->GetPosition()) / Player->GetZoomScale());
 		}
 		Camera->SetDistance(CAMERA_DISTANCE_AIMED);
@@ -340,7 +340,7 @@ void _PlayState::Update(double FrameTime) {
 
 	// Get item at cursor
 	PreviousCursorItem = CursorItem;
-	CursorItem = static_cast<_Item *>(Map->CheckCollisionsInGrid(WorldCursor, 0.05f, GRID_ITEM, NULL));
+	CursorItem = static_cast<_Item *>(Map->CheckCollisionsInGrid(WorldCursor, 0.05f, GRID_ITEM, nullptr));
 	if(CursorItem && CursorItem == PreviousCursorItem)
 		CursorItemTimer += FrameTime;
 	else
@@ -517,7 +517,7 @@ void _PlayState::EntityAttack(_Entity *Attacker, int GridType) {
 		if(WeaponType == WEAPON_MELEE) {
 
 			HitInformation.Object = Map->CheckMeleeCollisions(Attacker, Vector2(Attacker->GetDirection()), GridType);
-			if(HitInformation.Object != NULL) {
+			if(HitInformation.Object != nullptr) {
 				HitInformation.Type = HIT_OBJECT;
 				HitInformation.Position = HitInformation.Object->GetPosition();
 			}
@@ -529,7 +529,7 @@ void _PlayState::EntityAttack(_Entity *Attacker, int GridType) {
 
 			// Check distance to the wall
 			Map->CheckBulletCollisions(Attacker->GetPosition(), Vector2(ShotDirection), &HitInformation.Object, &HitInformation.Position, GridType, true);
-			if(HitInformation.Object != NULL)
+			if(HitInformation.Object != nullptr)
 				HitInformation.Type = HIT_OBJECT;
 			else
 				HitInformation.Type = HIT_WALL;
@@ -597,9 +597,9 @@ void _PlayState::PickupObject() {
 	// Loop through the objects
 	_TileBounds TB;
 	Map->GetTileBounds(Vector2(0.8, 0.8), 0.5, TB);
-	HitItem = (_Item *)Map->CheckCollisionsInGrid(Player->GetPosition(), Player->GetRadius(), GRID_ITEM, NULL);
+	HitItem = (_Item *)Map->CheckCollisionsInGrid(Player->GetPosition(), Player->GetRadius(), GRID_ITEM, nullptr);
 
-	if(HitItem != NULL) {
+	if(HitItem != nullptr) {
 		int AddResult = Player->AddItem(HitItem);
 		if(AddResult) {
 			Map->RemoveItem(HitItem);

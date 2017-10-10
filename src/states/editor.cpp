@@ -156,8 +156,8 @@ void _EditorState::Close() {
 	delete Camera;
 	delete Map;
 
-	Camera = NULL;
-	Map = NULL;
+	Camera = nullptr;
+	Map = nullptr;
 }
 
 // Load a level
@@ -195,9 +195,9 @@ void _EditorState::ResetEditorState() {
 	WorldCursor = ZERO_VECTOR;
 	SelectedBlockIndex = -1;
 	SelectedEventIndex = -1;
-	SelectedBlock = NULL;
-	SelectedEvent = NULL;
-	ClipboardEvent = NULL;
+	SelectedBlock = nullptr;
+	SelectedEvent = nullptr;
+	ClipboardEvent = nullptr;
 	MinZ = 0.0f;
 	MaxZ = 0.0f;
 	Rotation = 0.0f;
@@ -206,7 +206,7 @@ void _EditorState::ResetEditorState() {
 	EventActive = 1;
 	EventLevel = 0;
 	AltTextureIdentifier = "";
-	AltTexture = NULL;
+	AltTexture = nullptr;
 	EditorInput = -1;
 	CheckpointIndex = 0;
 	ClickedPosition = ZERO_VECTOR;
@@ -252,7 +252,7 @@ void _EditorState::ResetEditorState() {
 
 	for(int i = 0; i < EDITMODE_COUNT; i++) {
 		ModeButtons[i]->SetEnabled(false);
-		Brush[i] = NULL;
+		Brush[i] = nullptr;
 	}
 
 	// Load palettes
@@ -1069,7 +1069,7 @@ void _EditorState::DrawBrush() {
 	// Get selected palette
 	std::string IconText = "", IconIdentifier = "";
 	_Color IconColor = COLOR_WHITE;
-	const _Texture *IconTexture = NULL;
+	const _Texture *IconTexture = nullptr;
 	if(Brush[CurrentPalette]) {
 		IconIdentifier = Brush[CurrentPalette]->GetIdentifier();
 		IconText = Brush[CurrentPalette]->GetStyle()->GetIdentifier();
@@ -1203,7 +1203,7 @@ void _EditorState::DrawBrush() {
 				auto Iterator = SelectedObjects.begin();
 				IconIdentifier = (*Iterator)->Identifier;
 				IconText = "";
-				IconTexture = NULL;
+				IconTexture = nullptr;
 			}
 
 		break;
@@ -1225,7 +1225,7 @@ void _EditorState::DrawObject(float OffsetX, float OffsetY, const _ObjectSpawn *
 	float Scale = ITEM_SCALE;
 	float Depth = ITEM_Z;
 	_Color Color;
-	_Texture *Texture = NULL;
+	_Texture *Texture = nullptr;
 	switch(Object->Type) {
 		case _Object::MONSTER: {
 			_MonsterTemplate *Monster = Assets.GetMonsterTemplate(Object->Identifier);
@@ -1267,7 +1267,7 @@ void _EditorState::DrawObject(float OffsetX, float OffsetY, const _ObjectSpawn *
 	}
 
 	Color.Alpha *= Alpha;
-	if(Texture != NULL)
+	if(Texture != nullptr)
 		Graphics.DrawTexture(DrawPosition[0], DrawPosition[1], Depth, Texture, Color, 0.0f, Scale, Scale);
 }
 
@@ -1775,7 +1775,7 @@ void _EditorState::ExecuteDelete() {
 			if(EventSelected()) {
 				Map->RemoveEvent(SelectedEventIndex);
 				DeselectEvent();
-				ClipboardEvent = NULL;
+				ClipboardEvent = nullptr;
 			}
 		break;
 		default:
@@ -1835,7 +1835,7 @@ void _EditorState::ExecutePaste(bool Viewport) {
 			}
 		break;
 		case EDITMODE_EVENTS:
-			if(ClipboardEvent != NULL) {
+			if(ClipboardEvent != nullptr) {
 				DrawStart = Map->GetValidCoord(StartPosition);
 				DrawEnd = Map->GetValidCoord(ClipboardEvent->GetEnd() - ClipboardEvent->GetStart() + StartPosition);
 
@@ -1903,11 +1903,11 @@ void _EditorState::ExecuteSelectPalette(_Button *Button, int ClickType) {
 		if(ClickType == 1 && CurrentPalette == EDITMODE_BLOCKS) {
 			if(BlockSelected()) {
 				SelectedBlock->AltTextureIdentifier = "";
-				SelectedBlock->AltTexture = NULL;
+				SelectedBlock->AltTexture = nullptr;
 			}
 			else {
 				AltTextureIdentifier = "";
-				AltTexture = NULL;
+				AltTexture = nullptr;
 			}
 		}
 
@@ -2146,7 +2146,7 @@ void _EditorState::SelectObject() {
 	_ObjectSpawn *SelectedObject;
 	size_t Index;
 	Map->GetSelectedObject(WorldCursor, EDITOR_OBJECTRADIUS * EDITOR_OBJECTRADIUS, &SelectedObject, &Index);
-	if(SelectedObject != NULL) {
+	if(SelectedObject != nullptr) {
 		IsMoving = true;
 
 		// Single object selected
@@ -2206,7 +2206,7 @@ void _EditorState::SetEventProperties(double ActivationPeriod, int Level, int Ac
 // Clears all the objects in the clipboard
 void _EditorState::ClearClipboard() {
 	BlockCopied = false;
-	ClipboardEvent = NULL;
+	ClipboardEvent = nullptr;
 	ClipboardObjects.clear();
 }
 

@@ -120,7 +120,7 @@ class _HUD {
 
 		void SetLastEntityHit(_Entity *Entity);
 
-		bool IsDragging() const { return CursorItem != NULL; }
+		bool IsDragging() const { return CursorItem != nullptr; }
 
 		void SetCursorOverItem(_Item *CursorOverItem) { this->CursorOverItem = CursorOverItem; }
 		_Item *GetCursorOverItem() { return CursorOverItem; }
@@ -134,7 +134,7 @@ class _HUD {
 
 	private:
 
-		void DrawIndicator(const std::string &String, float Percent=0.0f, _Texture *Texture=NULL);
+		void DrawIndicator(const std::string &String, float Percent=0.0f, _Texture *Texture=nullptr);
 		void DrawHUDWeapon(const _Weapon *Weapon, _Element *Element, _Image *Image, _Label *Label);
 		void DrawItemCount(_Item *Item, int X, int Y);
 

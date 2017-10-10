@@ -159,8 +159,8 @@ class _EditorState : public _State {
 		void SpawnObject(const Vector2 &Position, int Type, const std::string &Identifier, bool Align);
 		void SelectObject();
 		void SelectObjects();
-		void DeselectBlock() { SelectedBlockIndex = -1, SelectedBlock = NULL; }
-		void DeselectEvent() { SelectedEventIndex = -1, SelectedEvent = NULL; }
+		void DeselectBlock() { SelectedBlockIndex = -1, SelectedBlock = nullptr; }
+		void DeselectEvent() { SelectedEventIndex = -1, SelectedEvent = nullptr; }
 		void DeselectObjects();
 		void ClearClipboard();
 		bool BlockSelected() { return SelectedBlockIndex != -1; }

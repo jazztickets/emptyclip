@@ -98,13 +98,12 @@ class _Player : public _Entity {
 		void ResetUseTimer() { UseTimer = 0; }
 		void ConsumeInventory(int Index, bool Delete=true);
 		void ReduceAmmo();
-		bool HasFullInventory() const;
 		bool HasAmmo() const;
 		bool HasClips() const;
-		bool HasMainHand() const { return GetMainHand() != NULL; }
-		bool HasOffHand() const { return GetOffHand() != NULL; }
-		bool HasArmor() const { return GetArmor() != NULL; }
-		bool HasInventory(int Index) const { return Index >= 0 && Inventory[Index] != NULL; }
+		bool HasMainHand() const { return GetMainHand() != nullptr; }
+		bool HasOffHand() const { return GetOffHand() != nullptr; }
+		bool HasArmor() const { return GetArmor() != nullptr; }
+		bool HasInventory(int Index) const { return Index >= 0 && Inventory[Index] != nullptr; }
 		bool CanAttack() const { return AttackAllowed && !IsMeleeAttacking() && !Reloading && !SwitchingWeapons && !IsDying(); }
 		bool CanPickup() const { return !IsDying() && CanUse(); }
 		bool CanUse() const { return UseTimer > UsePeriod; }
@@ -118,7 +117,7 @@ class _Player : public _Entity {
 		void SetCrouching(bool State);
 		void SetUseRequested(bool Use) { UseRequested = Use; }
 		void SetMedkitRequested(bool Medkit) { MedkitRequested = Medkit; }
-		void SetExperience(int64_t Experience) { Experience = Experience; }
+		void SetExprience(int64_t Experience) { this->Experience = Experience; }
 		void SetSkill(int Index, int Value) { Skills[Index] = Value; }
 
 		double GetReloadPercent() const { return std::min(1.0, ReloadTimer / ReloadPeriod); }
@@ -136,10 +135,6 @@ class _Player : public _Entity {
 		_Armor *GetArmor() const  { return (_Armor *)Inventory[INVENTORY_ARMOR]; }
 		_Item *GetInventory(int Index)  { return Inventory[Index]; }
 		float GetZoomScale() const { return ZoomScale; }
-		int GetMainHandTexture() const;
-		int GetOffHandTexture() const;
-		int GetArmorTexture() const;
-		int GetItemTexture(int Index) const;
 		int GetFireRate() const { return FireRate; }
 		int64_t GetExperience() const { return Experience; }
 		int64_t GetExperienceNextLevel() const { return ExperienceNextLevel; }
@@ -153,10 +148,6 @@ class _Player : public _Entity {
 		bool GetUseRequested() const { return UseRequested; }
 		bool GetMedkitRequested() const { return MedkitRequested; }
 		const std::string &GetSample(int Type) const;
-
-		int GetItemSize() const;
-		int GetWeaponSize() const;
-		int GetArmorSize() const;
 
 		void Move();
 		void AdjustLegDirection(float Destination);
@@ -174,9 +165,6 @@ class _Player : public _Entity {
 		bool IsBagIndex(int Index) { return Index >= INVENTORY_BAGSTART && Index < INVENTORY_BAGEND; }
 		bool IsEquipmentIndex(int Index) { return Index <= INVENTORY_BAGSTART; }
 		bool IsHandIndex(int Index) { return Index == INVENTORY_MAINHAND || Index == INVENTORY_OFFHAND; }
-		bool IsMainHandIndex(int Index) { return Index == INVENTORY_MAINHAND; }
-		bool IsOffHandIndex(int Index) { return Index == INVENTORY_OFFHAND; }
-		bool IsArmorIndex(int Index) { return Index == INVENTORY_ARMOR; }
 
 		void LoadItems(_Buffer &Buffer);
 		void LoadWeapon(_Buffer &Buffer, int Count, int InventoryIndex);
@@ -184,7 +172,6 @@ class _Player : public _Entity {
 		void SaveItems(std::ofstream &File);
 
 		void SetAnimationPlaybackSpeedFactor();
-		void CalculateMaxHealth();
 		void CalculateLevelPercentage();
 		void CalculateExperienceStats();
 		void CalculateSkillsRemaining();
@@ -193,7 +180,6 @@ class _Player : public _Entity {
 		void IncurDeathPenalty();
 		void ResetWeaponAnimation();
 
-		void ResetPlayingTimer() { TimePlayed = 0; PlayingTimer = 0; }
 		bool CanUseMedkit() const;
 		bool IsRightClip(const _Item *Item) const;
 		void DeleteItems();

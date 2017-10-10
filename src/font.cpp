@@ -45,12 +45,12 @@ bool operator>(const CharacterSortStruct &A, const CharacterSortStruct &B) {
 
 // Constructor
 _Font::_Font() {
-	Texture = NULL;
+	Texture = nullptr;
 }
 
 // Load a font file
 _Font::_Font(const std::string &FontFile, int FontSize, int TextureWidth) {
-	Texture = NULL;
+	Texture = nullptr;
 	HasKerning = false;
 	MaxHeight = 0.0f;
 
@@ -359,7 +359,7 @@ void _Font::GetStringDimensions(const std::string &Text, _TextBounds &TestBounds
 	}
 
 	TestBounds.Width = TestBounds.AboveBase = TestBounds.BelowBase = 0;
-	const GlyphStruct *Glyph = NULL;
+	const GlyphStruct *Glyph = nullptr;
 	for(size_t i = 0; i < Text.size(); i++) {
 
 		// Get glyph data

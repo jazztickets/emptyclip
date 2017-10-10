@@ -67,7 +67,7 @@ void _Save::DeletePlayer(int Slot) {
 	remove(GetConfigPath(Slot).c_str());
 
 	delete Players[Slot];
-	Players[Slot] = NULL;
+	Players[Slot] = nullptr;
 }
 
 // Load save files
@@ -76,7 +76,7 @@ void _Save::LoadSaves() {
 	// Clear previous saves
 	for(size_t i = 0; i < Players.size(); i++) {
 		delete Players[i];
-		Players[i] = NULL;
+		Players[i] = nullptr;
 	}
 
 	// Load test files

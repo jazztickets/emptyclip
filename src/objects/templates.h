@@ -156,7 +156,7 @@ struct _ParticleTemplate {
 struct _WeaponParticleTemplate {
 	_WeaponParticleTemplate() {
 		for(int i = 0; i < WEAPONPARTICLE_TYPES; i++)
-			ParticleTemplates[i] = NULL;
+			ParticleTemplates[i] = nullptr;
 	}
 
 	_ParticleTemplate *ParticleTemplates[WEAPONPARTICLE_TYPES];
@@ -165,7 +165,7 @@ struct _WeaponParticleTemplate {
 // Holds information about a weapon
 struct _WeaponTemplate {
 	_WeaponTemplate()
-		:	WeaponParticles(NULL),
+		:	WeaponParticles(nullptr),
 			Name("Fists"),
 			MinAccuracy(0.0f),
 			MaxAccuracy(90.0f),

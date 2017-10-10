@@ -65,7 +65,7 @@ void _Graphics::Init(int WindowWidth, int WindowHeight, int Vsync, int MSAA, boo
 	}
 
 	// Set root element
-	Element = new _Element("screen_element", NULL, _Point(0, 0), _Point(this->ScreenWidth, this->ScreenHeight), _Alignment(0, 0), NULL, false);
+	Element = new _Element("screen_element", nullptr, _Point(0, 0), _Point(this->ScreenWidth, this->ScreenHeight), _Alignment(0, 0), nullptr, false);
 
 	// Set up viewport
 	ChangeViewport(this->ScreenWidth, this->ScreenHeight);
@@ -80,12 +80,12 @@ void _Graphics::Init(int WindowWidth, int WindowHeight, int Vsync, int MSAA, boo
 
 	// Set video mode
 	Window = SDL_CreateWindow(GAME_WINDOWTITLE.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, this->ScreenWidth, this->ScreenHeight, VideoFlags);
-	if(Window == NULL)
+	if(Window == nullptr)
 		throw std::runtime_error("SDL_CreateWindow failed");
 
 	// Set up opengl context
 	Context = SDL_GL_CreateContext(Window);
-	if(Context == NULL)
+	if(Context == nullptr)
 		throw std::runtime_error("SDL_GL_CreateContext failed");
 
 	// Set vsync
@@ -107,12 +107,12 @@ void _Graphics::Close() {
 			glDeleteBuffers(1, &VertexBuffer[i]);
 
 		SDL_GL_DeleteContext(Context);
-		Context = NULL;
+		Context = nullptr;
 	}
 
 	if(Window) {
 		SDL_DestroyWindow(Window);
-		Window = NULL;
+		Window = nullptr;
 	}
 }
 

@@ -23,7 +23,7 @@ _Object::_Object()
 :	Active(true),
 	Name(""),
 	Type(UNDEFINED),
-	Map(NULL),
+	Map(nullptr),
 	TileChanged(false),
 	Radius(0.25f),
 	WallState(0),

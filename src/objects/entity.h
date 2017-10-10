@@ -122,7 +122,7 @@ class _Entity : public _Object {
 		virtual Vector2 GetGoal() const;
 		virtual int64_t GetExperienceGiven() const { return 0; }
 		virtual std::string GetItemGroupIdentifier() const { return ""; }
-		virtual const _ParticleTemplate *GetWeaponParticle(int Index) const { return NULL; }
+		virtual const _ParticleTemplate *GetWeaponParticle(int Index) const { return nullptr; }
 
 		void AddGoal(const Vector2 &Goal) { Goals.push_front(Goal); }
 		void PopGoal() { if(!Goals.empty()) Goals.pop_front(); }

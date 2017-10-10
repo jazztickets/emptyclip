@@ -22,7 +22,7 @@
 
 // Constructor
 _Item::_Item() {
-	Texture = NULL;
+	Texture = nullptr;
 	Level = 0;
 	Count = 0;
 	Quality = 0;

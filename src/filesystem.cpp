@@ -56,7 +56,7 @@ void _FileSystem::GetFiles(const std::string &Path, std::vector<std::string> &Co
 		struct dirent *Entry;
 		Directory = opendir(Path.c_str());
 		if(Directory) {
-			while((Entry = readdir(Directory)) != NULL) {
+			while((Entry = readdir(Directory)) != nullptr) {
 				if(Entry->d_type == DT_REG) {
 					Contents.push_back(Entry->d_name);
 				}

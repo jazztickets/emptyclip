@@ -22,7 +22,7 @@
 
 // Constructor
 _Particles::_Particles()
-:	Camera(NULL) {
+:	Camera(nullptr) {
 }
 
 // Destructor

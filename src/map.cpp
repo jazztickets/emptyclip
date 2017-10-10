@@ -36,11 +36,11 @@ _Map::_Map()
 	Width(MAP_WIDTH),
 	Height(MAP_HEIGHT),
 	Filename(""),
-	Data(NULL),
+	Data(nullptr),
 	ObjectManager(new _ObjectManager()),
-	Camera(NULL),
+	Camera(nullptr),
 	MonsterSet(MAP_DEFAULTMONSTERSET),
-	AmbientLightTexture(NULL),
+	AmbientLightTexture(nullptr),
 	AmbientLight(0.0f, 0.0f, 0.0f, 1.0f),
 	OldAmbientLight(0.0f, 0.0f, 0.0f, 1.0f),
 	AmbientLightRadius(100.0f),
@@ -179,7 +179,7 @@ _Map::_Map(const std::string &Filename) : _Map() {
 				throw std::runtime_error("Cannot find alt texture: " + Block.AltTextureIdentifier);
 		}
 		else
-			Block.AltTexture = NULL;
+			Block.AltTexture = nullptr;
 
 		Block.Start = GetValidCoord(Block.Start);
 		Block.End = GetValidCoord(Block.End);
@@ -202,7 +202,7 @@ _Map::~_Map() {
 	for(size_t i = 0; i < Events.size(); i++)
 		delete Events[i];
 
-	if(Data != NULL) {
+	if(Data != nullptr) {
 		for(int i = 0; i < Width; i++)
 			delete[] Data[i];
 		delete[] Data;
@@ -533,7 +533,7 @@ _Object *_Map::CheckCollisionsInGrid(const Vector2 &Position, float Radius, int 
 		}
 	}
 
-	return NULL;
+	return nullptr;
 }
 
 // Returns a list of entities that an object is colliding with
@@ -597,7 +597,7 @@ _Entity *_Map::CheckMeleeCollisions(_Entity *Attacker, const Vector2 &Direction,
 		}
 	}
 
-	return NULL;
+	return nullptr;
 }
 
 // Determines which walls are adjacent to the object
@@ -709,7 +709,7 @@ void _Map::CheckBulletCollisions(const Vector2 &Position, const Vector2 &Directi
 
 	// Traverse tiles
 	if(CheckObjects)
-		*HitEntity = NULL;
+		*HitEntity = nullptr;
 	float MinDistance = HUGE_VAL;
 	bool EndedOnX = false;
 	while(TileTracer.X >= 0 && TileTracer.Y >= 0 && TileTracer.X < Width && TileTracer.Y < Height && CanShootThrough(TileTracer.X, TileTracer.Y)) {
@@ -742,7 +742,7 @@ void _Map::CheckBulletCollisions(const Vector2 &Position, const Vector2 &Directi
 	}
 
 	// An object was hit
-	if(CheckObjects && *HitEntity != NULL) {
+	if(CheckObjects && *HitEntity != nullptr) {
 		*HitPosition = Direction * MinDistance + Position;
 		return;
 	}
@@ -772,7 +772,7 @@ void _Map::CheckBulletCollisions(const Vector2 &Position, const Vector2 &Directi
 
 	*HitPosition = WallHitPosition + Position;
 	if(CheckObjects)
-		*HitEntity = NULL;
+		*HitEntity = nullptr;
 }
 
 // Returns a t value for when a ray intersects a circle
@@ -967,7 +967,7 @@ void _Map::GetSelectedObject(const Vector2 &Position, float RadiusSquared, _Obje
 		}
 	}
 
-	*Object = NULL;
+	*Object = nullptr;
 }
 
 // Returns all the objects that fall inside the rectangle
@@ -1054,14 +1054,14 @@ int _Map::GetSelectedBlock(int Layer, const _Coord &Index, _Block **Block) {
 		return BlockIndex;
 	}
 
-	*Block = NULL;
+	*Block = nullptr;
 	return -1;
 }
 
 // Returns a block by its layer and index
 const _Block *_Map::GetBlock(int Layer, const size_t Index) const {
 	if(Layer < 0 || Layer >= MAPLAYER_COUNT || Index >= Blocks[Layer].size())
-		return NULL;
+		return nullptr;
 
 	return &Blocks[Layer][Index];
 }
@@ -1073,7 +1073,7 @@ int _Map::GetLastBlock(int Layer, _Block **Block) {
 		return Blocks[Layer].size() - 1;
 	}
 
-	*Block = NULL;
+	*Block = nullptr;
 	return -1;
 }
 
@@ -1149,7 +1149,7 @@ int _Map::GetSelectedEvent(const _Coord &Index, _Event **ReturnEvent) {
 		}
 	}
 
-	*ReturnEvent = NULL;
+	*ReturnEvent = nullptr;
 	return -1;
 }
 

@@ -496,7 +496,7 @@ void _Assets::LoadWeaponParticles(const std::string &Filename) {
 				throw std::runtime_error(std::string(__FUNCTION__) + " - Cannot find particle: " + ParticleIdentifier);
 			}
 			else if(ParticleIdentifier == "")
-				WeaponParticle.ParticleTemplates[i] = NULL;
+				WeaponParticle.ParticleTemplates[i] = nullptr;
 			else
 				WeaponParticle.ParticleTemplates[i] = GetParticleTemplate(ParticleIdentifier);
 
@@ -1113,7 +1113,7 @@ void _Assets::LoadElements(const std::string &Filename) {
 		InputFile.ignore(1024, '\n');
 
 		// Look for parent
-		_Element *ParentElement = NULL;
+		_Element *ParentElement = nullptr;
 		if(ParentIdentifier != "") {
 			ParentElement = GetElement(ParentIdentifier);
 			if(!ParentElement) {
@@ -1122,7 +1122,7 @@ void _Assets::LoadElements(const std::string &Filename) {
 		}
 
 		// Get style
-		_Style *Style = NULL;
+		_Style *Style = nullptr;
 		if(StyleIdentifier != "") {
 			Style = GetStyle(StyleIdentifier);
 			if(!Style) {
@@ -1174,7 +1174,7 @@ void _Assets::LoadLabels(const std::string &Filename) {
 		InputFile.ignore(1024, '\n');
 
 		// Look for parent
-		_Element *ParentElement = NULL;
+		_Element *ParentElement = nullptr;
 		if(ParentIdentifier != "") {
 			ParentElement = GetElement(ParentIdentifier);
 			if(!ParentElement) {
@@ -1235,7 +1235,7 @@ void _Assets::LoadImages(const std::string &Filename) {
 		InputFile.ignore(1024, '\n');
 
 		// Look for parent
-		_Element *ParentElement = NULL;
+		_Element *ParentElement = nullptr;
 		if(ParentIdentifier != "") {
 			ParentElement = GetElement(ParentIdentifier);
 			if(!ParentElement) {
@@ -1292,7 +1292,7 @@ void _Assets::LoadButtons(const std::string &Filename) {
 		InputFile.ignore(1024, '\n');
 
 		// Look for parent
-		_Element *ParentElement = NULL;
+		_Element *ParentElement = nullptr;
 		if(ParentIdentifier != "") {
 			ParentElement = GetElement(ParentIdentifier);
 			if(!ParentElement) {
@@ -1348,7 +1348,7 @@ void _Assets::LoadTextBoxes(const std::string &Filename) {
 		InputFile.ignore(1024, '\n');
 
 		// Look for parent
-		_Element *ParentElement = NULL;
+		_Element *ParentElement = nullptr;
 		if(ParentIdentifier != "") {
 			ParentElement = GetElement(ParentIdentifier);
 			if(!ParentElement) {
@@ -1711,13 +1711,13 @@ void _Assets::UnloadItemGroupTable() { ItemGroupTable.clear(); }
 
 _Font *_Assets::GetFont(const std::string &Identifier) {
 	if(Fonts.find(Identifier) == Fonts.end())
-		return NULL;
+		return nullptr;
 
 	return Fonts[Identifier];
 }
 _Texture *_Assets::GetTexture(const std::string &Identifier) {
 	if(Textures.find(Identifier) == Textures.end())
-		return NULL;
+		return nullptr;
 
 	return Textures[Identifier];
 }
@@ -1735,85 +1735,85 @@ const _Color &_Assets::GetColor(const std::string &Identifier) {
 }
 _Reel *_Assets::GetReel(const std::string &Identifier) {
 	if(Reels.find(Identifier) == Reels.end())
-		return NULL;
+		return nullptr;
 
 	return &Reels[Identifier];
 }
 AttackSampleTemplateStruct *_Assets::GetAttackSampleTemplate(const std::string &Identifier) {
 	if(AttackSampleTable.find(Identifier) == AttackSampleTable.end())
-		return NULL;
+		return nullptr;
 
 	return &AttackSampleTable[Identifier];
 }
 _Animation *_Assets::GetAnimation(const std::string &Identifier) {
 	if(Animations.find(Identifier) == Animations.end())
-		return NULL;
+		return nullptr;
 
 	return Animations[Identifier];
 }
 _ParticleTemplate *_Assets::GetParticleTemplate(const std::string &Identifier) {
 	if(ParticleTable.find(Identifier) == ParticleTable.end())
-		return NULL;
+		return nullptr;
 
 	return &ParticleTable[Identifier];
 }
 _WeaponParticleTemplate *_Assets::GetWeaponParticleTemplate(const std::string &Identifier) {
 	if(WeaponParticleTable.find(Identifier) == WeaponParticleTable.end())
-		return NULL;
+		return nullptr;
 
 	return &WeaponParticleTable[Identifier];
 }
 _MonsterTemplate *_Assets::GetMonsterTemplate(const std::string &Identifier) {
 	if(MonsterTable.find(Identifier) == MonsterTable.end())
-		return NULL;
+		return nullptr;
 
 	return &MonsterTable[Identifier];
 }
 _MiscItemTemplate *_Assets::GetMiscItemTemplate(const std::string &Identifier) {
 	if(MiscItemTable.find(Identifier) == MiscItemTable.end())
-		return NULL;
+		return nullptr;
 
 	return &MiscItemTable[Identifier];
 }
 _UpgradeTemplate *_Assets::GetUpgradeTemplate(const std::string &Identifier) {
 	if(UpgradeTable.find(Identifier) == UpgradeTable.end())
-		return NULL;
+		return nullptr;
 
 	return &UpgradeTable[Identifier];
 }
 _AmmoTemplate *_Assets::GetAmmoTemplate(const std::string &Identifier) {
 	if(AmmoTable.find(Identifier) == AmmoTable.end())
-		return NULL;
+		return nullptr;
 
 	return &AmmoTable[Identifier];
 }
 _WeaponTemplate *_Assets::GetWeaponTemplate(const std::string &Identifier) {
 	if(WeaponTable.find(Identifier) == WeaponTable.end())
-		return NULL;
+		return nullptr;
 
 	return &WeaponTable[Identifier];
 }
 _ArmorTemplate *_Assets::GetArmorTemplate(const std::string &Identifier) {
 	if(ArmorTable.find(Identifier) == ArmorTable.end())
-		return NULL;
+		return nullptr;
 
 	return &ArmorTable[Identifier];
 }
 _ItemGroup *_Assets::GetItemGroup(const std::string &Identifier) {
 	if(ItemGroupTable.find(Identifier) == ItemGroupTable.end())
-		return NULL;
+		return nullptr;
 
 	return &ItemGroupTable[Identifier];
 }
 _Style *_Assets::GetStyle(const std::string &Identifier) {
 	if(Styles.find(Identifier) == Styles.end())
-		return NULL;
+		return nullptr;
 
 	return Styles[Identifier];
 }
 _Element *_Assets::GetElement(const std::string &Identifier) {
 	if(Elements.find(Identifier) == Elements.end())
-		return NULL;
+		return nullptr;
 
 	return Elements[Identifier];
 }

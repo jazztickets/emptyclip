@@ -39,9 +39,9 @@ _Element::_Element(const std::string &Identifier, _Element *Parent, const _Point
 	this->UserData = 0;
 	this->ID = -1;
 	this->Fade = 1.0f;
-	this->HitElement = NULL;
-	this->PressedElement = NULL;
-	this->ReleasedElement = NULL;
+	this->HitElement = nullptr;
+	this->PressedElement = nullptr;
+	this->ReleasedElement = nullptr;
 	this->ChildrenOffset.Clear();
 
 	CalculateBounds();
@@ -84,7 +84,7 @@ void _Element::HandleInput(bool Pressed) {
 	// Get released element
 	if(!Pressed && PressedElement && HitElement) {
 		ReleasedElement = PressedElement;
-		PressedElement = NULL;
+		PressedElement = nullptr;
 	}
 }
 
@@ -93,20 +93,20 @@ _Element *_Element::GetClickedElement() {
 	if(HitElement == ReleasedElement)
 		return HitElement;
 
-	return NULL;
+	return nullptr;
 }
 
 // Handle mouse movement
 void _Element::Update(double FrameTime, const _Point &Mouse) {
-	HitElement = NULL;
-	ReleasedElement = NULL;
+	HitElement = nullptr;
+	ReleasedElement = nullptr;
 
 	// Test element first
 	if(Bounds.PointInside(Mouse)) {
 		HitElement = this;
 	}
 	else if(MaskOutside) {
-		HitElement = NULL;
+		HitElement = nullptr;
 		return;
 	}
 

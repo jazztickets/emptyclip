@@ -55,10 +55,10 @@ _Entity::_Entity()
 	AttackRequested(false),
 	AttackAllowed(true),
 	AttackMade(false),
-	TriggerDownAudio(NULL) {
+	TriggerDownAudio(nullptr) {
 
 	Animation = new _Animation();
-	Map = NULL;
+	Map = nullptr;
 
 	for(int i = 0; i < WEAPON_TYPES; i++)
 		WeaponParticleOffset[i] = Vector2(0.0f, 0.0f);
@@ -158,7 +158,7 @@ void _Entity::StartTriggerDownAudio() {
 // Stop all audio associated with entity
 void _Entity::StopAudio() {
 	delete TriggerDownAudio;
-	TriggerDownAudio = NULL;
+	TriggerDownAudio = nullptr;
 }
 
 // Update the entity

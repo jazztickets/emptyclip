@@ -21,7 +21,7 @@
 
 // Constructor
 _Image::_Image(const std::string &Identifier, _Element *Parent, const _Point &Offset, const _Point &Size, const _Alignment &Alignment, const _Texture *Texture, const _Color &Color, bool Stretch)
-:	_Element(Identifier, Parent, Offset, Size, Alignment, NULL, false) {
+:	_Element(Identifier, Parent, Offset, Size, Alignment, nullptr, false) {
 
 	this->Texture = Texture;
 	this->Color = Color;

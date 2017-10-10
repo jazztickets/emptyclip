@@ -33,14 +33,14 @@ void _Audio::Init(bool Enabled) {
 		return;
 
 	// Create device
-	ALCdevice *Device = alcOpenDevice(NULL);
-	if(Device == NULL) {
+	ALCdevice *Device = alcOpenDevice(nullptr);
+	if(Device == nullptr) {
 		throw std::runtime_error("Unable to create audio device");
 		Enabled = false;
 	}
 
 	// Create context
-	ALCcontext *Context = alcCreateContext(Device, NULL);
+	ALCcontext *Context = alcCreateContext(Device, nullptr);
 
 	// Set active context
 	alcMakeContextCurrent(Context);
@@ -67,7 +67,7 @@ void _Audio::Close() {
 	ALCdevice *Device = alcGetContextsDevice(Context);
 
 	// Disable context
-	alcMakeContextCurrent(NULL);
+	alcMakeContextCurrent(nullptr);
 
 	// Free context
 	alcDestroyContext(Context);
@@ -148,12 +148,12 @@ bool _Audio::LoadBuffer(const std::string &Name, const std::string &File, float 
 // Get a loaded buffer
 const _AudioBuffer *_Audio::GetBuffer(const std::string &Name) {
 	if(!Enabled)
-		return NULL;
+		return nullptr;
 
 	// Find buffer in map
 	auto BuffersIterator = Buffers.find(Name);
 	if(BuffersIterator == Buffers.end())
-		return NULL;
+		return nullptr;
 
 	return &BuffersIterator->second;
 }
@@ -282,7 +282,7 @@ void _Audio::SetGain(float Value) {
 // Create an audio source
 _AudioSource::_AudioSource(const _AudioBuffer *Buffer, bool Relative, bool Loop, float MinGain, float MaxGain, float ReferenceDistance, float RollOff) {
 	Loaded = false;
-	AudioBuffer = NULL;
+	AudioBuffer = nullptr;
 	if(Buffer) {
 
 		AudioBuffer = Buffer;

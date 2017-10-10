@@ -39,9 +39,9 @@
 // Initialize
 _HUD::_HUD(_Player *Player) {
 	this->Player = Player;
-	LastEntityHit = NULL;
-	DragStart = NULL;
-	CursorItem = CursorOverItem = NULL;
+	LastEntityHit = nullptr;
+	DragStart = nullptr;
+	CursorItem = CursorOverItem = nullptr;
 	CursorSkill = -1;
 	CrosshairScale = 0.0f;
 	MessageTimer = 0.0;
@@ -133,8 +133,8 @@ void _HUD::SetInventoryOpen(bool Value) {
 
 	}
 	else {
-		DragStart = NULL;
-		CursorItem = CursorOverItem = NULL;
+		DragStart = nullptr;
+		CursorItem = CursorOverItem = nullptr;
 	}
 
 	Graphics.ShowCursor(InventoryOpen);
@@ -173,8 +173,8 @@ void _HUD::MouseEvent(const _MouseEvent &MouseEvent) {
 			}
 
 			// Swap inventory
-			CursorItem = NULL;
-			DragStart = NULL;
+			CursorItem = nullptr;
+			DragStart = nullptr;
 		}
 
 		//if(HitElement)
@@ -200,7 +200,7 @@ void _HUD::MouseEvent(const _MouseEvent &MouseEvent) {
 // Update phase
 void _HUD::Update(double FrameTime, float Radius) {
 	LastEntityHitTimer += FrameTime;
-	CursorOverItem = NULL;
+	CursorOverItem = nullptr;
 	CursorSkill = -1;
 
 	// Update crosshair
@@ -224,8 +224,8 @@ void _HUD::Update(double FrameTime, float Radius) {
 	}
 
 	// Update health display
-	if(LastEntityHit != NULL && (LastEntityHitTimer > HUD_ENTITYHEALTHDISPLAYPERIOD || !LastEntityHit->GetActive())) {
-		LastEntityHit = NULL;
+	if(LastEntityHit != nullptr && (LastEntityHitTimer > HUD_ENTITYHEALTHDISPLAYPERIOD || !LastEntityHit->GetActive())) {
+		LastEntityHit = nullptr;
 	}
 
 	if(MessageTimer > 0.0) {
@@ -264,7 +264,7 @@ void _HUD::Render() {
 	}
 
 	// Draw enemy health
-	if(LastEntityHit != NULL) {
+	if(LastEntityHit != nullptr) {
 		Labels[LABEL_ENEMYNAME]->SetText(LastEntityHit->GetName());
 		Images[IMAGE_ENEMYHEALTH]->SetWidth(Elements[ELEMENT_ENEMYINFO]->GetSize().X * LastEntityHit->GetHealthPercentage());
 		Elements[ELEMENT_ENEMYINFO]->Render();

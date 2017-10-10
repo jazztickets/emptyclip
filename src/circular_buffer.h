@@ -25,7 +25,7 @@ template<class T> class _CircularBuffer {
 	public:
 
 		// Constructor
-		_CircularBuffer() : Data(NULL) { }
+		_CircularBuffer() : Data(nullptr) { }
 
 		// Constructor with size
 		_CircularBuffer(int Size) {
@@ -52,7 +52,7 @@ template<class T> class _CircularBuffer {
 		// Free memory
 		void Close() {
 			delete[] Data;
-			Data = NULL;
+			Data = nullptr;
 		}
 
 		// Clear the buffer
