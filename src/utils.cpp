@@ -49,7 +49,7 @@ std::string GetTSVText(std::ifstream &Stream, bool *EndOfLine) {
 
 	while(1) {
 		Stream.get(Char);
-		if(Char == '\n') {
+		if(Char == '\r' || Char == '\n') {
 			if(EndOfLine)
 				*EndOfLine = true;
 			return Text;
