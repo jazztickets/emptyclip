@@ -138,6 +138,7 @@ void _Player::Reset() {
 	WeaponSwitchTo = -1;
 	TimePlayed = 0;
 	PlayingTimer = 0;
+	Stamina = 1.0f;
 
 	CalculateExperienceStats();
 	CalculateLevelPercentage();
@@ -420,7 +421,9 @@ void _Player::Update(double FrameTime) {
 	}
 
 	// Update stamina
-	Stamina += PLAYER_STAMINAREGEN;
+	if(!IsDying())
+		Stamina += PLAYER_STAMINAREGEN;
+
 	if(Stamina > MaxStamina)
 	   Stamina = MaxStamina;
 	if(Tired && Stamina > PLAYER_TIREDTHRESHOLD)
