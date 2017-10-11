@@ -1210,7 +1210,7 @@ void _Player::RecalculateStats() {
 
 	MovementSpeed = PLAYER_MOVEMENTSPEED * Assets.GetSkill(Skills[SKILL_MOVESPEED], SKILL_MOVESPEED);
 	DamageResist = Assets.GetSkill(Skills[SKILL_DAMAGERESIST], SKILL_DAMAGERESIST) - 1.0f;
-	MaxHealth = Assets.GetLevelHealth(Level) * Assets.GetSkill(Skills[SKILL_HEALTH], SKILL_HEALTH);
+	MaxHealth = (int)(Assets.GetLevelHealth(Level) * Assets.GetSkill(Skills[SKILL_HEALTH], SKILL_HEALTH));
 	MaxStamina = 1.0f * Assets.GetSkill(Skills[SKILL_MAXSTAMINA], SKILL_MAXSTAMINA);
 	StaminaRegenModifier = 1.0f * Assets.GetSkill(Skills[SKILL_MAXSTAMINA], SKILL_MAXSTAMINA);
 
@@ -1223,24 +1223,25 @@ void _Player::RecalculateStats() {
 	}
 
 	if(DebugLevel > 1) {
-		std::cout << "***RecalculateStats***\n";
-		std::cout << "AttackRange: " << Weapon.Range << " -> " << AttackRange << '\n';
-		std::cout << "MinAccuracyNormal: " << Weapon.MinAccuracy << " -> " << MinAccuracyNormal << '\n';
-		std::cout << "MaxAccuracyNormal: " << Weapon.MaxAccuracy << " -> " << MaxAccuracyNormal << '\n';
-		std::cout << "ZoomScale: " << Weapon.ZoomScale << " -> " << ZoomScale << '\n';
-		std::cout << "DamageMultiplier: " << DamageMultiplier << '\n';
-		std::cout << "Recoil: " << Weapon.Recoil << " -> " << Recoil << '\n';
-		std::cout << "RecoilRegen: " << Weapon.RecoilRegen << " -> " << RecoilRegen << '\n';
-		std::cout << "FireRate: " << Weapon.FireRate << " -> " << FireRate << '\n';
-		std::cout << "FirePeriod: " << Weapon.FirePeriod << " -> " << FirePeriod << '\n';
-		std::cout << "MinDamage: " << Weapon.MinDamage << " -> " << MinDamage << '\n';
-		std::cout << "MaxDamage: " << Weapon.MaxDamage << " -> " << MaxDamage << '\n';
-		std::cout << "BulletsShot: " << Weapon.BulletsShot << " -> " << BulletsShot << '\n';
-		std::cout << "ReloadPeriod: " << Weapon.ReloadPeriod << " -> " << ReloadPeriod << '\n';
-		std::cout << "WeaponSwitchPeriod: " << PLAYER_WEAPONSWITCHPERIOD << " -> " << WeaponSwitchPeriod << '\n';
-		std::cout << "MovementSpeed: " << PLAYER_MOVEMENTSPEED << " -> " << MovementSpeed << '\n';
-		std::cout << "DamageBlock: " << DamageBlock << '\n';
-		std::cout << "DamageResist: " << DamageResist << '\n';
+		std::cout << "Stats for " << Name << std::endl;
+		std::cout << "AttackRange: " << Weapon.Range << " -> " << AttackRange << std::endl;
+		std::cout << "MinAccuracyNormal: " << Weapon.MinAccuracy << " -> " << MinAccuracyNormal << std::endl;
+		std::cout << "MaxAccuracyNormal: " << Weapon.MaxAccuracy << " -> " << MaxAccuracyNormal << std::endl;
+		std::cout << "ZoomScale: " << Weapon.ZoomScale << " -> " << ZoomScale << std::endl;
+		std::cout << "DamageMultiplier: " << DamageMultiplier << std::endl;
+		std::cout << "Recoil: " << Weapon.Recoil << " -> " << Recoil << std::endl;
+		std::cout << "RecoilRegen: " << Weapon.RecoilRegen << " -> " << RecoilRegen << std::endl;
+		std::cout << "FireRate: " << Weapon.FireRate << " -> " << FireRate << std::endl;
+		std::cout << "FirePeriod: " << Weapon.FirePeriod << " -> " << FirePeriod << std::endl;
+		std::cout << "MinDamage: " << Weapon.MinDamage << " -> " << MinDamage << std::endl;
+		std::cout << "MaxDamage: " << Weapon.MaxDamage << " -> " << MaxDamage << std::endl;
+		std::cout << "BulletsShot: " << Weapon.BulletsShot << " -> " << BulletsShot << std::endl;
+		std::cout << "ReloadPeriod: " << Weapon.ReloadPeriod << " -> " << ReloadPeriod << std::endl;
+		std::cout << "WeaponSwitchPeriod: " << PLAYER_WEAPONSWITCHPERIOD << " -> " << WeaponSwitchPeriod << std::endl;
+		std::cout << "MovementSpeed: " << PLAYER_MOVEMENTSPEED << " -> " << MovementSpeed << std::endl;
+		std::cout << "DamageBlock: " << DamageBlock << std::endl;
+		std::cout << "DamageResist: " << DamageResist << std::endl;
+		std::cout << "MaxStamina: " << MaxStamina << std::endl;
 	}
 
 }
