@@ -68,7 +68,7 @@ class _Animation {
 		void ChangeReel(int Index);
 
 		void SetFramePeriod(double Value);
-		void SetPlaybackSpeedFactor(int Value) { PlaybackSpeed = Reels[CurrentReel]->PlaybackSpeed * Value; }
+		void SetPlaybackSpeedFactor(double Value) { PlaybackSpeed = Reels[CurrentReel]->PlaybackSpeed * Value; }
 		void SetPlayMode(int Mode);
 		void SetAllowUpdate(bool Value) { AllowUpdate = Value; }
 

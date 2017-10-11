@@ -41,7 +41,6 @@ union Vector2 {
 
 		// Utility functions
 		void Set(float X, float Y) { this->X = X; this->Y = Y; }
-		void Print() const;
 		void SetZero();
 		void Normalize();
 		float Magnitude() const;

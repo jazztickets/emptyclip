@@ -72,7 +72,7 @@ class _Player : public _Entity {
 		void UpdateExperience(int64_t ExperienceGained);
 		void UpdateReloading();
 		void UpdateWeaponSwitch();
-		void UpdateSpeed();
+		void UpdateSpeed(float Factor) override;
 		void UpdateLevel();
 		void UpdateKillCount(int Value) { MonsterKills += Value; }
 		void UpdateSkill(int Index, int Value);
@@ -115,6 +115,7 @@ class _Player : public _Entity {
 		void SetTorsoAnimation(const _Animation *Animation);
 		void SetLegAnimation(const _Animation *Animation);
 		void SetCrouching(bool State);
+		void SetSprinting(bool State);
 		void SetUseRequested(bool Use) { UseRequested = Use; }
 		void SetMedkitRequested(bool Medkit) { MedkitRequested = Medkit; }
 		void SetExprience(int64_t Experience) { this->Experience = Experience; }
@@ -144,12 +145,12 @@ class _Player : public _Entity {
 		int GetSkill(int Index) const { return Skills[Index]; }
 		int GetSkillPointsRemaining() const { return SkillPointsRemaining; }
 		int GetInventoryMaxStack() const;
-		bool GetCrouching() const { return Crouching; }
+		bool IsCrouching() const { return Crouching; }
+		bool IsSprinting() const { return Sprinting; }
 		bool GetUseRequested() const { return UseRequested; }
 		bool GetMedkitRequested() const { return MedkitRequested; }
 		const std::string &GetSample(int Type) const;
 
-		void Move();
 		void AdjustLegDirection(float Destination);
 		void SetLegAnimationPlayMode(int Type);
 		void SetLegDirection(float Rotation) { LegDirection = Rotation; }
@@ -197,8 +198,8 @@ class _Player : public _Entity {
 		_Animation *LegAnimation;
 		std::string ColorIdentifier;
 		float LegDirection;
-		int LegAnimationSpeed[2];
 		bool Crouching;
+		bool Sprinting;
 
 		// Inventory
 		_Item *Inventory[INVENTORY_SIZE];

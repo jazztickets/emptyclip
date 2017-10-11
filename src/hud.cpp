@@ -76,6 +76,9 @@ _HUD::_HUD(_Player *Player) {
 	Images[IMAGE_PLAYERHEALTH] = Assets.GetImage("player_health_full");
 	Labels[LABEL_PLAYERHEALTH] = Assets.GetLabel("hud_player_health_text");
 
+	Elements[ELEMENT_PLAYERSTAMINA] = Assets.GetElement("hud_player_stamina");
+	Images[IMAGE_PLAYERSTAMINA] = Assets.GetImage("player_stamina_full");
+
 	Images[IMAGE_ENEMYHEALTH] = Assets.GetImage("enemy_health_full");
 
 	Elements[ELEMENT_INDICATOR] = Assets.GetElement("hud_indicator");
@@ -272,6 +275,16 @@ void _HUD::Render() {
 		Images[IMAGE_ENEMYHEALTH]->SetWidth(Elements[ELEMENT_ENEMYINFO]->GetSize().X * LastEntityHit->GetHealthPercentage());
 		Elements[ELEMENT_ENEMYINFO]->Render();
 	}
+
+	// Draw stamina
+	Images[IMAGE_PLAYERSTAMINA]->SetWidth(Elements[ELEMENT_PLAYERSTAMINA]->GetSize().X * Player->GetStaminaPercentage());
+	if(Player->GetTired())
+		Images[IMAGE_PLAYERSTAMINA]->SetColor(_Color(1.0f, 0.5f, 0.0f));
+	else
+		Images[IMAGE_PLAYERSTAMINA]->SetColor(_Color(1.0f, 1.0f, 1.0f));
+
+	if(Player->GetStaminaPercentage() < 1.0f)
+		Elements[ELEMENT_PLAYERSTAMINA]->Render();
 
 	// Draw player health
 	Buffer << Player->GetHealth() << "/" << Player->GetMaxHealth();

@@ -2,6 +2,7 @@ identifier	parent	style	offset x	offset y	width	height	alignment x	alignment y	m
 hud_player_info			80	31	0	0	0	0	0
 hud_enemy_info			0	50	150	0	1	0	0
 hud_player_health			0	-80	200	0	1	2	0
+hud_player_stamina			0	-100	100	0	1	2	0
 hud_indicator			0	166	256	32	1	1	0
 hud_experience			0	-14	512	8	1	2	0
 hud_mainhand			-190	-90	0	0	1	2	0

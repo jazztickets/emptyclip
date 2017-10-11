@@ -103,6 +103,7 @@ class _Object {
 		// Graphics
 		Vector2 Position;
 		Vector2 LastPosition;
+		Vector2 Direction;
 		_Color Color;
 		float Rotation;
 		float Scale;

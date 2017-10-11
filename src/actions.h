@@ -37,12 +37,17 @@ class _Actions {
 			LEFT,
 			RIGHT,
 			USE,
-			INVENTORY,
+			SPRINT,
 			FIRE,
 			AIM,
 			RELOAD,
 			WEAPONSWITCH,
 			MEDKIT,
+			INVENTORY,
+			WEAPON1,
+			WEAPON2,
+			WEAPON3,
+			WEAPON4,
 			COUNT,
 		};
 

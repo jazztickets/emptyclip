@@ -91,6 +91,7 @@ class _Entity : public _Object {
 
 		void UpdateMaxHealth(int Adjust);
 		void UpdateHealth(int Adjust);
+		virtual void UpdateSpeed(float Factor) {}
 		int GenerateDamage(int DamageBlock, float DamageResist);
 		bool IsDying() const { return Action == ACTION_DYING || Action == ACTION_STARTDEATH; }
 		bool IsDead() const { return Action == ACTION_DYING && !Active; }
@@ -109,6 +110,7 @@ class _Entity : public _Object {
 		int GetMaxHealth() const { return MaxHealth; }
 		int GetHealth() const { return CurrentHealth; }
 		float GetHealthPercentage() const { return (float)CurrentHealth / MaxHealth; }
+		float GetStaminaPercentage() const { return Stamina / MaxStamina; }
 		bool GetAttackRequested() const { return AttackRequested; }
 		int GetWeaponType() const { return WeaponType; }
 		Vector2 GetWeaponOffset(int Type) const { return WeaponParticleOffset[Type]; }
@@ -119,6 +121,7 @@ class _Entity : public _Object {
 		int GetMaxDamage() const { return MaxDamage; }
 		int GetBulletsShot() const { return BulletsShot; }
 		int GetLevel() const { return Level; }
+		bool GetTired() const { return Tired; }
 		virtual Vector2 GetGoal() const;
 		virtual int64_t GetExperienceGiven() const { return 0; }
 		virtual std::string GetItemGroupIdentifier() const { return ""; }
@@ -151,9 +154,11 @@ class _Entity : public _Object {
 		// Movement
 		MoveType MoveState;
 		double MoveSoundTimer, MoveSoundDelay;
-		float MovementSpeed;
+		float MovementSpeed, MovementModifier;
 		Vector2 MoveDirection;
 		bool PositionChanged;
+		float Stamina, MaxStamina;
+		bool Tired;
 
 		std::list<Vector2> Goals;
 
@@ -166,7 +171,7 @@ class _Entity : public _Object {
 		float DamageResist;
 
 		// Attacking attributes
-		float CurrentAccuracy, MinAccuracy, MaxAccuracy, Recoil, RecoilRegen, AttackRange;
+		float CurrentAccuracy, MinAccuracy, MaxAccuracy, AccuracyModifier, Recoil, RecoilRegen, AttackRange;
 		double FireTimer, FirePeriod;
 		int MinDamage, MaxDamage, BulletsShot, WeaponType;
 		bool AttackRequested, AttackAllowed, AttackMade;

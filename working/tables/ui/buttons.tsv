@@ -30,12 +30,13 @@ button_options_input_down	menu_options	menu_box	menu_hover	-125	300	128	32	1	0
 button_options_input_left	menu_options	menu_box	menu_hover	-125	350	128	32	1	0
 button_options_input_right	menu_options	menu_box	menu_hover	-125	400	128	32	1	0
 button_options_input_use	menu_options	menu_box	menu_hover	-125	450	128	32	1	0
-button_options_input_inventory	menu_options	menu_box	menu_hover	-125	500	128	32	1	0
+button_options_input_sprint	menu_options	menu_box	menu_hover	-125	500	128	32	1	0
 button_options_input_fire	menu_options	menu_box	menu_hover	225	250	128	32	1	0
 button_options_input_aim	menu_options	menu_box	menu_hover	225	300	128	32	1	0
 button_options_input_reload	menu_options	menu_box	menu_hover	225	350	128	32	1	0
 button_options_input_switch	menu_options	menu_box	menu_hover	225	400	128	32	1	0
 button_options_input_medkit	menu_options	menu_box	menu_hover	225	450	128	32	1	0
+button_options_input_inventory	menu_options	menu_box	menu_hover	225	500	128	32	1	0
 button_ingame_restart	menu_ingame	menu_button	menu_button_hover	0	-100	128	32	1	0
 button_ingame_resume	menu_ingame	menu_button	menu_button_hover	0	0	128	32	1	0
 button_ingame_options	menu_ingame	menu_button	menu_button_hover	0	50	128	32	1	0

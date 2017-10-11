@@ -82,6 +82,7 @@ label_options_aim	button_options_input_aim	hud_medium		Aim	-150	21	0	0	1	3
 label_options_reload	button_options_input_reload	hud_medium		Reload	-150	21	0	0	1	3
 label_options_weaponswitch	button_options_input_switch	hud_medium		Weapon Switch	-150	21	0	0	1	3
 label_options_medkit	button_options_input_medkit	hud_medium		Medkit	-150	21	0	0	1	3
+label_options_sprint	button_options_input_sprint	hud_medium		Sprint	-150	21	0	0	1	3
 label_options_config_up	button_options_input_up	hud_medium			0	21	0	0	1	3
 label_options_config_down	button_options_input_down	hud_medium			0	21	0	0	1	3
 label_options_config_left	button_options_input_left	hud_medium			0	21	0	0	1	3
@@ -93,6 +94,7 @@ label_options_config_aim	button_options_input_aim	hud_medium			0	21	0	0	1	3
 label_options_config_reload	button_options_input_reload	hud_medium			0	21	0	0	1	3
 label_options_config_weaponswitch	button_options_input_switch	hud_medium			0	21	0	0	1	3
 label_options_config_medkit	button_options_input_medkit	hud_medium			0	21	0	0	1	3
+label_options_config_sprint	button_options_input_sprint	hud_medium			0	21	0	0	1	3
 menu_options_accept_text	menu_popup	hud_large		Press a key or button for	0	35	0	0	1	3
 menu_options_accept_text_action	menu_popup	hud_large			0	75	0	0	1	3
 menu_ingame_restart_text	button_ingame_restart	hud_medium		Restart Level	0	21	0	0	1	3

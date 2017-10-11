@@ -31,7 +31,11 @@ _Entity::_Entity()
 	MoveSoundTimer(0),
 	MoveSoundDelay(0),
 	MovementSpeed(0),
+	MovementModifier(1.0f),
 	PositionChanged(false),
+	Stamina(1),
+	MaxStamina(1),
+	Tired(false),
 	Action(ACTION_IDLE),
 	WalkingAnimation(ENTITY_ANIMATIONWALKING),
 	MeleeAnimation(ENTITY_ANIMATIONATTACK),
@@ -46,6 +50,7 @@ _Entity::_Entity()
 	CurrentAccuracy(0),
 	MinAccuracy(0),
 	MaxAccuracy(0),
+	AccuracyModifier(1.0f),
 	Recoil(0),
 	RecoilRegen(0),
 	AttackRange(0),
@@ -82,7 +87,7 @@ float _Entity::GenerateShotDirection() {
 	float RandomOffset, NewDirection;
 
 	// Generate the offset
-	RandomOffset = Random.GenerateRange(-CurrentAccuracy / 2.0f, CurrentAccuracy / 2.0f);
+	RandomOffset = Random.GenerateRange(-CurrentAccuracy * AccuracyModifier / 2.0f, CurrentAccuracy * AccuracyModifier / 2.0f);
 
 	// Figure out new direction
 	NewDirection = Rotation + RandomOffset;
@@ -263,7 +268,7 @@ void _Entity::UpdateRecoil() {
 
 // Moves the object with collision detection
 void _Entity::Move() {
-
+	UpdateSpeed(1.0f);
 	if(MoveState == MOVE_NONE)
 		PositionChanged = false;
 
@@ -272,55 +277,62 @@ void _Entity::Move() {
 
 		// Get direction
 		Vector2 Goal = GetGoal();
-		Vector2 Delta, Direction(0.0, 0.0f);
+		Vector2 Delta, NewDirection(0.0, 0.0f);
 		switch(MoveState) {
 			case MOVE_DIRECTION:
 				if(MoveDirection[0] != 0 || MoveDirection[1] != 0) {
 					Delta = WallInPath(MoveDirection);
-					Direction = Delta * MovementSpeed;
+					NewDirection = Delta;
 				}
 			break;
 			case MOVE_GOAL:
 				Delta = (Goal - Position);
 				if(Delta.MagnitudeSquared() >= 0.01f) {
 					Delta = WallInPath(Delta);
-					Direction = Delta * MovementSpeed;
+					NewDirection = Delta;
 				}
 				else {
 					Position = Goal;
 				}
 			break;
 			case MOVE_FORWARD:
-				Direction[1] = -MovementSpeed;
+				NewDirection[1] = -1;
 			break;
 			case MOVE_BACKWARD:
-				Direction[1] = MovementSpeed;
+				NewDirection[1] = 1;
 			break;
 			case MOVE_LEFT:
-				Direction[0] = -MovementSpeed;
+				NewDirection[0] = -1;
 			break;
 			case MOVE_RIGHT:
-				Direction[0] = MovementSpeed;
+				NewDirection[0] = 1;
 			break;
 			case MOVE_FORWARDLEFT:
-				Direction[0] = -MovementSpeed * M_SQRT1_2;
-				Direction[1] = -MovementSpeed * M_SQRT1_2;
+				NewDirection[0] = -M_SQRT1_2;
+				NewDirection[1] = -M_SQRT1_2;
 			break;
 			case MOVE_FORWARDRIGHT:
-				Direction[0] = MovementSpeed * M_SQRT1_2;
-				Direction[1] = -MovementSpeed * M_SQRT1_2;
+				NewDirection[0] = M_SQRT1_2;
+				NewDirection[1] = -M_SQRT1_2;
 			break;
 			case MOVE_BACKWARDLEFT:
-				Direction[0] = -MovementSpeed * M_SQRT1_2;
-				Direction[1] = MovementSpeed * M_SQRT1_2;
+				NewDirection[0] = -M_SQRT1_2;
+				NewDirection[1] = M_SQRT1_2;
 			break;
 			case MOVE_BACKWARDRIGHT:
-				Direction[0] = MovementSpeed * M_SQRT1_2;
-				Direction[1] = MovementSpeed * M_SQRT1_2;
+				NewDirection[0] = M_SQRT1_2;
+				NewDirection[1] = M_SQRT1_2;
 			break;
 			default:
 			break;
 		}
+
+		// Moving backwards
+		if(NewDirection * Direction < 0)
+			UpdateSpeed(PLAYER_BACKWARDSPEED);
+
+		float Speed = MovementSpeed * MovementModifier;
+		NewDirection *= Speed;
 
 		// Get a list of entities that the object is colliding with
 		std::list<_Entity *> HitEntities;
@@ -331,7 +343,7 @@ void _Entity::Move() {
 			Vector2 HitObjectDirection = Iterator->Position - Position;
 
 			// Determine if we need to clip the direction
-			if(HitObjectDirection * Direction > 0) {
+			if(HitObjectDirection * NewDirection > 0) {
 				Vector2 DividingLine;
 
 				// Rotate vector
@@ -340,13 +352,13 @@ void _Entity::Move() {
 				DividingLine.Normalize();
 
 				// Project the direction onto the dividing line
-				Direction = DividingLine * (Direction * DividingLine);
+				NewDirection = DividingLine * (NewDirection * DividingLine);
 			}
 		}
 
 		// Check collisions with walls and map boundaries
 		Vector2 NewPosition;
-		Map->CheckCollisions(GetPosition() + Direction, GetRadius(), NewPosition);
+		Map->CheckCollisions(GetPosition() + NewDirection, GetRadius(), NewPosition);
 
 		// Determine if the object has moved
 		if(Position != NewPosition) {

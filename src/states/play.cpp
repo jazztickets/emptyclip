@@ -140,6 +140,7 @@ bool _PlayState::HandleAction(int InputType, int Action, int Value) {
 				case _Actions::INVENTORY:
 					HUD->SetInventoryOpen(!HUD->GetInventoryOpen());
 					Player->SetCrouching(false);
+					Player->SetSprinting(false);
 				break;
 				case _Actions::FIRE:
 					if(!HUD->GetInventoryOpen()) {
@@ -208,8 +209,8 @@ void _PlayState::KeyEvent(const _KeyEvent &KeyEvent) {
 			break;
 			case SDL_SCANCODE_GRAVE:
 				//WorldCursor.Print();
-				IsFiring = !IsFiring;
-				Audio.Play(new _AudioSource(Audio.GetBuffer("player_hit0")), WorldCursor);
+				//IsFiring = !IsFiring;
+				//Audio.Play(new _AudioSource(Audio.GetBuffer("player_hit0")), WorldCursor);
 				//HUD->ShowTextMessage("CHECKPOINT REACHED", 5.0f);
 				//_ParticleSpawn
 				//Particles->Create(_ParticleSpawn(Assets.GetParticleTemplate("tracer0"), WorldCursor, OBJECT_Z, Player->GetDirection()));
@@ -278,6 +279,7 @@ void _PlayState::Update(double FrameTime) {
 
 			// Aim
 			Player->SetCrouching(Actions.GetState(_Actions::AIM));
+			Player->SetSprinting(Actions.GetState(_Actions::SPRINT));
 		}
 
 		Player->SetUseRequested(Actions.GetState(_Actions::USE));
@@ -324,7 +326,7 @@ void _PlayState::Update(double FrameTime) {
 	Camera->SetPosition(Player->GetPosition());
 
 	// Get zoom state
-	if(Player->GetCrouching()) {
+	if(Player->IsCrouching()) {
 		if(Map->IsVisible(Player->GetPosition(), WorldCursor)) {
 			Camera->UpdatePosition((WorldCursor - Player->GetPosition()) / Player->GetZoomScale());
 		}

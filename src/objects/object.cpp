@@ -29,6 +29,7 @@ _Object::_Object()
 	WallState(0),
 	Position(ZERO_VECTOR),
 	LastPosition(ZERO_VECTOR),
+	Direction(0.0, 1.0f),
 	Color(COLOR_WHITE),
 	Rotation(0.0f),
 	Scale(1.0f),
@@ -43,7 +44,13 @@ _Object::~_Object() {
 // Calculates the angle from a slope
 void _Object::FacePosition(const Vector2 &Cursor) {
 
-	Rotation = atan2(Cursor.Y - Position.Y, Cursor.X - Position.X) * DEGREES_IN_RADIAN + 90.0f;
+	Direction.X = Cursor.X - Position.X;
+	Direction.Y = Cursor.Y - Position.Y;
+	if(Direction.X == 0 && Direction.Y == 0.0f)
+		Direction.Y = 1.0f;
+	Direction.Normalize();
+
+	Rotation = atan2(Direction.Y, Direction.X) * DEGREES_IN_RADIAN + 90.0f;
 	if(Rotation < 0.0f)
 		Rotation += 360.0f;
 }

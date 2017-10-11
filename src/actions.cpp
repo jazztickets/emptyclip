@@ -41,6 +41,7 @@ void _Actions::LoadActionNames() {
 	Names[RELOAD] = Assets.GetLabel("label_options_reload")->GetText();
 	Names[WEAPONSWITCH] = Assets.GetLabel("label_options_weaponswitch")->GetText();
 	Names[MEDKIT] = Assets.GetLabel("label_options_medkit")->GetText();
+	Names[SPRINT] = Assets.GetLabel("label_options_sprint")->GetText();
 }
 
 // Clear all mappings

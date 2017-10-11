@@ -11,6 +11,8 @@ viewport_healthend0	hud/healthend0.png	0	0	0
 viewport_healthend1	hud/healthend1.png	0	0	0
 viewport_reload0	hud/reload0.png	0	0	0
 viewport_weaponswitch0	hud/weaponswitch0.png	0	1	0
+viewport_stamina0	hud/stamina0.png	0	1	0
+viewport_stamina1	hud/stamina1.png	0	1	0
 menu_button	menu/button.png	0	0	0
 menu_button_hover	menu/button_hover.png	0	0	0
 menu_title	menu/title.png	0	0	0

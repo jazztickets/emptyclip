@@ -49,8 +49,8 @@ void _Framework::Init(int ArgumentCount, char **Arguments) {
 
 	bool AudioEnabled = Config.AudioEnabled;
 	bool Fullscreen = Config.Fullscreen;
-	int ScreenWidth = Config.ScreenWidth;
-	int ScreenHeight = Config.ScreenHeight;
+	int ScreenWidth = Config.WindowWidth;
+	int ScreenHeight = Config.WindowHeight;
 	int MSAA = Config.MSAA;
 	int Vsync = Config.Vsync;
 

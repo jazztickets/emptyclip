@@ -48,12 +48,13 @@ const std::string KEYLABEL_IDENTIFIERS[] = {
 	"label_options_config_left",
 	"label_options_config_right",
 	"label_options_config_use",
-	"label_options_config_inventory",
+	"label_options_config_sprint",
 	"label_options_config_fire",
 	"label_options_config_aim",
 	"label_options_config_reload",
 	"label_options_config_weaponswitch",
 	"label_options_config_medkit",
+	"label_options_config_inventory",
 };
 
 const char *COLORS[] = {

@@ -5,6 +5,8 @@ player_health_cap_start	hud_player_health	viewport_healthend0		-108	0	16	32	1	0	
 player_health_cap_end	hud_player_health	viewport_healthend1		108	0	16	32	1	0	0
 enemy_health_empty	hud_enemy_info	viewport_health1		0	0	150	32	0	0	0
 enemy_health_full	hud_enemy_info	viewport_health0		0	0	0	32	0	0	0
+player_stamina_empty	hud_player_stamina	viewport_stamina1		0	0	100	8	0	0	0
+player_stamina_full	hud_player_stamina	viewport_stamina0		0	0	0	8	0	0	0
 indicator_progress	hud_indicator			0	0	256	32	0	0	0
 experience_bar	hud_experience	hud_experience		0	0	512	8	0	0	0
 experience_bar_full	hud_experience	hud_experience_full		0	0	512	8	0	0	0

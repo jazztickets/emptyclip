@@ -56,8 +56,9 @@ void _Config::Close() {
 // Set defaults
 void _Config::SetDefaults() {
 
-	ScreenWidth = DEFAULT_WINDOW_WIDTH;
-	ScreenHeight = DEFAULT_WINDOW_HEIGHT;
+	Version = 1;
+	WindowWidth = DEFAULT_WINDOW_WIDTH;
+	WindowHeight = DEFAULT_WINDOW_HEIGHT;
 	MSAA = 0;
 	Aniso = 0;
 	Fullscreen = DEFAULT_FULLSCREEN;
@@ -82,6 +83,7 @@ void _Config::LoadDefaultInputBindings() {
 	Actions.AddInputMap(_Input::KEYBOARD, DEFAULT_KEYDOWN, _Actions::DOWN);
 	Actions.AddInputMap(_Input::KEYBOARD, DEFAULT_KEYLEFT, _Actions::LEFT);
 	Actions.AddInputMap(_Input::KEYBOARD, DEFAULT_KEYRIGHT, _Actions::RIGHT);
+	Actions.AddInputMap(_Input::KEYBOARD, DEFAULT_KEYSPRINT, _Actions::SPRINT);
 	Actions.AddInputMap(_Input::KEYBOARD, DEFAULT_KEYUSE, _Actions::USE);
 	Actions.AddInputMap(_Input::KEYBOARD, DEFAULT_KEYINVENTORY, _Actions::INVENTORY);
 	Actions.AddInputMap(_Input::MOUSE_BUTTON, DEFAULT_BUTTONFIRE, _Actions::FIRE);
@@ -89,6 +91,10 @@ void _Config::LoadDefaultInputBindings() {
 	Actions.AddInputMap(_Input::KEYBOARD, DEFAULT_KEYRELOAD, _Actions::RELOAD);
 	Actions.AddInputMap(_Input::KEYBOARD, DEFAULT_KEYWEAPONSWITCH, _Actions::WEAPONSWITCH);
 	Actions.AddInputMap(_Input::KEYBOARD, DEFAULT_KEYMEDKIT, _Actions::MEDKIT);
+	Actions.AddInputMap(_Input::KEYBOARD, DEFAULT_KEYWEAPON1, _Actions::WEAPON1);
+	Actions.AddInputMap(_Input::KEYBOARD, DEFAULT_KEYWEAPON2, _Actions::WEAPON2);
+	Actions.AddInputMap(_Input::KEYBOARD, DEFAULT_KEYWEAPON3, _Actions::WEAPON3);
+	Actions.AddInputMap(_Input::KEYBOARD, DEFAULT_KEYWEAPON4, _Actions::WEAPON4);
 }
 
 // Load the config file
@@ -120,9 +126,18 @@ void _Config::Load() {
 	}
 	In.close();
 
+	// Read version
+	int ReadVersion = 0;
+	GetValue("version", ReadVersion);
+	if(ReadVersion != Version) {
+		std::rename(ConfigFile.c_str(), (ConfigFile + "." + std::to_string(ReadVersion)).c_str());
+		Save();
+		return;
+	}
+
 	// Read config
-	GetValue("screen_width", ScreenWidth);
-	GetValue("screen_height", ScreenHeight);
+	GetValue("window_width", WindowWidth);
+	GetValue("window_height", WindowHeight);
 	GetValue("fullscreen", Fullscreen);
 	GetValue("vsync", Vsync);
 	GetValue("max_fps", MaxFPS);
@@ -166,8 +181,9 @@ void _Config::Save() {
 	}
 
 	// Write variables
-	Out << "screen_width=" << ScreenWidth << std::endl;
-	Out << "screen_height=" << ScreenHeight << std::endl;
+	Out << "version=" << Version << std::endl;
+	Out << "window_width=" << WindowWidth << std::endl;
+	Out << "window_height=" << WindowHeight << std::endl;
 	Out << "fullscreen=" << Fullscreen << std::endl;
 	Out << "vsync=" << Vsync << std::endl;
 	Out << "max_fps=" << MaxFPS << std::endl;

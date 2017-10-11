@@ -36,10 +36,13 @@ class _Config {
 
 		const std::string &GetConfigPath() { return ConfigPath; }
 
+		// State
+		int Version;
+
 		// Graphics
-		int ScreenWidth;
-		int ScreenHeight;
-		int MaxFPS;
+		int WindowWidth;
+		int WindowHeight;
+		double MaxFPS;
 		int Vsync;
 		int MSAA;
 		int Aniso;
