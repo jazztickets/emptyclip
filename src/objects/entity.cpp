@@ -35,6 +35,7 @@ _Entity::_Entity()
 	PositionChanged(false),
 	Stamina(1),
 	MaxStamina(1),
+	StaminaRegenModifier(1.0f),
 	Tired(false),
 	Action(ACTION_IDLE),
 	WalkingAnimation(ENTITY_ANIMATIONWALKING),

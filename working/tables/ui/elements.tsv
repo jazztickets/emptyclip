@@ -9,8 +9,8 @@ hud_mainhand			-190	-90	0	0	1	2	0
 hud_offhand			190	-90	0	0	1	2	0
 hud_messagebox		menu_window	0	-150	275	100	1	2	0
 inventory			-140	0	200	258	1	1	0
-skills		hud_skills	0	0	250	500	2	1	0
-skill_info		hud_skills	0	0	350	140	0	0	0
+skills		hud_skills	0	0	300	700	2	1	0
+skill_info		hud_skills	0	0	350	200	0	0	0
 editor_command			16	0	700	147	0	2	0
 editor_blocks			382	-81	304	32	0	2	0
 editor_events			382	-81	304	32	0	2	0

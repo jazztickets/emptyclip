@@ -138,7 +138,7 @@ void _Player::Reset() {
 	WeaponSwitchTo = -1;
 	TimePlayed = 0;
 	PlayingTimer = 0;
-	Stamina = 1.0f;
+	Stamina = 100.0f;
 
 	CalculateExperienceStats();
 	CalculateLevelPercentage();
@@ -422,7 +422,7 @@ void _Player::Update(double FrameTime) {
 
 	// Update stamina
 	if(!IsDying())
-		Stamina += PLAYER_STAMINAREGEN;
+		Stamina += PLAYER_STAMINAREGEN * StaminaRegenModifier;
 
 	if(Stamina > MaxStamina)
 	   Stamina = MaxStamina;
@@ -1211,6 +1211,8 @@ void _Player::RecalculateStats() {
 	MovementSpeed = PLAYER_MOVEMENTSPEED * Assets.GetSkill(Skills[SKILL_MOVESPEED], SKILL_MOVESPEED);
 	DamageResist = Assets.GetSkill(Skills[SKILL_DAMAGERESIST], SKILL_DAMAGERESIST) - 1.0f;
 	MaxHealth = Assets.GetLevelHealth(Level) * Assets.GetSkill(Skills[SKILL_HEALTH], SKILL_HEALTH);
+	MaxStamina = 1.0f * Assets.GetSkill(Skills[SKILL_MAXSTAMINA], SKILL_MAXSTAMINA);
+	StaminaRegenModifier = 1.0f * Assets.GetSkill(Skills[SKILL_MAXSTAMINA], SKILL_MAXSTAMINA);
 
 	// Armor
 	if(GetArmor()) {

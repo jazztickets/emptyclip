@@ -157,7 +157,7 @@ class _Entity : public _Object {
 		float MovementSpeed, MovementModifier;
 		Vector2 MoveDirection;
 		bool PositionChanged;
-		float Stamina, MaxStamina;
+		float Stamina, MaxStamina, StaminaRegenModifier;
 		bool Tired;
 
 		std::list<Vector2> Goals;

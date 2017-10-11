@@ -111,4 +111,5 @@ skills_plus4	skills	hud_plus	hud_plus_hover	75	150	16	16	0	0
 skills_plus5	skills	hud_plus	hud_plus_hover	75	180	16	16	0	0
 skills_plus6	skills	hud_plus	hud_plus_hover	75	210	16	16	0	0
 skills_plus7	skills	hud_plus	hud_plus_hover	75	240	16	16	0	0
-skills_hidden	skills			75	280	16	16	0	0
+skills_plus8	skills	hud_plus	hud_plus_hover	75	270	16	16	0	0
+skills_hidden	skills			75	310	16	16	0	0

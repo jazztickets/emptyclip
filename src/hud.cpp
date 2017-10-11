@@ -108,6 +108,7 @@ _HUD::_HUD(_Player *Player) {
 	Labels[LABEL_SKILL5] = Assets.GetLabel("hud_skill5_value");
 	Labels[LABEL_SKILL6] = Assets.GetLabel("hud_skill6_value");
 	Labels[LABEL_SKILL7] = Assets.GetLabel("hud_skill7_value");
+	Labels[LABEL_SKILL8] = Assets.GetLabel("hud_skill8_value");
 
 	Labels[LABEL_DAMAGE] = Assets.GetLabel("hud_player_damage_value");
 	Labels[LABEL_DAMAGEBLOCK] = Assets.GetLabel("hud_player_damageblock_value");
@@ -817,6 +818,11 @@ void _HUD::UpdateSkillInfo(int Skill, int DrawX, int DrawY) {
 			Labels[LABEL_SKILLTEXT]->SetText("Increases max inventory stack size");
 			Buffer << "+" << Assets.GetSkill(Player->GetSkill(Skill), Skill) << " Stacks";
 			BufferNext << "+" << Assets.GetSkill(Assets.GetValidSkill(Player->GetSkill(Skill)+1), Skill) << " Stacks";
+		break;
+		case SKILL_MAXSTAMINA:
+			Labels[LABEL_SKILLTEXT]->SetText("Increases max stamina");
+			Buffer << "+" << Assets.GetSkillPercentImprovement(Player->GetSkill(Skill), Skill) << "% Max Stamina";
+			BufferNext << "+" << Assets.GetSkillPercentImprovement(Assets.GetValidSkill(Player->GetSkill(Skill)+1), Skill) << "% Max Stamina";
 		break;
 	}
 
