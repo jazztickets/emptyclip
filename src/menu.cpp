@@ -78,8 +78,8 @@ _Menu::_Menu() {
 void _Menu::InitTitle() {
 
 	std::string BuildNumber = "";
-	if(GAME_BUILD)
-		BuildNumber = "r" + std::to_string(GAME_BUILD);
+	if(BUILD_NUMBER)
+		BuildNumber = "r" + std::to_string(BUILD_NUMBER);
 
 	Assets.GetLabel("game_version")->SetText(GAME_VERSION + BuildNumber);
 	Graphics.ShowCursor(true);
