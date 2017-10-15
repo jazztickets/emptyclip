@@ -134,6 +134,10 @@ void _EditorState::Init() {
 	Camera->CalculateFrustum(Graphics.GetAspectRatio());
 	Graphics.ShowCursor(true);
 
+	// Adjust UI
+	for(int i = 0; i < EDITMODE_COUNT; i++)
+		PaletteElement[i]->SetHeight(Graphics.GetViewportHeight() - 30);
+
 	if(SavedLayer != -1)
 		ExecuteUpdateLayer(SavedLayer, false);
 
@@ -1184,8 +1188,8 @@ void _EditorState::DrawBrush() {
 				ActivationPeriod = EventActivationPeriod;
 			}
 
-			int X = (float)Graphics.GetViewportWidth() + 70;
-			int Y = (float)Graphics.GetViewportHeight() - 15;
+			int X = Graphics.GetViewportWidth() + 75;
+			int Y = Graphics.GetViewportHeight() - 15;
 
 			std::ostringstream Buffer;
 			Buffer << Active;
@@ -1220,7 +1224,6 @@ void _EditorState::DrawBrush() {
 				IconText = "";
 				IconTexture = nullptr;
 			}
-
 		break;
 	}
 
@@ -1231,8 +1234,10 @@ void _EditorState::DrawBrush() {
 	if(IconIdentifier != "")
 		MainFont->DrawText(IconIdentifier, (float)Graphics.GetViewportWidth() + 112, (float)Graphics.GetViewportHeight() + 145, COLOR_WHITE, CENTER_MIDDLE);
 
-	if(IconTexture)
+	if(IconTexture) {
+		Graphics.EnableVBO(VBO_QUAD);
 		Graphics.DrawTexture((float)Graphics.GetScreenWidth() - 112, (float)Graphics.GetScreenHeight() - 84, 0.0f, IconTexture, IconColor, IconRotation, IconScaleX * EDITOR_PALETTE_SELECTEDSIZE * 2, EDITOR_PALETTE_SELECTEDSIZE * 2);
+	}
 }
 
 // Draws an object
