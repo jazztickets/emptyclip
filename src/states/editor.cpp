@@ -945,7 +945,7 @@ void _EditorState::Render(double BlendFactor) {
 
 	// Draw cursor position
 	int X = 16;
-	int Y = Graphics.GetScreenHeight() - 25;
+	int Y = Graphics.GetViewportHeight() - 25;
 	Buffer << std::fixed << WorldCursor[0] << ", " << WorldCursor[1];
 	MainFont->DrawText(Buffer.str(), X, Y);
 	Buffer.str("");
