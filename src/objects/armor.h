@@ -22,9 +22,13 @@
 
 // Holds information about armor
 struct _ArmorTemplate {
-	std::string Name, IconIdentifier;
+	std::string Name;
+	std::string IconIdentifier;
 	_Color Color;
-	int DamageBlock, StrengthRequirement;
+	int StrengthRequirement;
+	int DamageBlock;
+	float DamageResist;
+	float MovementSpeed;
 };
 
 // Classes
@@ -35,15 +39,17 @@ class _Armor : public _Item {
 		_Armor(const std::string &Identifier, int Count, const Vector2 &Position, const _ArmorTemplate *Armor, _Texture *Texture);
 		~_Armor();
 
-		void SetDamageBlock(int Value) { DamageBlock = Value; }
-		void SetStrengthRequirement(int Value) { StrengthRequirement = Value; }
-
-		int GetDamageBlock() const { return DamageBlock; }
 		int GetStrengthRequirement() const { return StrengthRequirement; }
+		int GetDamageBlock() const { return DamageBlock; }
+		float GetDamageResist() const { return DamageResist; }
+		float GetMovementSpeed() const { return MovementSpeed; }
 
 		virtual std::string GetTypeAsString() const override { return "Armor"; }
 
 	protected:
 
-		int DamageBlock, StrengthRequirement;
+		int StrengthRequirement;
+		int DamageBlock;
+		float DamageResist;
+		float MovementSpeed;
 };

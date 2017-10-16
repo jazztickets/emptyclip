@@ -1208,19 +1208,22 @@ void _Player::RecalculateStats() {
 	if(FirePeriod < WEAPON_MINFIREPERIOD)
 		FirePeriod = WEAPON_MINFIREPERIOD;
 
-	MovementSpeed = PLAYER_MOVEMENTSPEED * Assets.GetSkill(Skills[SKILL_MOVESPEED], SKILL_MOVESPEED);
+	MovementSpeed = Assets.GetSkill(Skills[SKILL_MOVESPEED], SKILL_MOVESPEED);
 	DamageResist = Assets.GetSkill(Skills[SKILL_DAMAGERESIST], SKILL_DAMAGERESIST) - 1.0f;
 	MaxHealth = (int)(Assets.GetLevelHealth(Level) * Assets.GetSkill(Skills[SKILL_HEALTH], SKILL_HEALTH));
 	MaxStamina = 1.0f * Assets.GetSkill(Skills[SKILL_MAXSTAMINA], SKILL_MAXSTAMINA);
 	StaminaRegenModifier = 1.0f * Assets.GetSkill(Skills[SKILL_MAXSTAMINA], SKILL_MAXSTAMINA);
 
 	// Armor
+	DamageBlock = Assets.GetLevelDamageBlock(Level);
 	if(GetArmor()) {
-		DamageBlock = Assets.GetLevelDamageBlock(Level) + GetArmor()->GetDamageBlock();
+		DamageBlock += GetArmor()->GetDamageBlock();
+		DamageResist += GetArmor()->GetDamageResist();
+		MovementSpeed += GetArmor()->GetMovementSpeed();
 	}
-	else {
-		DamageBlock = Assets.GetLevelDamageBlock(Level);
-	}
+
+	// Get final speed
+	MovementSpeed *= PLAYER_MOVEMENTSPEED;
 
 	if(DebugLevel > 1) {
 		std::cout << "Stats for " << Name << std::endl;

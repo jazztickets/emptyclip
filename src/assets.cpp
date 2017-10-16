@@ -833,7 +833,7 @@ void _Assets::LoadArmorTable(const std::string &Filename) {
 		Armor.Name = GetTSVText(InputFile);
 		Armor.IconIdentifier = GetTSVText(InputFile);
 		ColorName = GetTSVText(InputFile);
-		InputFile >> Armor.DamageBlock >> Armor.StrengthRequirement;
+		InputFile >> Armor.StrengthRequirement >> Armor.DamageBlock >> Armor.DamageResist >> Armor.MovementSpeed;
 		InputFile.ignore(1024, '\n');
 
 		// Check for loaded textures

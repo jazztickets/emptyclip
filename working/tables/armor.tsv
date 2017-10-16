@@ -1,76 +1,76 @@
-identifier	name	icon identifier	color	defense	strength requirement
-special_shirt0	Jade Shirt	s_shirt0		25	3
-special_shirt1	Special Jacket	s_shirt0		75	10
-special_shirt2	Magical Pockets	s_shirt0		50	25
-special_shirt3	Demon's Robe	s_shirt0		125	35
-special_shirt4	Ninja Suit	s_shirt0	dark	190	20
-special_chain0	Sapphire Vest	s_chain0		30	2
-special_chain1	Light Suit	s_chain0		95	12
-special_chain2	Demon Vest	s_chain0		250	30
-special_chain3	Dragon Armor	s_chain0	dark	500	41
-special_plate0	Rock Armor	s_plate0		100	8
-special_plate1	Wyvern Shield	s_plate0		300	25
-special_plate2	Plasma Suit	s_plate0	dark	800	42
-shirt0	Shirt	ar_shirt0	shade_red0	0	0
-shirt1	Plain Shirt	ar_shirt0	shade_green0	1	0
-shirt2	Stylish Shirt	ar_shirt0	shade_blue0	2	0
-shirt3	Warm Sweatshirt	ar_shirt0	shade_red1	3	1
-shirt4	Nice Jacket	ar_shirt0	shade_green1	5	1
-shirt5	Cool Jacket	ar_shirt0	shade_blue1	7	1
-shirt6	Leather Jacket	ar_shirt0	shade_red2	6	2
-shirt7	Tough Jacket	ar_shirt0	shade_green2	9	2
-shirt8	Strong Jacket	ar_shirt0	shade_blue2	12	2
-shirt9	Shirt II	ar_shirt0	shade_red0	9	3
-shirt10	Plain Shirt II	ar_shirt0	shade_green0	13	3
-shirt11	Stylish Shirt II	ar_shirt0	shade_blue0	17	3
-shirt12	Warm Sweatshirt II	ar_shirt0	shade_red1	12	4
-shirt13	Nice Jacket II	ar_shirt0	shade_green1	17	4
-shirt14	Cool Jacket II	ar_shirt0	shade_blue1	22	4
-shirt15	Leather Jacket II	ar_shirt0	shade_red2	15	5
-shirt16	Tough Jacket II	ar_shirt0	shade_green2	21	5
-shirt17	Strong Jacket II	ar_shirt0	shade_blue2	27	5
-shirt18	Protective Shirt	ar_shirt0	shade_black0	18	6
-shirt19	Tough Jacket III	ar_shirt0	shade_black1	25	6
-shirt20	Magical Shirt	ar_shirt0	shade_black2	32	6
-chain0	Wire Shirt	ar_chain0	shade_red0	5	1
-chain1	Copper Jacket	ar_chain0	shade_green0	6	1
-chain2	Heavy Shirt	ar_chain0	shade_blue0	12	2
-chain3	Weak Metal Vest	ar_chain0	shade_red1	15	3
-chain4	Bullet Proof Vest	ar_chain0	shade_green1	17	3
-chain5	Metal Jacket	ar_chain0	shade_blue1	24	4
-chain6	Metal Vest	ar_chain0	shade_red2	25	5
-chain7	Steel Vest	ar_chain0	shade_green2	33	6
-chain8	Chainmail	ar_chain0	shade_blue2	36	6
-chain9	Wire Shirt II	ar_chain0	shade_red0	35	7
-chain10	Copper Jacket II	ar_chain0	shade_green0	44	8
-chain11	Heavy Shirt II	ar_chain0	shade_blue0	48	8
-chain12	Weak Metal Vest II	ar_chain0	shade_red1	45	9
-chain13	Bullet Proof Vest II	ar_chain0	shade_green1	55	10
-chain14	Metal Jacket II	ar_chain0	shade_blue1	65	11
-chain15	Metal Vest II	ar_chain0	shade_red2	55	11
-chain16	Steel Vest II	ar_chain0	shade_green2	66	12
-chain17	Chainmail	ar_chain0	shade_blue2	77	13
-chain18	Diamond Mail	ar_chain0	shade_black0	65	13
-chain19	Platinum Vest	ar_chain0	shade_black1	77	14
-chain20	Aegis	ar_chain0	shade_black2	89	15
-plate0	Tin Plate	ar_plate0	shade_red0	16	1
-plate1	Weak Armor	ar_plate0	shade_green0	23	2
-plate2	Soft Plate Mail	ar_plate0	shade_blue0	30	3
-plate3	Medium Armor	ar_plate0	shade_red1	40	5
-plate4	Medium Plate	ar_plate0	shade_green1	48	6
-plate5	Weak Plate Mail	ar_plate0	shade_blue1	62	8
-plate6	Plate Mail	ar_plate0	shade_red2	64	9
-plate7	Full Armor	ar_plate0	shade_green2	79	11
-plate8	Protective Plate	ar_plate0	shade_blue2	88	12
-plate9	Tin Plate II	ar_plate0	shade_red0	88	13
-plate10	Weak Armor II	ar_plate0	shade_green0	104	15
-plate11	Soft Plate Mail II	ar_plate0	shade_blue0	114	16
-plate12	Medium Armor II	ar_plate0	shade_red1	118	18
-plate13	Medium Plate II	ar_plate0	shade_green1	129	19
-plate14	Weak Plate Mail II	ar_plate0	shade_blue1	146	21
-plate15	Plate Mail II	ar_plate0	shade_red2	142	22
-plate16	Full Armor II	ar_plate0	shade_green2	154	23
-plate17	Protective Plate II	ar_plate0	shade_blue2	172	25
-plate18	Knight's Armor	ar_plate0	shade_black0	166	26
-plate19	Full Suit	ar_plate0	shade_black1	185	28
-plate20	Magician Plate	ar_plate0	shade_black2	198	29
+identifier	name	icon	color	strength requirement	damage block	damage resist	movement speed
+special_shirt0	Jade Shirt	s_shirt0		3	25	0	0
+special_shirt1	Special Jacket	s_shirt0		10	75	0	0
+special_shirt2	Magical Pockets	s_shirt0		25	50	0	0
+special_shirt3	Demon's Robe	s_shirt0		35	125	0	0
+special_shirt4	Ninja Suit	s_shirt0	dark	20	190	0	0
+special_chain0	Sapphire Vest	s_chain0		2	30	0	0
+special_chain1	Light Suit	s_chain0		12	95	0	0
+special_chain2	Demon Vest	s_chain0		30	250	0	0
+special_chain3	Dragon Armor	s_chain0	dark	41	500	0	0
+special_plate0	Rock Armor	s_plate0		8	100	0	0
+special_plate1	Wyvern Shield	s_plate0		25	300	0	0
+special_plate2	Plasma Suit	s_plate0	dark	42	800	0	0
+shirt0	Shirt	ar_shirt0	shade_red0	0	0	0	0.1
+shirt1	Plain Shirt	ar_shirt0	shade_green0	1	1	0	0.1
+shirt2	Stylish Shirt	ar_shirt0	shade_blue0	2	2	0	0.1
+shirt3	Warm Sweatshirt	ar_shirt0	shade_red1	3	3	0	0.1
+shirt4	Nice Jacket	ar_shirt0	shade_green1	5	5	0	0.1
+shirt5	Cool Jacket	ar_shirt0	shade_blue1	7	7	0	0.1
+shirt6	Leather Jacket	ar_shirt0	shade_red2	6	6	0	0.1
+shirt7	Tough Jacket	ar_shirt0	shade_green2	9	9	0	0.1
+shirt8	Strong Jacket	ar_shirt0	shade_blue2	12	12	0	0.1
+shirt9	Shirt II	ar_shirt0	shade_red0	9	9	0	0.1
+shirt10	Plain Shirt II	ar_shirt0	shade_green0	13	13	0	0.1
+shirt11	Stylish Shirt II	ar_shirt0	shade_blue0	17	17	0	0.1
+shirt12	Warm Sweatshirt II	ar_shirt0	shade_red1	12	12	0	0.1
+shirt13	Nice Jacket II	ar_shirt0	shade_green1	17	17	0	0.1
+shirt14	Cool Jacket II	ar_shirt0	shade_blue1	22	22	0	0.1
+shirt15	Leather Jacket II	ar_shirt0	shade_red2	15	15	0	0.1
+shirt16	Tough Jacket II	ar_shirt0	shade_green2	21	21	0	0.1
+shirt17	Strong Jacket II	ar_shirt0	shade_blue2	27	27	0	0.1
+shirt18	Protective Shirt	ar_shirt0	shade_black0	18	18	0	0.1
+shirt19	Tough Jacket III	ar_shirt0	shade_black1	25	25	0	0.1
+shirt20	Magical Shirt	ar_shirt0	shade_black2	32	32	0	0.1
+chain0	Wire Shirt	ar_chain0	shade_red0	5	5	0.1	-0.1
+chain1	Copper Jacket	ar_chain0	shade_green0	6	6	0.1	-0.1
+chain2	Heavy Shirt	ar_chain0	shade_blue0	12	12	0.1	-0.1
+chain3	Weak Metal Vest	ar_chain0	shade_red1	15	15	0.1	-0.1
+chain4	Bullet Proof Vest	ar_chain0	shade_green1	17	17	0.1	-0.1
+chain5	Metal Jacket	ar_chain0	shade_blue1	24	24	0.1	-0.1
+chain6	Metal Vest	ar_chain0	shade_red2	25	25	0.1	-0.1
+chain7	Steel Vest	ar_chain0	shade_green2	33	33	0.1	-0.1
+chain8	Chainmail	ar_chain0	shade_blue2	36	36	0.1	-0.1
+chain9	Wire Shirt II	ar_chain0	shade_red0	35	35	0.1	-0.1
+chain10	Copper Jacket II	ar_chain0	shade_green0	44	44	0.1	-0.1
+chain11	Heavy Shirt II	ar_chain0	shade_blue0	48	48	0.1	-0.1
+chain12	Weak Metal Vest II	ar_chain0	shade_red1	45	45	0.1	-0.1
+chain13	Bullet Proof Vest II	ar_chain0	shade_green1	55	55	0.1	-0.1
+chain14	Metal Jacket II	ar_chain0	shade_blue1	65	65	0.1	-0.1
+chain15	Metal Vest II	ar_chain0	shade_red2	55	55	0.1	-0.1
+chain16	Steel Vest II	ar_chain0	shade_green2	66	66	0.1	-0.1
+chain17	Chainmail	ar_chain0	shade_blue2	77	77	0.1	-0.1
+chain18	Diamond Mail	ar_chain0	shade_black0	65	65	0.1	-0.1
+chain19	Platinum Vest	ar_chain0	shade_black1	77	77	0.1	-0.1
+chain20	Aegis	ar_chain0	shade_black2	89	89	0.1	-0.1
+plate0	Tin Plate	ar_plate0	shade_red0	16	16	0.2	-0.2
+plate1	Weak Armor	ar_plate0	shade_green0	23	23	0.2	-0.2
+plate2	Soft Plate Mail	ar_plate0	shade_blue0	30	30	0.2	-0.2
+plate3	Medium Armor	ar_plate0	shade_red1	40	40	0.2	-0.2
+plate4	Medium Plate	ar_plate0	shade_green1	48	48	0.2	-0.2
+plate5	Weak Plate Mail	ar_plate0	shade_blue1	62	62	0.2	-0.2
+plate6	Plate Mail	ar_plate0	shade_red2	64	64	0.2	-0.2
+plate7	Full Armor	ar_plate0	shade_green2	79	79	0.2	-0.2
+plate8	Protective Plate	ar_plate0	shade_blue2	88	88	0.2	-0.2
+plate9	Tin Plate II	ar_plate0	shade_red0	88	88	0.2	-0.2
+plate10	Weak Armor II	ar_plate0	shade_green0	104	104	0.2	-0.2
+plate11	Soft Plate Mail II	ar_plate0	shade_blue0	114	114	0.2	-0.2
+plate12	Medium Armor II	ar_plate0	shade_red1	118	118	0.2	-0.2
+plate13	Medium Plate II	ar_plate0	shade_green1	129	129	0.2	-0.2
+plate14	Weak Plate Mail II	ar_plate0	shade_blue1	146	146	0.2	-0.2
+plate15	Plate Mail II	ar_plate0	shade_red2	142	142	0.2	-0.2
+plate16	Full Armor II	ar_plate0	shade_green2	154	154	0.2	-0.2
+plate17	Protective Plate II	ar_plate0	shade_blue2	172	172	0.2	-0.2
+plate18	Knight's Armor	ar_plate0	shade_black0	166	166	0.2	-0.2
+plate19	Full Suit	ar_plate0	shade_black1	185	185	0.2	-0.2
+plate20	Magician Plate	ar_plate0	shade_black2	198	198	0.2	-0.2

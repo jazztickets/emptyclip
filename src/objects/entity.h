@@ -117,6 +117,7 @@ class _Entity : public _Object {
 		float GetWeaponRange() const { return AttackRange; }
 		float GetCurrentAccuracy() const { return CurrentAccuracy; }
 		float GetMaxAccuracy() const { return MaxAccuracy; }
+		float GetMovementSpeed() const { return MovementSpeed; }
 		int GetMinDamage() const { return MinDamage; }
 		int GetMaxDamage() const { return MaxDamage; }
 		int GetBulletsShot() const { return BulletsShot; }

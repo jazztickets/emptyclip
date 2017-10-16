@@ -113,6 +113,7 @@ _HUD::_HUD(_Player *Player) {
 	Labels[LABEL_DAMAGE] = Assets.GetLabel("hud_player_damage_value");
 	Labels[LABEL_DAMAGEBLOCK] = Assets.GetLabel("hud_player_damageblock_value");
 	Labels[LABEL_DAMAGERESIST] = Assets.GetLabel("hud_player_damageresist_value");
+	Labels[LABEL_MOVEMENTSPEED] = Assets.GetLabel("hud_player_movementspeed_value");
 	Labels[LABEL_KILLS] = Assets.GetLabel("hud_player_kills_value");
 
 	Elements[ELEMENT_SKILLINFO] = Assets.GetElement("skill_info");
@@ -425,6 +426,10 @@ void _HUD::RenderCharacterScreen() {
 	Labels[LABEL_DAMAGERESIST]->SetText(Buffer.str());
 	Buffer.str("");
 
+	Buffer << int(100 * Player->GetMovementSpeed() / PLAYER_MOVEMENTSPEED + 0.5f) << "%";
+	Labels[LABEL_MOVEMENTSPEED]->SetText(Buffer.str());
+	Buffer.str("");
+
 	Buffer << Player->GetMonsterKills();
 	Labels[LABEL_KILLS]->SetText(Buffer.str());
 	Buffer.str("");
@@ -706,33 +711,71 @@ void _HUD::RenderItemInfo(_Item *Item, int DrawX, int DrawY) {
 			DrawX += 40;
 
 			// Strength required
-			TextColor = COLOR_WHITE;
-			if(EquippedArmor) {
-				if(Armor->GetStrengthRequirement() < EquippedArmor->GetStrengthRequirement())
-					TextColor = COLOR_GREEN;
-				else if(Armor->GetStrengthRequirement() > EquippedArmor->GetStrengthRequirement())
-					TextColor = COLOR_RED;
-			}
-			DrawY += 20;
-			Buffer << Armor->GetStrengthRequirement();
-			Fonts[FONT_MEDIUM]->DrawText("Strength Required", DrawX - PadX, DrawY, COLOR_WHITE, RIGHT_BASELINE);
-			Fonts[FONT_MEDIUM]->DrawText(Buffer.str(), DrawX + PadX, DrawY, TextColor, LEFT_BASELINE);
-			Buffer.str("");
-
-			// DamageBlock
-			TextColor = COLOR_WHITE;
-			if(EquippedArmor) {
-				if(Armor->GetDamageBlock() > EquippedArmor->GetDamageBlock())
-					TextColor = COLOR_GREEN;
-				else if(Armor->GetDamageBlock() < EquippedArmor->GetDamageBlock())
-					TextColor = COLOR_RED;
+			if(Armor->GetStrengthRequirement() != 0) {
+				TextColor = COLOR_WHITE;
+				if(EquippedArmor) {
+					if(Armor->GetStrengthRequirement() < EquippedArmor->GetStrengthRequirement())
+						TextColor = COLOR_GREEN;
+					else if(Armor->GetStrengthRequirement() > EquippedArmor->GetStrengthRequirement())
+						TextColor = COLOR_RED;
+				}
+				DrawY += 20;
+				Buffer << Armor->GetStrengthRequirement();
+				Fonts[FONT_MEDIUM]->DrawText("Strength Required", DrawX - PadX, DrawY, COLOR_WHITE, RIGHT_BASELINE);
+				Fonts[FONT_MEDIUM]->DrawText(Buffer.str(), DrawX + PadX, DrawY, TextColor, LEFT_BASELINE);
+				Buffer.str("");
 			}
 
-			DrawY += 20;
-			Buffer << Armor->GetDamageBlock();
-			Fonts[FONT_MEDIUM]->DrawText("Damage Block", DrawX - PadX, DrawY, COLOR_WHITE, RIGHT_BASELINE);
-			Fonts[FONT_MEDIUM]->DrawText(Buffer.str(), DrawX + PadX, DrawY, TextColor, LEFT_BASELINE);
-			Buffer.str("");
+			// Damage Block
+			if(Armor->GetDamageBlock() != 0) {
+				TextColor = COLOR_WHITE;
+				if(EquippedArmor) {
+					if(Armor->GetDamageBlock() > EquippedArmor->GetDamageBlock())
+						TextColor = COLOR_GREEN;
+					else if(Armor->GetDamageBlock() < EquippedArmor->GetDamageBlock())
+						TextColor = COLOR_RED;
+				}
+
+				DrawY += 20;
+				Buffer << Armor->GetDamageBlock();
+				Fonts[FONT_MEDIUM]->DrawText("Damage Block", DrawX - PadX, DrawY, COLOR_WHITE, RIGHT_BASELINE);
+				Fonts[FONT_MEDIUM]->DrawText(Buffer.str(), DrawX + PadX, DrawY, TextColor, LEFT_BASELINE);
+				Buffer.str("");
+			}
+
+			// Damage Resist
+			if(Armor->GetDamageResist() != 0) {
+				TextColor = COLOR_WHITE;
+				if(EquippedArmor) {
+					if(Armor->GetDamageResist() > EquippedArmor->GetDamageResist())
+						TextColor = COLOR_GREEN;
+					else if(Armor->GetDamageResist() < EquippedArmor->GetDamageResist())
+						TextColor = COLOR_RED;
+				}
+
+				DrawY += 20;
+				Buffer << (Armor->GetDamageResist() < 0 ? "" : "+") << Armor->GetDamageResist() * 100 << "%";
+				Fonts[FONT_MEDIUM]->DrawText("Damage Resist", DrawX - PadX, DrawY, COLOR_WHITE, RIGHT_BASELINE);
+				Fonts[FONT_MEDIUM]->DrawText(Buffer.str(), DrawX + PadX, DrawY, TextColor, LEFT_BASELINE);
+				Buffer.str("");
+			}
+
+			// Movement Speed
+			if(Armor->GetMovementSpeed() != 0) {
+				TextColor = COLOR_WHITE;
+				if(EquippedArmor) {
+					if(Armor->GetMovementSpeed() > EquippedArmor->GetMovementSpeed())
+						TextColor = COLOR_GREEN;
+					else if(Armor->GetMovementSpeed() < EquippedArmor->GetMovementSpeed())
+						TextColor = COLOR_RED;
+				}
+
+				DrawY += 20;
+				Buffer << (Armor->GetMovementSpeed() < 0 ? "" : "+") << Armor->GetMovementSpeed() * 100 << "%";
+				Fonts[FONT_MEDIUM]->DrawText("Movement Speed", DrawX - PadX, DrawY, COLOR_WHITE, RIGHT_BASELINE);
+				Fonts[FONT_MEDIUM]->DrawText(Buffer.str(), DrawX + PadX, DrawY, TextColor, LEFT_BASELINE);
+				Buffer.str("");
+			}
 		} break;
 		case _Object::MISCITEM: {
 			_MiscItem *MiscItem = (_MiscItem *)Item;
