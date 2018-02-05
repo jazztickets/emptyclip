@@ -192,7 +192,10 @@ void _PlayState::KeyEvent(const _KeyEvent &KeyEvent) {
 					RestartFromDeath();
 				}
 				else if(!Player->IsDying()) {
-					if(TestMode) {
+					if(HUD->GetInventoryOpen()) {
+						HUD->SetInventoryOpen(false);
+					}
+					else if(TestMode) {
 						if(FromEditor)
 							Framework.ChangeState(&EditorState);
 						else
